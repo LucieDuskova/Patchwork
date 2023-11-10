@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Lato&display=swap');
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Your Decorative Font', 'Lato', sans-serif;
+  background-color: #4D3520;
+  color: #C8C6AD;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 1.5rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #eeeee9;
+  margin-right: 2rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
