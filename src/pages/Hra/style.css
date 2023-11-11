@@ -1,1 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Lato&display=swap');
+
+
+.player1 {
+  aspect-ratio: 1 / 1;
+  background-color: #506D84;
+  width: 25%;
+}
+
+button {
+  aspect-ratio: 1 / 1;
+  width: 20%;
+  background-color: rgba(141, 141, 141, 0.687);
+}
+
+.player2 {
+  aspect-ratio: 1 / 1;
+  background-color: #A84575;
+  width: 25%;
+}
+
+.playerBoards {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
