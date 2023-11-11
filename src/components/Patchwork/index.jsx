@@ -1,46 +1,27 @@
-export const Patchwork = [
-  {
-    id: "0_0",
-    svg: "M 0 0 L 5 0 L 5 5 L 5 10 L 0 10 L 0 0",
-    viewBox: '0 0 0 0',
-    pattern: "",
-    price: 2,
-    time: 1,
-    income: 0,
-    filled: [
-      [1],
-      [1],
-    ],
-  },
-  {
-    id: "0_1",
-    svg: "M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 0 15 L 0 0",
-    viewBox: '0 0 0 0',
-    pattern: "",
-    price: 4,
-    time: 6,
-    income: 2,
-    filled: [
-      [2, 0],
-      [2, 0],
-      [1, 0],
-      [1, 1],
-    ],
-  },
-  {
-    id: "0_2",
-    svg: "M 5 0 L 10 0 L 10 10 L 15 10 L 15 15 L 10 15 L 10 25 L 5 25 L 5 15 L 0 15 L 0 10 L 5 10 L 5 0",
-    viewBox: '0 0 0 0',
-    pattern: "",
-    price: 1,
-    time: 4,
-    income: 1,
-    filled: [
-      [0, 2, 0],
-      [0, 1, 0],
-      [1, 1, 1],
-      [0, 1, 0],
-      [0, 1, 0],
-    ],
-  },
-];
+import * as React from "react";
+import "./styles.css";
+import range from "lodash-es/range";
+import { motion } from "framer-motion";
+import { Patchworks } from "../Patchworks";
+
+export default function App() {
+  const parts = [{}, {}, {}];
+
+  return (
+    <>
+      {Patchworks.map((patschwork) => (
+        <motion.svg
+          xmlns="http://www.w3.org/2000/svg"
+          drag
+          dragMomentum={false}
+          viewBox={viewBox}
+          // width="20"
+        >
+          <g>
+            <path d={svg} />
+          </g>
+        </motion.svg>
+      ))}
+    </>
+  );
+}
