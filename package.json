@@ -1,7 +1,7 @@
 {
-  "name": "jsx-starter-kit",
+  "name": "react-starter-kit",
   "version": "1.0.0",
-  "description": "Starter kit for JSX JavaScript project",
+  "description": "Starter kit for React JavaScript project",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@czechitas/render": "^0.3.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0"
   },
   "devDependencies": {
-    "vite": "^4.4.11",
-    "glob": "^10.3.0"
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
   }
 }
