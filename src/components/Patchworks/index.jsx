@@ -3,6 +3,7 @@ export const Patchworks = [
     id: "0_0",
     svg: "M 0 0 L 5 0 L 5 5 L 5 10 L 0 10 L 0 0",
     viewBox: '0 0 5 10',
+    // sirka: '5%',
     pattern: "",
     color: '#bd1794', //růžová
     price: 2,
@@ -17,6 +18,7 @@ export const Patchworks = [
     id: "0_1",
     svg: "M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 0 15 L 0 0",
     viewBox: '0 0 10 20',
+    // sirka: '10%',
     pattern: "",
     color: '#1725bd', //modrá
     price: 4,
@@ -33,6 +35,7 @@ export const Patchworks = [
     id: "0_2",
     svg: "M 5 0 L 10 0 L 10 10 L 15 10 L 15 15 L 10 15 L 10 25 L 5 25 L 5 15 L 0 15 L 0 10 L 5 10 L 5 0",
     viewBox: '0 0 15 25',
+    // sirka: '15%',
     pattern: "",
     color: '#17bd1a', //zelená
     price: 1,
