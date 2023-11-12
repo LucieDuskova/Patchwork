@@ -12,8 +12,8 @@ export const Patchworks = [
   },
   {
     id: '0_1',
-    svg: 'M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 0 15 L 0 0',
-    viewBox: '0 0 10 20',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 10 L 0 10 L 0 0',
+    viewBox: '0 0 10 10',
     pattern: '',
     color: '#00ff00', //Zelená
     price: 4,
@@ -45,8 +45,8 @@ export const Patchworks = [
   },
   {
     id: '0_3',
-    svg: 'm 0 0 L 10 0 L 10 10 L 15 10 L 15 15 L 5 15 L 5 5 L 0 5 L 0 0',
-    viewBox: '0 0 15 15',
+    svg: 'm 0 0 L 10 0 L 10 15 L 20 15 L 15 20 L 5 20 L 5 5 L 0 5 L 0 0',
+    viewBox: '0 0 15 20',
     pattern: '',
     color: '#ffff00', //Žlutá
     price: 1,
@@ -271,9 +271,9 @@ export const Patchworks = [
   },
 
   {
-    id: '2_1',
+    id: '2_0',
     svg: 'M 0 0 L 10 0 L 10 5 L 5 5 L 5 10 L 10 10 L 10 15 L 0 15 L 0 0',
-    viewBox: '0 0 15 15',
+    viewBox: '0 0 10 15',
     pattern: '',
     color: '#00cc00', //Sytě zelená
     price: 1,
@@ -283,6 +283,237 @@ export const Patchworks = [
       [1, 1],
       [1, 0],
       [1, 1],
+    ],
+  },
+
+  {
+    id: '2_1',
+    svg: 'M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 5 15 L 0 15 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#0000CC', //Sytě modrá
+    price: 4,
+    time: 2,
+    income: 1,
+    filled: [
+      [2, 0],
+      [1, 0],
+      [1, 1],
+    ],
+  },
+
+  {
+    id: '2_2',
+    svg: 'M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 5 15 L 0 15 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#CCCC00', //Sytě žlutá
+    price: 4,
+    time: 6,
+    income: 2,
+    filled: [
+      [2, 0],
+      [1, 0],
+      [1, 2],
+    ],
+  },
+
+  {
+    id: '2_3',
+    svg: 'M 0 0 L 5 0 L 5 5 L 5 15 L 10 15 L 10 20 L 5 20 L 0 20 L 0 0',
+    viewBox: '0 0 10 20',
+    pattern: '',
+    color: '#CC00CC', //Sytě purporuvá
+    price: 10,
+    time: 3,
+    income: 2,
+    filled: [
+      [2, 0],
+      [2, 0],
+      [1, 0],
+      [1, 1],
+    ],
+  },
+
+  {
+    id: '2_4',
+    svg: 'M 5 0 L 10 0 L 10 15 L 5 15 L 5 20 L 0 20 L 0 10 L 5 10 L 5 0',
+    viewBox: '0 0 10 20',
+    pattern: '',
+    color: '#00CCCC', //Sytě tyrkysová
+    price: 2,
+    time: 3,
+    income: 1,
+    filled: [
+      [0, 1],
+      [0, 2],
+      [1, 1],
+      [1, 0],
+    ],
+  },
+
+  {
+    id: '2_5',
+    svg: 'M 0 0 L 5 0 L 5 15 L 0 15 L 0 0',
+    viewBox: '0 0 5 15',
+    pattern: '',
+    color: '#666666', //Středně šedá
+    price: 2,
+    time: 3,
+    income: 1,
+    filled: [[1], [1], [1]],
+  },
+
+  {
+    id: '2_6',
+    svg: 'M 0 0 L 5 0 L 5 25 L 0 25 L 0 0',
+    viewBox: '0 0 5 25',
+    pattern: '',
+    color: '#4D4D4D', //Středně tmavě šedá
+    price: 7,
+    time: 1,
+    income: 1,
+    filled: [[1], [1], [2], [1], [1]],
+  },
+
+  {
+    id: '2_7',
+    svg: 'M 5 0 L 10 0 L 10 10 L 15 10 L 15 15 L 10 15 L 10 20 L 5 20 L 5 15 L 0 15 L 0 10 L 5 10 L 5 0',
+    viewBox: '0 0 15 20',
+    pattern: '',
+    color: '#CC6600', //Hnědá
+    price: 0,
+    time: 3,
+    income: 1,
+    filled: [
+      [0, 2, 0],
+      [0, 1, 0],
+      [1, 1, 1],
+      [0, 1, 0],
+    ],
+  },
+
+  {
+    id: '3_0',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 10 L 0 10 L 0 0',
+    viewBox: '0 0 10 10',
+    pattern: '',
+    color: '#006600', //Tmavě zelená
+    price: 1,
+    time: 3,
+    income: 0,
+    filled: [
+      [1, 0],
+      [1, 1],
+    ],
+  },
+
+  {
+    id: '3_1',
+    svg: 'M 5 0 L 10 0 L 10 5 L 15 5 L 15 10 L 10 10 L 10 15 L 5 15 L 5 10 L 0 10 L 0 5 L 5 5 L 5 0',
+    viewBox: '0 0 15 15',
+    pattern: '',
+    color: '#000066', //Tmavě modrá
+    price: 5,
+    time: 4,
+    income: 2,
+    filled: [
+      [0, 2, 0],
+      [1, 1, 2],
+      [0, 1, 0],
+    ],
+  },
+
+  {
+    id: '3_2',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 10 L 5 10 L 5 15 L 0 15 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#666600', //Tmavě olivová
+    price: 2,
+    time: 2,
+    income: 0,
+    filled: [
+      [1, 0],
+      [1, 1],
+      [1, 0],
+    ],
+  },
+
+  {
+    id: '3_3',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 15 L 0 15 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#660066', //Tmavě fialová
+    price: 2,
+    time: 2,
+    income: 0,
+    filled: [
+      [1, 0],
+      [1, 1],
+      [1, 1],
+    ],
+  },
+
+  {
+    id: '3_4',
+    svg: 'M 0 0 L 10 0 L 10 5 L 5 5 L 5 15 L 10 15 L 10 20 L 0 20 L 0 15 L 0 0',
+    viewBox: '0 0 10 20',
+    pattern: '',
+    color: '#006666', //Tmavě azurová
+    price: 1,
+    time: 5,
+    income: 1,
+    filled: [
+      [1, 1],
+      [1, 0],
+      [1, 0],
+      [2, 1],
+    ],
+  },
+
+  {
+    id: '3_5',
+    svg: 'M 0 0 L 5 0 L 5 20 L 0 20 L 0 0',
+    viewBox: '0 0 5 20',
+    pattern: '',
+    color: '#999999', //Střední světlá šedá
+    price: 3,
+    time: 3,
+    income: 1,
+    filled: [[1], [1], [1], [2]],
+  },
+
+  {
+    id: '3_6',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 15 L 10 15 L 5 15 L 5 10 L 0 10 L 0 0 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#262626', //Tmavě šedá
+    price: 3,
+    time: 2,
+    income: 1,
+    filled: [
+      [2, 0],
+      [1, 1],
+      [0, 1],
+    ],
+  },
+
+  {
+    id: '3_7',
+    svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 15 L 10 15 L 5 15 L 5 10 L 0 10 L 0 0 L 0 0',
+    viewBox: '0 0 10 15',
+    pattern: '',
+    color: '#FF6600', //Oranžová
+    price: 7,
+    time: 6,
+    income: 3,
+    filled: [
+      [2, 0],
+      [2, 2],
+      [0, 1],
     ],
   },
 ];
