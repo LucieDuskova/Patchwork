@@ -2,13 +2,13 @@ import './global.css';
 import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import { Pravidla } from './pages/Pravidla';
-import { Kontakty } from './pages/Kontakty';
-import { Domu } from './pages/Domu';
+import { RulePage } from './pages/RulePage';
+import { ContactPage } from './pages/ContactPage';
+import { HomePage } from './pages/HomePage';
 import { ErrorPage } from './pages/ErrorPage';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Hra } from './pages/Hra';
+import { GamePage } from './pages/GamePage';
 
 const App = () => {
   return (
@@ -26,18 +26,19 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '', element: <Domu /> },
+      { path: '', 
+        element: <HomePage /> },
       {
         path: '/pravidla',
-        element: <Pravidla />,
+        element: <RulePage />,
       },
       {
         path: '/hra',
-        element: <Hra />,
+        element: <GamePage />,
       },
       {
         path: '/kontakty',
-        element: <Kontakty />,
+        element: <ContactPage />,
       },
     ],
   },

@@ -1,12 +1,12 @@
 import './style.css';
 
-export const Pravidla = () => {
+export const RulePage = () => {
   return (
     <main>
       <div className="main__div1">
         <img
           className="projectImg"
-          src="./pages/Pravidla/img/Patchwork.png"
+          src="./pages/RulePage/img/Patchwork.png"
           alt="herní plán Patchwork"
         />
         <div>

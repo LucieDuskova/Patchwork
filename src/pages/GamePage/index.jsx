@@ -1,11 +1,11 @@
 import './style.css';
 
-export const Hra = () => {
+export const GamePage = () => {
   return (
     <main>
       <div className="time"></div>
-      <div className="playerBoards">
-        <div className="player1">
+      <div className="GamePage__playerBoards">
+        <div className="GamePage__player1">
           <button></button>
           <button></button>
           <button></button>
@@ -32,7 +32,7 @@ export const Hra = () => {
           <button></button>
           <button></button>
         </div>
-        <div className="player2">
+        <div className="GamePage__player2">
           <button></button>
           <button></button>
           <button></button>

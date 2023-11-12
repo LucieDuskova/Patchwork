@@ -7,14 +7,14 @@ export const Header = () => {
       <div>
         <h1>Patchwork</h1>
       </div>
-      <nav>
-        <Link to="/">Homepage</Link>
+      <nav className='header__nav'>
+        <Link className='header__nav-link'to="/">Domu</Link>
         <span> | </span>
-        <Link to="/pravidla">Pravidla</Link>
+        <Link className='header__nav-link' to="/pravidla">Pravidla</Link>
         <span> | </span>
-        <Link to="/hra">Začít hrát</Link>
+        <Link className='header__nav-link' to="/hra">Začít hrát</Link>
         <span> | </span>
-        <Link to="/kontakty">Kontakty</Link>
+        <Link className='header__nav-link' to="/kontakty">Kontakty</Link>
       </nav>
     </header>
   );
