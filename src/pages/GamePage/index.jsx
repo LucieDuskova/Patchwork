@@ -1,7 +1,15 @@
+import { Patchwork } from '../../components/Patchwork';
 import './style.css';
+
+
+
 
 export const GamePage = () => {
   return (
+    <>
+
+    <Patchwork />
+
     <main>
       <div className="time"></div>
       <div className="GamePage__playerBoards">
@@ -61,5 +69,6 @@ export const GamePage = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
