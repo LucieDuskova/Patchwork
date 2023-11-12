@@ -14,7 +14,7 @@ export const Patchwork = () => (
         drag
         dragMomentum={false}
         viewBox={patchwork.viewBox}
-        width={`${((patchwork.viewBox.split(' ').map(Number))[2])*0.54321}%`}
+        width={`${((patchwork.viewBox.split(' ').map(Number))[2])*0.549999}%`}
       >
         <g>
           <path d={patchwork.svg} fill={patchwork.color} />
