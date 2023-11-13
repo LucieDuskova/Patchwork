@@ -1,10 +1,10 @@
-import { Patchwork } from '../../components/Patchwork';
+import { Patch } from '../../components/Patch';
 import './style.css';
 
 export const GamePage = () => {
   return (
     <>
-      <Patchwork />
+      <Patch />
 
       <main>
         <div className="time"></div>
