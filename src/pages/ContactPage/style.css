@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Lato&display=swap');
 
-.main__kontakty {
-  background-color: #F3D5C0;
-  font-family: 'Lato', sans-serif;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-
 img {
   width: 40%;
   height: auto;
@@ -27,4 +18,16 @@ h4 {
 p {
   flex: 1;
   margin-left: 1rem;
+}
+
+.contactPage {
+  display: flex;
+}
+
+.contactPage__profil {
+  width: 50%;
+}
+
+.contactPage__img {
+  width: 40%;
 }

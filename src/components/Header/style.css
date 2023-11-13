@@ -5,14 +5,15 @@ header {
   flex-direction: column;
   align-items: center;
   font-family: 'Your Decorative Font', 'Lato', sans-serif;
-  background-color: #4D3520;
-  color: #C8C6AD;
-  padding: 1rem;
+  background-color: #3f3a35;
+  color: #f8f5d1;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 h1 {
-  font-size: 5rem;
-  margin: 1.5rem;
+  font-size: 4rem;
+  margin: 1rem;
 }
 
 
@@ -20,16 +21,20 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
 }
 
 nav a {
   text-decoration: none;
   color: #eeeee9;
-  margin-right: 2rem;
 }
 
 nav a:hover {
   text-decoration: underline;
+}
+
+.header__nav-space {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

@@ -1,0 +1,21 @@
+.gameMenu {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.gameMenu__button {
+  background-color: #A888AF;
+  border: 1px solid #6F5084;
+  border-radius: 3px;
+  width: 100%;
+  height: 1.3rem;
+  margin-top: 5px;
+}
+
+.gameMenu__button-rotation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
