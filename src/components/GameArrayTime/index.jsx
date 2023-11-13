@@ -1,0 +1,74 @@
+import './style.css';
+
+export const GameArrayTime = () => {
+  return (
+    <div className="GameArrayTime">
+      <div className="GameArrayTime__array">
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+        <button className="button"></button>
+      </div>
+    </div>
+  );
+};
