@@ -15,7 +15,12 @@ export const Patch = () => (
         width={`${patch.viewBox.split(' ').map(Number)[2] * 7}px`}
       >
         <g>
-          <path d={patch.svg} fill={patch.color} />
+          <path
+            d={patch.svg}
+            fill={patch.color}
+            stroke="#000000" 
+            strokeWidth="0.15" 
+          />
         </g>
       </motion.svg>
     ))}
