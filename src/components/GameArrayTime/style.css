@@ -1,4 +1,4 @@
-.GameArrayTime {
+.gameArrayTime {
   height: 100%;
   margin: 5rem 0 5rem 0;
   display: flex;
@@ -7,16 +7,23 @@
 }
 
 
-.GameArrayTime__array {
+.gameArrayTime__array {
   aspect-ratio: 1 / 1;
   background-color: #889EAF;
   display: flex;
   flex-wrap: wrap;
-  width: 25%;
+  width: 300px;
 }
 
-.button {
+.gameArrayTime__array-one {
+  width: 37.5px;
+  height: 37.5px;
+  border: 1px solid blue;
+}
+
+
+/* .button {
   aspect-ratio: 1 / 1;
   width: 12.5%;
   border: 1px solid #506D84;
-}
+} */

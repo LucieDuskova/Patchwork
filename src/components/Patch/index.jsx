@@ -12,7 +12,7 @@ export const Patch = () => (
         drag
         dragMomentum={false}
         viewBox={patch.viewBox}
-        width={`${patch.viewBox.split(' ').map(Number)[2] * 0.549999}%`}
+        width={`${patch.viewBox.split(' ').map(Number)[2] * 7}px`}
       >
         <g>
           <path d={patch.svg} fill={patch.color} />

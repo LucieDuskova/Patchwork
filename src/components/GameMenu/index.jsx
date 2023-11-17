@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from '@geist-ui/core';
+// import { Button, ButtonGroup } from '@geist-ui/core';
 import './style.css';
 
 export const GameMenu = () => {
