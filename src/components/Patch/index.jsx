@@ -33,7 +33,7 @@ export const Patch = () => {
   };*/
   {
     console.log(points);
-    console.log('point 0: ' + points[0]);
+    console.log('point 7: ' + points[7]);
     console.log('point 1: ' + points[1]);
   }
   return (
@@ -42,7 +42,11 @@ export const Patch = () => {
         <motion.svg
           key={patch.id}
           xmlns="http://www.w3.org/2000/svg"
-          style={{ top: `${y} px`, left: `${x}px` }}
+          style={{
+            top: `${y + points[[25]]}px`,
+            left: `${x + points[[25]]}px`,
+            position: 'absolute',
+          }}
           drag
           dragMomentum={false}
           viewBox={patch.viewBox}
@@ -54,6 +58,7 @@ export const Patch = () => {
               fill={patch.color}
               stroke="#000000"
               strokeWidth="0.15"
+              style={{ top: `1000px`, left: `1000px`, position: 'absolute' }}
             />
           </g>
         </motion.svg>
