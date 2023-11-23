@@ -18,70 +18,340 @@ export const GameArrayTime = () => {
     score.push({});
   }
 
-  score[0] = { color: '#ff0000', text: '0' };
-  score[1] = { color: '#ff0000', text: '1' };
-  score[2] = { color: '#ff0000', text: '2' };
-  score[3] = { color: '#f39c12', text: '3' };
-  score[4] = { color: '#f39c12', text: '4' };
-  score[5] = { color: '#f39c12', text: '5' };
-  score[6] = { color: '#f39c12', text: '6' };
-  score[7] = { button: true, color: '#3498db', text: '7' };
-  score[8] = { color: '#f39c12', text: '8' };
-  score[9] = { color: '#f39c12', text: '9' };
-  score[10] = { color: '#f39c12', text: '10' };
-  score[11] = { color: '#f39c12', text: '11' };
-  score[12] = { color: '#f39c12', text: '12' };
-  score[13] = { button: true, color: '#3498db', text: '13' };
-  score[14] = { color: '#f39c12', text: '14' };
-  score[15] = { color: '#f39c12', text: '15' };
-  score[16] = { color: '#f39c12', text: '16' };
-  score[17] = { color: '#f39c12', text: '17' };
-  score[18] = { color: '#f39c12', text: '18' };
-  score[19] = { button: true, color: '#3498db', text: '19' };
-  score[20] = { color: '#f39c12', text: '20' };
-  score[21] = { color: '#f39c12', text: '21' };
-  score[22] = { patch: true, color: '#8B4513', text: '22' };
-  score[23] = { color: '#f39c12', text: '23' };
-  score[24] = { color: '#f39c12', text: '24' };
-  score[25] = { color: '#f39c12', text: '25' };
-  score[26] = { button: true, color: '#3498db', text: '26' };
-  score[27] = { color: '#f39c12', text: '27' };
-  score[28] = { color: '#f39c12', text: '28' };
-  score[29] = { patch: true, color: '#8B4513', text: '29' };
-  score[30] = { color: '#f39c12', text: '30' };
-  score[31] = { color: '#f39c12', text: '31' };
-  score[32] = { color: '#f39c12', text: '32' };
-  score[33] = { button: true, color: '#3498db', text: '33' };
-  score[34] = { color: '#f39c12', text: '34' };
-  score[35] = { color: '#f39c12', text: '35' };
-  score[36] = { patch: true, color: '#8B4513', text: '36' };
-  score[37] = { color: '#f39c12', text: '37' };
-  score[38] = { color: '#f39c12', text: '38' };
-  score[39] = { color: '#f39c12', text: '39' };
-  score[40] = { button: true, color: '#3498db', text: '40' };
-  score[41] = { color: '#f39c12', text: '41' };
-  score[42] = { color: '#f39c12', text: '42' };
-  score[43] = { color: '#f39c12', text: '43' };
-  score[44] = { color: '#f39c12', text: '44' };
-  score[45] = { color: '#f39c12', text: '45' };
-  score[46] = { button: true, color: '#3498db', text: '46' };
-  score[47] = { color: '#f39c12', text: '47' };
-  score[48] = { color: '#f39c12', text: '48' };
-  score[49] = { patch: true, color: '#8B4513', text: '49' };
-  score[50] = { color: '#f39c12', text: '50' };
-  score[51] = { color: '#f39c12', text: '51' };
-  score[52] = { color: '#f39c12', text: '52' };
-  score[53] = { button: true, color: '#3498db', text: '53' };
-  score[54] = { color: '#f39c12', text: '54' };
-  score[55] = { color: '#f39c12', text: '55' };
-  score[56] = { patch: true, color: '#8B4513', text: '56' };
-  score[57] = { color: '#f39c12', text: '57' };
-  score[58] = { color: '#f39c12', text: '58' };
-  score[59] = { color: '#f39c12', text: '59' };
-  score[60] = { button: true, color: '#3498db', text: '60' };
-  score[61] = { color: '#f39c12', text: '61' };
-  score[62] = { color: '#f39c12', text: '62' };
-  score[63] = { color: '#f39c12', text: '63' };
+  score[0] = {
+    color: '#ff0000',
+    text: '0',
+    borderWidth: '4px 2px 4px 4px',
+  };
+  score[1] = {
+    color: '#ff0000',
+    text: '1',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[2] = {
+    color: '#ff0000',
+    text: '2',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[3] = {
+    color: '#f39c12',
+    text: '3',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[4] = {
+    color: '#f39c12',
+    text: '4',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[5] = {
+    color: '#f39c12',
+    text: '5',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[6] = {
+    color: '#f39c12',
+    text: '6',
+    borderWidth: '4px 2px 4px 0px',
+  };
+  score[7] = {
+    button: true,
+    color: '#3498db',
+    text: '7',
+    borderWidth: '4px 4px 2px 0px',
+  };
+  score[8] = {
+    color: '#f39c12',
+    text: '8',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[9] = {
+    color: '#f39c12',
+    text: '9',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[10] = {
+    color: '#f39c12',
+    text: '10',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[11] = {
+    color: '#f39c12',
+    text: '11',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[12] = {
+    color: '#f39c12',
+    text: '12',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[13] = {
+    button: true,
+    color: '#3498db',
+    text: '13',
+    borderWidth: '0px 4px 2px 4px',
+  };
+  score[14] = {
+    color: '#f39c12',
+    text: '14',
+    borderWidth: '0px 4px 4px 2px',
+  };
+  score[15] = {
+    color: '#f39c12',
+    text: '15',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[16] = {
+    color: '#f39c12',
+    text: '16',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[17] = {
+    color: '#f39c12',
+    text: '17',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[18] = {
+    color: '#f39c12',
+    text: '18',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[19] = {
+    button: true,
+    color: '#3498db',
+    text: '19',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[20] = {
+    color: '#f39c12',
+    text: '20',
+    borderWidth: '4px 0px 4px 2px',
+  };
+  score[21] = {
+    color: '#f39c12',
+    text: '21',
+    borderWidth: '2px 0px 4px 4px',
+  };
+  score[22] = {
+    patch: true,
+    color: '#8B4513',
+    text: '22',
+    borderWidth: '2px 4px 0px 4px',
+  };
+  score[23] = {
+    color: '#f39c12',
+    text: '23',
+    borderWidth: '2px 4px 0px 4px',
+  };
+  score[24] = {
+    color: '#f39c12',
+    text: '24',
+    borderWidth: '2px 4px 0px 4px',
+  };
+  score[25] = {
+    color: '#f39c12',
+    text: '25',
+    borderWidth: '2px 4px 0px 4px',
+  };
+  score[26] = {
+    button: true,
+    color: '#3498db',
+    text: '26',
+    borderWidth: '2px 4px 0px 4px',
+  };
+  score[27] = {
+    color: '#f39c12',
+    text: '27',
+    borderWidth: '0px 2px 0px 4px',
+  };
+  score[28] = {
+    color: '#f39c12',
+    text: '28',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[29] = {
+    patch: true,
+    color: '#8B4513',
+    text: '29',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[30] = {
+    color: '#f39c12',
+    text: '30',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[31] = {
+    color: '#f39c12',
+    text: '31',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[32] = {
+    color: '#f39c12',
+    text: '32',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[33] = {
+    button: true,
+    color: '#3498db',
+    text: '33',
+    borderWidth: '0px 0px 2px 0px',
+  };
+  score[34] = {
+    color: '#f39c12',
+    text: '34',
+    borderWidth: '0px 0px 2px 4px',
+  };
+  score[35] = {
+    color: '#f39c12',
+    text: '35',
+    borderWidth: '0px 0px 2px 4px',
+  };
+  score[36] = {
+    patch: true,
+    color: '#8B4513',
+    text: '36',
+    borderWidth: '0px 0px 2px 4px',
+  };
+  score[37] = {
+    color: '#f39c12',
+    text: '37',
+    borderWidth: '0px 0px 2px 4px',
+  };
+  score[38] = {
+    color: '#f39c12',
+    text: '38',
+    borderWidth: '0px 0px 0px 2px',
+  };
+  score[39] = {
+    color: '#f39c12',
+    text: '39',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[40] = {
+    button: true,
+    color: '#3498db',
+    text: '40',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[41] = {
+    color: '#f39c12',
+    text: '41',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[42] = {
+    color: '#f39c12',
+    text: '42',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[43] = {
+    color: '#f39c12',
+    text: '43',
+    borderWidth: '2px 0px 0px 0px',
+  };
+  score[44] = {
+    color: '#f39c12',
+    text: '44',
+    borderWidth: '2px 4px 0px 0px',
+  };
+  score[45] = {
+    color: '#f39c12',
+    text: '45',
+    borderWidth: '2px 4px 0px 0px',
+  };
+  score[46] = {
+    button: true,
+    color: '#3498db',
+    text: '46',
+    borderWidth: '2px 4px 0px 0px',
+  };
+  score[47] = {
+    color: '#f39c12',
+    text: '47',
+    borderWidth: '0px 2px 0px 0px',
+  };
+  score[48] = {
+    color: '#f39c12',
+    text: '48',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[49] = {
+    patch: true,
+    color: '#8B4513',
+    text: '49',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[50] = {
+    color: '#f39c12',
+    text: '50',
+    borderWidth: '0px 2px 4px 0px',
+  };
+  score[51] = {
+    color: '#f39c12',
+    text: '51',
+    borderWidth: '0px 0px 2px 0px',
+  };
+  score[52] = {
+    color: '#f39c12',
+    text: '52',
+    borderWidth: '0px 0px 2px 4px',
+  };
+  score[53] = {
+    button: true,
+    color: '#3498db',
+    text: '53',
+        borderWidth: '0px 0px 2px 4px',
+  };
+  score[54] = {
+    color: '#f39c12',
+    text: '54',
+    borderWidth: '0px 0px 0px 2px',
+  };
+  score[55] = {
+    color: '#f39c12',
+    text: '55',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[56] = {
+    patch: true,
+    color: '#8B4513',
+    text: '56',
+    borderWidth: '4px 0px 0px 2px',
+  };
+  score[57] = {
+    color: '#f39c12',
+    text: '57',
+    borderWidth: '2px 0px 0px 0px',
+  };
+  score[58] = {
+    color: '#f39c12',
+    text: '58',
+    borderWidth: '2px 4px 0px 0px',
+  };
+  score[59] = {
+    color: '#f39c12',
+    text: '59',
+    borderWidth: '0px 2px 0px 0px',
+  };
+  score[60] = {
+    button: true,
+    color: '#3498db',
+    text: '60',
+    borderWidth: '0px 0px 0px 0px',
+  };
+  score[61] = {
+    color: '#ff0000',
+    text: '61',
+    borderWidth: '0px 0px 0px 0px',
+  };
+  score[62] = {
+    color: '#ff0000',
+    text: '62',
+    borderWidth: '0px 0px 0px 0px',
+  };
+  score[63] = {
+    color: '#ff0000',
+    text: '63',
+    borderWidth: '0px 0px 0px 0px',
+  };
 
   arrayGrid[0][0] = score[0];
   arrayGrid[1][0] = score[1];
@@ -148,12 +418,6 @@ export const GameArrayTime = () => {
   arrayGrid[4][4] = score[62];
   arrayGrid[3][4] = score[63];
 
-  // score.forEach((item, index) => {
-  //   const row = Math.floor(index / 8);
-  //   const col = index % 8;
-  //   arrayGrid[col][row] = item;
-  // });
-
   return (
     <div className="gameArrayTime">
       <div className="gameArrayTime__array">
@@ -164,12 +428,17 @@ export const GameArrayTime = () => {
                 key={colIndex}
                 className={`gameArrayTime__cell-${colIndex}`}
                 style={{
-                  backgroundColor: cell.color || 'blue',
+                  backgroundColor: cell.color || '#f39c12',
                   width: '37.2px',
                   height: '37.2px',
+                  borderWidth: cell.borderWidth,
+                  borderStyle: 'solid',
+                  borderColor: '#000000',
+                  transform: 'translateY(0.5px)',
+                  boxSizing: 'border-box',
                 }}
               >
-                {' '}
+                {'   '}
                 {cell.text}
               </div>
             ))}
