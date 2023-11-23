@@ -298,7 +298,7 @@ export const GameArrayTime = () => {
     button: true,
     color: '#3498db',
     text: '53',
-        borderWidth: '0px 0px 2px 4px',
+    borderWidth: '0px 0px 2px 4px',
   };
   score[54] = {
     color: '#f39c12',
@@ -423,23 +423,24 @@ export const GameArrayTime = () => {
       <div className="gameArrayTime__array">
         {arrayGrid.map((row, rowIndex) => (
           <div key={rowIndex} className={`gameArrayTime__row-${rowIndex}`}>
-            {row.map((cell, colIndex) => (
+            {row.map((cell, Index) => (
               <div
-                key={colIndex}
-                className={`gameArrayTime__cell-${colIndex}`}
+                key={Index}
+                className={`gameArrayTime__cell-${Index}`}
                 style={{
-                  backgroundColor: cell.color || '#f39c12',
+                  backgroundColor: cell.color,
+                  backgroundImage: cell.button
+                    ? `url('./img/knoflik.jpg')`
+                    : '',
                   width: '37.2px',
                   height: '37.2px',
                   borderWidth: cell.borderWidth,
                   borderStyle: 'solid',
                   borderColor: '#000000',
-                  transform: 'translateY(0.5px)',
-                  boxSizing: 'border-box',
                 }}
               >
                 {'   '}
-                {cell.text}
+                {/* {cell.text} */}
               </div>
             ))}
           </div>
