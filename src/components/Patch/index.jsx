@@ -5,9 +5,12 @@ import { motion } from 'framer-motion';
 import { Patchs } from '../Patchs';
 
 export const Patch = () => {
+  useEffect(() => {}, []);
+
   function distributePointsOnEllipse(a, b, numPoints) {
     const points = [];
 
+    // fce na vytvoření 33 pozic pro patch
     for (let i = 0; i < numPoints; i++) {
       const theta = (2 * Math.PI * i) / numPoints;
       const x = a * Math.sin(theta);
@@ -18,7 +21,7 @@ export const Patch = () => {
     return points;
   }
 
-  // Example usage:
+  // Ovál parametry:
   const a = document.body.clientWidth / 2.5; // šířka oválu šířka okna / 2,5
   const b = 300; // výška oválu
   const x = document.body.clientWidth / 2; // pozice zleva, šířka okna / 2 (střed okna)
