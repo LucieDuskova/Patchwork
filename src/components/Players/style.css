@@ -1,4 +1,4 @@
-.gamePage__player1 {
+.gamePage__player1--array {
   background-color: #889EAF;
   display: flex;
   flex-wrap: wrap;
@@ -18,10 +18,15 @@
   border: 1px solid #A84575;
 }
 
-.gamePage__player2 {
+.gamePage__player2--array {
   background-color: #BD74A0;
   display: flex;
   flex-wrap: wrap;
   width: 315px;
   height: 315px;
+}
+
+.gamePage__player1,
+.gamePage__player2 {
+  display: flex;
 }

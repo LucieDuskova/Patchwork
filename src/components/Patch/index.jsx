@@ -55,6 +55,13 @@ export const Patch = () => {
               stroke="#000000"
               strokeWidth="0.15"
             />
+
+
+            <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
+              {`P: ${patch.price}, T: ${patch.time}`}
+            </text>
+
+
           </g>
         </motion.svg>
       ))}
