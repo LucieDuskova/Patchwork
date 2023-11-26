@@ -34,22 +34,22 @@ export const GameArrayTime = () => {
     borderWidth: '4px 1px 1px 1px',
   };
   score[3] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '3',
     borderWidth: '4px 1px 1px 1px',
   };
   score[4] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '4',
     borderWidth: '4px 1px 1px 1px',
   };
   score[5] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '5',
     borderWidth: '4px 1px 1px 1px',
   };
   score[6] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '6',
     borderWidth: '4px 1px 1px 1px',
   };
@@ -60,27 +60,27 @@ export const GameArrayTime = () => {
     borderWidth: '4px 4px 1px 1px',
   };
   score[8] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '8',
     borderWidth: '1px 4px 1px 1px',
   };
   score[9] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '9',
     borderWidth: '1px 4px 1px 1px',
   };
   score[10] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '10',
     borderWidth: '1px 4px 1px 1px',
   };
   score[11] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '11',
     borderWidth: '1px 4px 1px 1px',
   };
   score[12] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '12',
     borderWidth: '1px 4px 1px 1px',
   };
@@ -91,27 +91,27 @@ export const GameArrayTime = () => {
     borderWidth: '1px 4px 1px 1px',
   };
   score[14] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '14',
     borderWidth: '1px 4px 4px 1px',
   };
   score[15] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '15',
     borderWidth: '1px 1px 4px 1px',
   };
   score[16] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '16',
     borderWidth: '1px 1px 4px 1px',
   };
   score[17] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '17',
     borderWidth: '1px 1px 4px 1px',
   };
   score[18] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '18',
     borderWidth: '1px 1px 4px 1px',
   };
@@ -122,12 +122,12 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 4px 1px',
   };
   score[20] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '20',
     borderWidth: '1px 1px 4px 1px',
   };
   score[21] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '21',
     borderWidth: '1px 1px 4px 4px',
   };
@@ -138,17 +138,17 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 1px 4px',
   };
   score[23] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '23',
     borderWidth: '1px 1px 1px 4px',
   };
   score[24] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '24',
     borderWidth: '1px 1px 1px 4px',
   };
   score[25] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '25',
     borderWidth: '1px 1px 1px 4px',
   };
@@ -159,12 +159,12 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 1px 4px',
   };
   score[27] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '27',
     borderWidth: '4px 1px 1px 4px',
   };
   score[28] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '28',
     borderWidth: '4px 1px 1px 1px',
   };
@@ -175,17 +175,17 @@ export const GameArrayTime = () => {
     borderWidth: '4px 1px 1px 1px',
   };
   score[30] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '30',
     borderWidth: '4px 1px 1px 1px',
   };
   score[31] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '31',
     borderWidth: '4px 1px 1px 1px',
   };
   score[32] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '32',
     borderWidth: '4px 1px 1px 1px',
   };
@@ -196,12 +196,12 @@ export const GameArrayTime = () => {
     borderWidth: '4px 4px 1px 1px',
   };
   score[34] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '34',
     borderWidth: '1px 4px 1px 1px',
   };
   score[35] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '35',
     borderWidth: '1px 4px 1px 1px',
   };
@@ -212,17 +212,17 @@ export const GameArrayTime = () => {
     borderWidth: '1px 4px 1px 1px',
   };
   score[37] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '37',
     borderWidth: '1px 4px 1px 1px',
   };
   score[38] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '38',
     borderWidth: '1px 4px 4px 1px',
   };
   score[39] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '39',
     borderWidth: '1px 1px 4px 1px',
   };
@@ -233,27 +233,27 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 4px 1px',
   };
   score[41] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '41',
     borderWidth: '1px 1px 4px 1px',
   };
   score[42] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '42',
     borderWidth: '1px 1px 4px 1px',
   };
   score[43] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '43',
     borderWidth: '1px 1px 4px 4px',
   };
   score[44] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '44',
     borderWidth: '1px 1px 1px 4px',
   };
   score[45] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '45',
     borderWidth: '1px 1px 1px 4px',
   };
@@ -264,12 +264,12 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 1px 4px',
   };
   score[47] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '47',
     borderWidth: '4px 1px 1px 4px',
   };
   score[48] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '48',
     borderWidth: '4px 1px 1px 1px',
   };
@@ -280,17 +280,17 @@ export const GameArrayTime = () => {
     borderWidth: '4px 1px 1px 1px',
   };
   score[50] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '50',
     borderWidth: '4px 1px 1px 1px',
   };
   score[51] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '51',
     borderWidth: '4px 4px 1px 1px',
   };
   score[52] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '52',
     borderWidth: '1px 4px 1px 1px',
   };
@@ -301,12 +301,12 @@ export const GameArrayTime = () => {
     borderWidth: '1px 4px 1px 1px',
   };
   score[54] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '54',
     borderWidth: '1px 4px 4px 1px',
   };
   score[55] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '55',
     borderWidth: '1px 1px 4px 1px',
   };
@@ -317,17 +317,17 @@ export const GameArrayTime = () => {
     borderWidth: '1px 1px 4px 1px',
   };
   score[57] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '57',
     borderWidth: '1px 1px 4px 4px',
   };
   score[58] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '58',
     borderWidth: '1px 1px 1px 4px',
   };
   score[59] = {
-    color: '#f39c12',
+    color: '#ffc43a',
     text: '59',
     borderWidth: '4px 1px 1px 4px',
   };
@@ -430,7 +430,7 @@ export const GameArrayTime = () => {
                 style={{
                   backgroundColor: cell.color,
                   backgroundImage: cell.button
-                    ? `url('./img/knoflik.jpg')`
+                    ? 'url(img/lucka.jpeg)'
                     : '',
                   width: '37.2px',
                   height: '37.2px',
