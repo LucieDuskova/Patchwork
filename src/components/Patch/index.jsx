@@ -35,6 +35,18 @@ export const Patch = ({ dispatch, state }) => {
   const points = distributePointsOnEllipse(a, b, numPoints);
 
   Patchs.sort(() => Math.random() - 0.5); // náhodné seřazení látek
+  const indexOf0_0 = Patchs.findIndex((x) => x.id === '0_0');
+  console.log(indexOf0_0);
+
+  const arraymove = (arr, fromIndex) => {
+    var element = Patchs[fromIndex];
+    arr.splice(fromIndex, 1);
+    arr.splice(33, 0, element);
+  };
+
+  arraymove(Patchs, indexOf0_0);
+  console.log(Patchs.findIndex((x) => x.id === '0_0'));
+
   //najít 0_0 a dát ho na konec
   //zamíchat kopii z uSeReducer, ne původní látky
   return (
