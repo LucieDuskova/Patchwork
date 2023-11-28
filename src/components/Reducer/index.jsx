@@ -2,13 +2,31 @@ import { useReducer } from 'react';
 import { Patchs } from '../Patchs';
 
 export const reducer = (state, action) => {
-  if (action.type === 'CHANGE_TO_PLAYER_1') {
-    return { ...state, currentPlayer: novyHrac };
+  if (action.type === 'NEW_GAME') {
+    return { defaultState };
   }
-  if (action.type === 'CHANGE_TO_PLAYER_2') {
-    return { ...state, currentPlayer: 'player2' };
+
+  if (action.type === 'CHANGE_PLAYER') {
+    const newPlayer = '';
+    if (state.player1.score < state.player2.score) {
+      newPlayer = 'player1';
+      return { ...state, currentPlayer: 'newPlayer' };
+    } else if (state.player2.score < state.player1.score) {
+      newPlayer = 'player2';
+      return { ...state, currentPlayer: 'newPlayer' };
+    }
   }
-  if (action.type === 'ADD_INCOME') {
+
+  if (action.type === 'WANT_PATCH') {
+    const newPlayerButtons = '';
+    const newPlayerIncome = '';
+    const newPlayerScore = '';
+    if (state.currentPlayer.score.incldes(button)) // políčko na kterém stojí + přidat všechna další políčka, přes ktreré projel
+    {
+    }
+
+
+
     return {
       ...state,
       [state.currentPlayer]: {
@@ -17,6 +35,8 @@ export const reducer = (state, action) => {
       },
     };
   }
+
+  
   if (action.type === 'ADD_BUTTONS') {
     return {
       ...state,
