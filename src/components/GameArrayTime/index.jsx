@@ -34,6 +34,8 @@ export const GameArrayTime = () => {
     borderWidth: '4px 1px 1px 1px',
   };
   score[3] = {
+    top: 500,
+    left: 500,
     color: '#ffc43a',
     text: '3',
     borderWidth: '4px 1px 1px 1px',
@@ -419,33 +421,47 @@ export const GameArrayTime = () => {
   arrayGrid[3][4] = score[63];
 
   return (
-    <div className="gameArrayTime">
-      <div className="gameArrayTime__array">
-        {arrayGrid.map((row, rowIndex) => (
-          <div key={rowIndex} className={`gameArrayTime__row-${rowIndex}`}>
-            {row.map((cell, Index) => (
-              <div
-                key={Index}
-                className={`gameArrayTime__cell-${Index}`}
-                style={{
-                  backgroundColor: cell.color,
-                  backgroundImage: cell.button
-                    ? 'url(img/lucka.jpeg)'
-                    : '',
-                  width: '37.2px',
-                  height: '37.2px',
-                  borderWidth: cell.borderWidth,
-                  borderStyle: 'solid',
-                  borderColor: '#000000',
-                }}
-              >
-                {'   '}
-                {/* {cell.text} */}
-              </div>
-            ))}
-          </div>
-        ))}
+    <>
+      <div className="gameArrayTime">
+        <div className="gameArrayTime__array">
+          {arrayGrid.map((row, rowIndex) => (
+            <div key={rowIndex} className={`gameArrayTime__row-${rowIndex}`}>
+              {row.map((cell, Index) => (
+                <div
+                  key={Index}
+                  className={`gameArrayTime__cell-${Index}`}
+                  style={{
+                    backgroundColor: cell.color,
+                    backgroundImage: cell.button ? 'url(img/lucka.jpeg)' : '',
+                    width: '37.2px',
+                    height: '37.2px',
+                    borderWidth: cell.borderWidth,
+                    borderStyle: 'solid',
+                    borderColor: '#000000',
+                    
+                  }}
+                >
+                  {'   '}
+                  {/* {cell.text} */}
+                </div>
+              ))}
+            </div>
+          ))}
+
+<div
+          className="figures_1"
+          style={{
+            position: 'absolute',
+            top: score[3].top,
+            left: score[3].left,
+          }}
+        ></div>
+        <div className="figures_2"></div>
+
+        </div>
+
+
       </div>
-    </div>
+    </>
   );
 };

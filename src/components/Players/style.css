@@ -6,7 +6,7 @@
   height: 315px;
   position: absolute;
   left: 50px;
-  top: 50px;
+  top: 550px;
 }
 
 .gamePage__player1-field {
@@ -29,7 +29,7 @@
   height: 315px;
   position: absolute;
   left: 1550px;
-  top: 50px;
+  top: 550px;
 }
 
 .gamePage__player1,
@@ -41,12 +41,12 @@
   width: 100px;
   position: absolute;
   left: 400px;
-  top: 200px;
+  top: 700px;
 }
 
 .gamePage__player2--state{
   width: 100px;
   position: absolute;
   left: 1400px;
-  top: 200px;
+  top: 700px;
 }

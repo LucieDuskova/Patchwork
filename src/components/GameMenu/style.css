@@ -1,11 +1,12 @@
 .gameMenu {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 300px;
   color: black;
   padding-top: 250px;
   position: absolute;
   left: 750px;
+  top: 500px;
 
 }
 
