@@ -3,6 +3,10 @@
   flex-direction: column;
   width: 400px;
   color: black;
+  padding-top: 250px;
+  position: absolute;
+  left: 750px;
+
 }
 
 .gameMenu__button {

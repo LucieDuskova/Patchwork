@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   width: 315px;
   height: 315px;
+  position: absolute;
+  left: 50px;
+  top: 50px;
 }
 
 .gamePage__player1-field {
@@ -24,9 +27,26 @@
   flex-wrap: wrap;
   width: 315px;
   height: 315px;
+  position: absolute;
+  left: 1550px;
+  top: 50px;
 }
 
 .gamePage__player1,
 .gamePage__player2 {
   display: flex;
+}
+
+.gamePage__player1--state{
+  width: 100px;
+  position: absolute;
+  left: 400px;
+  top: 200px;
+}
+
+.gamePage__player2--state{
+  width: 100px;
+  position: absolute;
+  left: 1400px;
+  top: 200px;
 }

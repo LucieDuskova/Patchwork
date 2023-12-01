@@ -5,6 +5,9 @@
   aspect-ratio: 1 / 1;
   background-color: #506D84;
   width: 25%;
+  position: absolute;
+  left: 50px;
+  top: 50px;
 }
 
 button {
@@ -17,6 +20,8 @@ button {
   aspect-ratio: 1 / 1;
   background-color: #A84575;
   width: 25%;
+  position: absolute;
+
 }
 
 .GamePage__playerBoards {
@@ -24,4 +29,6 @@ button {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  position: relative;
+  height: 350px;
 }

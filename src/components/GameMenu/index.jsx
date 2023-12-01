@@ -1,4 +1,3 @@
-// import { Button, ButtonGroup } from '@geist-ui/core';
 import './style.css';
 
 export const GameMenu = () => {
@@ -17,14 +16,3 @@ export const GameMenu = () => {
     </>
   );
 };
-/*
-      <div className="gameMenu">
-        <ButtonGroup type="success-light">
-          <Button className="gameMenu__button">O</Button>
-          <Button className="gameMenu__button">&#9664;</Button>
-          <Button className="gameMenu__button">&#9654;</Button>
-          <Button className="gameMenu__button">O</Button>
-        </ButtonGroup>
-        <Button className="gameMenu__button">koupit látku</Button>
-        <Button className="gameMenu__button">vynechat tah</Button>
-      </div>*/
