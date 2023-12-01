@@ -15,13 +15,14 @@ export const Patch = ({ dispatch, state }) => {
   const [userWidth, setUserWidth] = useState(document.body.clientWidth);
   const [patchesMixed, setPatchesMixed] = useState([]);
 
+  // useEffectů může být použito několik v kódu
   useEffect(() => {
     setUserWidth(document.body.clientWidth); // Re-render now that you know the real height
     const patches = [...Patchs]; // kopie původních Patchs
 
     patches.sort(() => Math.random() - 0.5); // náhodné seřazení látek
     const indexOf0_0 = patches.findIndex((x) => x.id === '0_0'); // naleznutí indexu 0_0
-    console.log(indexOf0_0);
+    //console.log(indexOf0_0);
 
     arraymove(patches, indexOf0_0); // posunutí 0_0 nakonec
     console.log(patches.findIndex((x) => x.id === '0_0'));
@@ -44,9 +45,9 @@ export const Patch = ({ dispatch, state }) => {
 
   // Ovál parametry:
   const a = userWidth / 2.5; // šířka oválu šířka okna / 2,5
-  const b = 300; // výška oválu
+  const b = 250; // výška oválu
   const x = userWidth / 2; // pozice zleva, šířka okna / 2 (střed okna)
-  const y = 450; // pozice ze shora
+  const y = 420; // pozice ze shora
   const numPoints = 33;
 
   const points = distributePointsOnEllipse(a, b, numPoints);

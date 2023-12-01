@@ -15,7 +15,7 @@ const App = () => {
     <div className="container">
       <Header />
       <Outlet />
-      <Footer />
+      {/*<Footer />*/}
     </div>
   );
 };
@@ -26,8 +26,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '', 
-        element: <HomePage /> },
+      { path: '', element: <HomePage /> },
       {
         path: '/pravidla',
         element: <RulePage />,
