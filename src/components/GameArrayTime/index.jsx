@@ -19,148 +19,202 @@ export const GameArrayTime = () => {
   }
 
   score[0] = {
+    top: ((0*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ff0000',
     text: '0',
     borderWidth: '4px 1px 1px 4px',
   };
   score[1] = {
+    top: ((0*37.2) + 3.5),
+    left: ((1*37.2) + 3.5),
     color: '#ff0000',
     text: '1',
     borderWidth: '4px 1px 1px 1px',
   };
   score[2] = {
+    top: ((0*37.2) + 3.5),
+    left: ((2*37.2) + 3.5),
     color: '#ff0000',
     text: '2',
     borderWidth: '4px 1px 1px 1px',
   };
   score[3] = {
-    top: 500,
-    left: 500,
+    top: ((0*37.2) + 3.5),
+    left: ((3*37.2) + 3.5),
     color: '#ffc43a',
     text: '3',
     borderWidth: '4px 1px 1px 1px',
   };
   score[4] = {
+    top: ((0*37.2) + 3.5),
+    left: ((4*37.2) + 3.5),
     color: '#ffc43a',
     text: '4',
     borderWidth: '4px 1px 1px 1px',
   };
   score[5] = {
+    top: ((0*37.2) + 3.5),
+    left: ((5*37.2) + 3.5),
     color: '#ffc43a',
     text: '5',
     borderWidth: '4px 1px 1px 1px',
   };
   score[6] = {
+    top: ((0*37.2) + 3.5),
+    left: ((6*37.2) + 3.5),
     color: '#ffc43a',
     text: '6',
     borderWidth: '4px 1px 1px 1px',
   };
   score[7] = {
+    top: ((0*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     button: true,
     color: '#3498db',
     text: '7',
     borderWidth: '4px 4px 1px 1px',
   };
   score[8] = {
+    top: ((1*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '8',
     borderWidth: '1px 4px 1px 1px',
   };
   score[9] = {
+    top: ((2*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '9',
     borderWidth: '1px 4px 1px 1px',
   };
   score[10] = {
+    top: ((3*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '10',
     borderWidth: '1px 4px 1px 1px',
   };
   score[11] = {
+    top: ((4*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '11',
     borderWidth: '1px 4px 1px 1px',
   };
   score[12] = {
+    top: ((5*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '12',
     borderWidth: '1px 4px 1px 1px',
   };
   score[13] = {
+    top: ((6*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     button: true,
     color: '#3498db',
     text: '13',
     borderWidth: '1px 4px 1px 1px',
   };
   score[14] = {
+    top: ((7*37.2) + 3.5),
+    left: ((7*37.2) + 3.5),
     color: '#ffc43a',
     text: '14',
     borderWidth: '1px 4px 4px 1px',
   };
   score[15] = {
+    top: ((7*37.2) + 3.5),
+    left: ((6*37.2) + 3.5),
     color: '#ffc43a',
     text: '15',
     borderWidth: '1px 1px 4px 1px',
   };
   score[16] = {
+    top: ((7*37.2) + 3.5),
+    left: ((5*37.2) + 3.5),
     color: '#ffc43a',
     text: '16',
     borderWidth: '1px 1px 4px 1px',
   };
   score[17] = {
+    top: ((7*37.2) + 3.5),
+    left: ((4*37.2) + 3.5),
     color: '#ffc43a',
     text: '17',
     borderWidth: '1px 1px 4px 1px',
   };
   score[18] = {
+    top: ((7*37.2) + 3.5),
+    left: ((3*37.2) + 3.5),
     color: '#ffc43a',
     text: '18',
     borderWidth: '1px 1px 4px 1px',
   };
   score[19] = {
+    top: ((7*37.2) + 3.5),
+    left: ((2*37.2) + 3.5),
     button: true,
     color: '#3498db',
     text: '19',
     borderWidth: '1px 1px 4px 1px',
   };
   score[20] = {
+    top: ((7*37.2) + 3.5),
+    left: ((1*37.2) + 3.5),
     color: '#ffc43a',
     text: '20',
     borderWidth: '1px 1px 4px 1px',
   };
   score[21] = {
+    top: ((7*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ffc43a',
     text: '21',
     borderWidth: '1px 1px 4px 4px',
   };
   score[22] = {
+    top: ((6*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     patch: true,
     color: '#8B4513',
     text: '22',
     borderWidth: '1px 1px 1px 4px',
   };
   score[23] = {
+    top: ((5*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ffc43a',
     text: '23',
     borderWidth: '1px 1px 1px 4px',
   };
   score[24] = {
+    top: ((4*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ffc43a',
     text: '24',
     borderWidth: '1px 1px 1px 4px',
   };
   score[25] = {
+    top: ((3*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ffc43a',
     text: '25',
     borderWidth: '1px 1px 1px 4px',
   };
   score[26] = {
+    top: ((2*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     button: true,
     color: '#3498db',
     text: '26',
     borderWidth: '1px 1px 1px 4px',
   };
   score[27] = {
+    top: ((1*37.2) + 3.5),
+    left: ((0*37.2) + 3.5),
     color: '#ffc43a',
     text: '27',
     borderWidth: '4px 1px 1px 4px',
@@ -424,6 +478,24 @@ export const GameArrayTime = () => {
     <>
       <div className="gameArrayTime">
         <div className="gameArrayTime__array">
+          <div
+            className="figures_1"
+            style={{
+              position: 'absolute',
+              top: score[8].top,
+              left: score[8].left,
+            }}
+          ></div>
+
+          <div
+            className="figures_2"
+            style={{
+              position: 'absolute',
+              top: score[3].top,
+              left: score[3].left,
+            }}
+          ></div>
+
           {arrayGrid.map((row, rowIndex) => (
             <div key={rowIndex} className={`gameArrayTime__row-${rowIndex}`}>
               {row.map((cell, Index) => (
@@ -438,29 +510,15 @@ export const GameArrayTime = () => {
                     borderWidth: cell.borderWidth,
                     borderStyle: 'solid',
                     borderColor: '#000000',
-                    
                   }}
                 >
                   {'   '}
-                  {/* {cell.text} */}
+                  { cell.text }
                 </div>
               ))}
             </div>
           ))}
-
-<div
-          className="figures_1"
-          style={{
-            position: 'absolute',
-            top: score[3].top,
-            left: score[3].left,
-          }}
-        ></div>
-        <div className="figures_2"></div>
-
         </div>
-
-
       </div>
     </>
   );
