@@ -4,11 +4,28 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Patchs } from '../Patchs';
 
+//funkce, která mi požadovaný prvek přesune na konec pole
+const arraymove = (arr, fromIndex) => {
+  var element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(33, 0, element);
+};
+
 export const Patch = ({ dispatch, state }) => {
   const [userWidth, setUserWidth] = useState(document.body.clientWidth);
+  const [patchesMixed, setPatchesMixed] = useState([]);
 
   useEffect(() => {
     setUserWidth(document.body.clientWidth); // Re-render now that you know the real height
+    const patches = [...Patchs]; // kopie původních Patchs
+
+    patches.sort(() => Math.random() - 0.5); // náhodné seřazení látek
+    const indexOf0_0 = patches.findIndex((x) => x.id === '0_0'); // naleznutí indexu 0_0
+    console.log(indexOf0_0);
+
+    arraymove(patches, indexOf0_0); // posunutí 0_0 nakonec
+    console.log(patches.findIndex((x) => x.id === '0_0'));
+    setPatchesMixed(patches);
   }, []);
 
   const distributePointsOnEllipse = (a, b, numPoints) => {
@@ -34,24 +51,11 @@ export const Patch = ({ dispatch, state }) => {
 
   const points = distributePointsOnEllipse(a, b, numPoints);
 
-  Patchs.sort(() => Math.random() - 0.5); // náhodné seřazení látek
-  const indexOf0_0 = Patchs.findIndex((x) => x.id === '0_0');
-  console.log(indexOf0_0);
-
-  const arraymove = (arr, fromIndex) => {
-    var element = Patchs[fromIndex];
-    arr.splice(fromIndex, 1);
-    arr.splice(33, 0, element);
-  };
-
-  arraymove(Patchs, indexOf0_0);
-  console.log(Patchs.findIndex((x) => x.id === '0_0'));
-
   //najít 0_0 a dát ho na konec
   //zamíchat kopii z uSeReducer, ne původní látky
   return (
     <>
-      {Patchs.map((patch, index) => (
+      {patchesMixed.map((patch, index) => (
         <motion.svg
           key={patch.id}
           xmlns="http://www.w3.org/2000/svg"
