@@ -30,6 +30,17 @@ export const reducer = (state, action) => {
     };
   }
 
+  if (action.type === 'SKIP_TURN') {
+   performGameMoveSummary()
+    return {
+      ...state,
+      // [state.currentPlayer]: {
+      //   ...state[state.currentPlayer],
+      //   income: state[state.currentPlayer].income + PatchesData.income,
+      // },
+    };
+  }
+
   if (action.type === 'WANT_PATCH') {
     const newPlayerButtons = '';
     const newPlayerIncome = '';
@@ -46,6 +57,7 @@ export const reducer = (state, action) => {
       },
     };
   }
+
 
   if (action.type === 'ADD_BUTTONS') {
     return {
@@ -91,6 +103,12 @@ const mixingPatches = () => {
   arraymove(patches, indexOf0_0); // posunutí 0_0 nakonec
   return patches;
 };
+
+
+const performGameMoveSummary = () => {
+
+}
+
 
 export const defaultState = {
   currentPlayer: 'player1',

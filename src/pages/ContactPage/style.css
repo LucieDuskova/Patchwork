@@ -32,5 +32,10 @@ p {
 }
 
 .contactPage__img {
+  margin-top: 50px;
   width: 40%;
+}
+
+.contactPage__description{
+  margin-top: 50px;
 }
