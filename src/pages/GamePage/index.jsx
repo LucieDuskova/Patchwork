@@ -14,14 +14,11 @@ export const GamePage = () => {
     <>
       <GameArrayTime state={state} />
       <Patches dispatch={dispatch} state={state} />
-      <main>
-        <div className="time"></div>
-        <div className="GamePage__playerBoards">
-          <Player1 state={state} />
-          <GameMenu />
-          <Player2 state={state} />
-        </div>
-      </main>
+      <div className="GamePage__playerBoards">
+        <Player1 state={state} />
+        <GameMenu dispatch={dispatch} state={state} />
+        <Player2 state={state} />
+      </div>
     </>
   );
 };

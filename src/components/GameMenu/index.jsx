@@ -1,6 +1,6 @@
 import './style.css';
 
-export const GameMenu = () => {
+export const GameMenu = (state, dispatch) => {
   return (
     <>
       <div className="gameMenu">
@@ -10,8 +10,18 @@ export const GameMenu = () => {
           <button className="gameMenu__button">&#9654;</button>
           <button className="gameMenu__button">O</button>
         </div>
-        <button className="gameMenu__button">koupit látku</button>
-        <button className="gameMenu__button">vynechat tah</button>
+        <button
+          className="gameMenu__button"
+          onClick={() => dispatch({ type: 'WANT_PATCH' })}
+        >
+          koupit látku
+        </button>
+        <button
+          className="gameMenu__button"
+          onClick={() => dispatch({ type: 'SKIP_TURN' })}
+        >
+          vynechat tah
+        </button>
       </div>
     </>
   );
