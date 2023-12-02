@@ -1,10 +1,8 @@
 import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
-import {changePlayer} from './../FunctionsGame'
+import { changePlayer } from './../FunctionsGame';
 
 const performGameMoveSummary = () => {};
-
-
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
@@ -33,8 +31,11 @@ export const reducer = (state, action) => {
 
     let newScore = null;
     let newAddButtons = null;
+    const forScoreStart = currentPlayer.score;
+
     //přeskočení druhého hráče
     newScore = otherPlayer.score + 1;
+    const forScoreEnd = newScore; //opravit podle látek, až je budeme mít
 
     //přičtení knoflíků;
     newAddButtons =
@@ -62,6 +63,10 @@ export const reducer = (state, action) => {
       ...newState,
       currentPlayer: whoIsCurrentPlayer,
     };
+    /*
+    for (forScoreStart; forScoreStart < forScoreEnd; forScoreStart++) {}
+    console.log(forScoreStart);
+    console.log(forScoreEnd);*/
 
     return newStateCurrentPlayer;
   }

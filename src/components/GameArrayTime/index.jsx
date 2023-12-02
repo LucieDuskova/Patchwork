@@ -1,7 +1,7 @@
 import './style.css';
+import { motion } from 'framer-motion';
 
-
-export const GameArrayTime = ({  state }) => {
+export const GameArrayTime = ({ state }) => {
   const arrayGrid = [];
 
   for (let i = 0; i < 8; i++) {
@@ -18,9 +18,6 @@ export const GameArrayTime = ({  state }) => {
   for (let i = 0; i < 64; i++) {
     score.push({});
   }
-
-
-
 
   score[0] = {
     top: 0 * state.box_weight + state.edge,
@@ -555,23 +552,23 @@ export const GameArrayTime = ({  state }) => {
     <>
       <div className="gameArrayTime">
         <div className="gameArrayTime__array">
-          <div
+          <motion.div
             className="figures_1"
-            style={{
+            animate={{
               position: 'absolute',
-              top: score[state.player1.score].top,
-              left: score[state.player1.score].left,
+              y: score[state.player1.score].top,
+              x: score[state.player1.score].left,
             }}
-          ></div>
+          ></motion.div>
 
-          <div
+          <motion.div
             className="figures_2"
-            style={{
+            animate={{
               position: 'absolute',
-              top: score[state.player2.score].top,
-              left: score[state.player2.score].left,
+              y: score[state.player2.score].top,
+              x: score[state.player2.score].left,
             }}
-          ></div>
+          ></motion.div>
 
           {arrayGrid.map((row, rowIndex) => (
             <div key={rowIndex} className={`gameArrayTime__row-${rowIndex}`}>
