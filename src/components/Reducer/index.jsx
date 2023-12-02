@@ -1,6 +1,7 @@
 import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
-import { changePlayer } from './../FunctionsGame';
+import { changePlayer, timeArray } from './../FunctionsGame';
+import { GameArrayTime } from './../GameArrayTime';
 
 const performGameMoveSummary = () => {};
 
@@ -31,7 +32,7 @@ export const reducer = (state, action) => {
 
     let newScore = null;
     let newAddButtons = null;
-    const forScoreStart = currentPlayer.score;
+    let forScoreStart = currentPlayer.score;
 
     //přeskočení druhého hráče
     newScore = otherPlayer.score + 1;
@@ -40,6 +41,13 @@ export const reducer = (state, action) => {
     //přičtení knoflíků;
     newAddButtons =
       currentPlayer.buttons + (otherPlayer.score - currentPlayer.score + 1);
+
+    // prošel jsem přes knoflík?
+    for (forScoreStart; forScoreStart <= forScoreEnd; forScoreStart++) {
+      if (state.timeArray[forScoreStart].button) {
+        newAddButtons = newAddButtons + currentPlayer.income;
+      }
+    }
 
     //console.log(newAddButtons);
     const newState = {
@@ -63,42 +71,86 @@ export const reducer = (state, action) => {
       ...newState,
       currentPlayer: whoIsCurrentPlayer,
     };
-    /*
-    for (forScoreStart; forScoreStart < forScoreEnd; forScoreStart++) {}
+
+    console.log(state.scoreButton);
     console.log(forScoreStart);
-    console.log(forScoreEnd);*/
+    console.log(forScoreEnd);
 
     return newStateCurrentPlayer;
   }
 
   if (action.type === 'WANT_PATCH') {
-    const newPlayerButtons = '';
-    const newPlayerIncome = '';
-    const newPlayerScore = '';
-    if (state.currentPlayer.score.incldes(button)) {
-      // políčko na kterém stojí + přidat všechna další políčka, přes ktreré projel
+    // vybrat aktuálního hráče
+    const currentPlayer =
+      state.currentPlayer === 'player1' ? state.player1 : state.player2;
+
+    // dát mu aktuální záplatu
+    // vzít si záplatu - aktuální (ID máme vybrané)
+    const newSelectedPatch = state.patchesMixed.find(
+      (x) => x.id === state.selectedPatchId,
+    );
+
+    //aktuálního hráče si vezmeme jeho pole a do něj vložíme tu záplatu
+    const newCurrentPlayerArray = [
+      ...currentPlayer.arrayPatch,
+      newSelectedPatch,
+    ];
+
+    // odebrat záplatu z pole záplat
+    const indexOfselectedPatch = state.patchesMixed.findIndex(
+      (x) => x.id === state.selectedPatchId,
+    );
+
+    const newPatchesMixed = [
+      ...state.patchesMixed.slice(indexOfselectedPatch + 1),
+      ...state.patchesMixed.slice(0, indexOfselectedPatch),
+    ];
+
+    // odečíst příslušný počet knoflíků
+    let newCurrentPlayerButtons =
+      currentPlayer.buttons - newSelectedPatch.price;
+
+    // posunout skóre a přičíst knoflíky
+    const newScore = currentPlayer.score + newSelectedPatch.time;
+    const newIncome = currentPlayer.income + newSelectedPatch.income;
+
+    let forScoreStart = currentPlayer.score;
+    const forScoreEnd = newScore;
+
+    for (forScoreStart; forScoreStart <= forScoreEnd; forScoreStart++) {
+      if (state.timeArray[forScoreStart].button) {
+        newCurrentPlayerButtons =
+          newCurrentPlayerButtons + currentPlayer.income;
+      }
     }
 
-    return {
+    const newState = {
       ...state,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
-        income: state[state.currentPlayer].income + PatchesData.income,
+        arrayPatch: newCurrentPlayerArray,
+        buttons: newCurrentPlayerButtons,
+        income: newIncome,
+        score: newScore,
       },
+      // vrácení látky do elipsy
+      patchesMixed: newPatchesMixed,
     };
+
+    const whoIsCurrentPlayer = changePlayer(
+      newState.player1.score,
+      newState.player2.score,
+      newState.currentPlayer,
+    );
+
+    const newStateCurrentPlayer = {
+      ...newState,
+      currentPlayer: whoIsCurrentPlayer,
+    };
+
+    return newStateCurrentPlayer;
   }
 
-  if (action.type === 'ADD_BUTTONS') {
-    return {
-      ...state,
-      [state.currentPlayer]: {
-        ...state[state.currentPlayer],
-        buttons:
-          state[state.currentPlayer].buttons +
-          state[state.currentPlayer].income,
-      },
-    };
-  }
   return state;
 };
 
@@ -135,14 +187,13 @@ const mixingPatches = () => {
 
 export const defaultState = {
   currentPlayer: 'player1',
-  player1: { buttons: 5, income: 0, score: 1 },
-  player2: { buttons: 5, income: 0, score: 2 },
-  gamePlayer1: {},
-  gamePlayer2: {},
+  player1: { buttons: 5, income: 0, score: 1, arrayPatch: [] },
+  player2: { buttons: 5, income: 0, score: 2, arrayPatch: [] },
   scoreButton: false,
   scorePatch: false,
   selectedPatchId: null,
   selectedPatchPosition: { x: 0, y: 0 },
+  timeArray: [...timeArray(37.2, 3.5)],
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
   playerFieldSide: 35,
