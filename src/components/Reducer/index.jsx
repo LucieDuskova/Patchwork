@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { Patchs } from '../Patchs';
+import { PatchesData } from '../PatchesData';
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
@@ -20,8 +20,8 @@ export const reducer = (state, action) => {
   if (action.type === 'ON_DRAG_END') {
     const newSelectedPatchId = action.patchId;
     const newSelectedPatchPosition = {
-      x: action.patchInfo.offset.x,
-      y: action.patchInfo.offset.y,
+      x: action.patchX + action.patchInfo.offset.x,
+      y: action.patchY + action.patchInfo.offset.y,
     };
     return {
       ...state,
@@ -42,7 +42,7 @@ export const reducer = (state, action) => {
       ...state,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
-        income: state[state.currentPlayer].income + Patchs.income,
+        income: state[state.currentPlayer].income + PatchesData.income,
       },
     };
   }
@@ -83,7 +83,7 @@ const arraymove = (arr, fromIndex) => {
 };
 
 const mixingPatches = () => {
-  const patches = [...Patchs]; // kopie původních Patchs
+  const patches = [...PatchesData]; // kopie původních PatchesData
 
   patches.sort(() => Math.random() - 0.5); // náhodné seřazení látek
   const indexOf0_0 = patches.findIndex((x) => x.id === '0_0'); // naleznutí indexu 0_0

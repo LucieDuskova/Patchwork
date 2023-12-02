@@ -1,6 +1,6 @@
 import { GameArrayTime } from '../../components/GameArrayTime';
 import { GameMenu } from '../../components/GameMenu';
-import { Patch } from '../../components/Patch';
+import { Patches } from '../../components/Patches';
 import { useReducer } from 'react';
 import { Player1 } from '../../components/Players';
 import { Player2 } from '../../components/Players';
@@ -13,13 +13,13 @@ export const GamePage = () => {
   return (
     <>
       <GameArrayTime state={state} />
-      <Patch dispatch={dispatch} state={state} />
+      <Patches dispatch={dispatch} state={state} />
       <main>
         <div className="time"></div>
         <div className="GamePage__playerBoards">
-          <Player1  state={state}/>
+          <Player1 state={state} />
           <GameMenu />
-          <Player2  state={state}/>
+          <Player2 state={state} />
         </div>
       </main>
     </>
