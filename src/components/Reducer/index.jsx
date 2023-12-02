@@ -1,6 +1,12 @@
 import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
 
+
+const performGameMoveSummary = () => {
+
+}
+
+
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
     return { defaultState };
@@ -105,15 +111,13 @@ const mixingPatches = () => {
 };
 
 
-const performGameMoveSummary = () => {
 
-}
 
 
 export const defaultState = {
   currentPlayer: 'player1',
-  player1: { buttons: 5, income: 0, score: 3 },
-  player2: { buttons: 5, income: 0, score: 3 },
+  player1: { buttons: 5, income: 0, score: 2 },
+  player2: { buttons: 5, income: 0, score: 1 },
   gamePlayer1: {},
   gamePlayer2: {},
   scoreButton: false,
