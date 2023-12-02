@@ -54,23 +54,50 @@ export const Patch = ({ dispatch, state }) => {
 
   //najít 0_0 a dát ho na konec
   //zamíchat kopii z uSeReducer, ne původní látky
+
   return (
     <>
       {patchesMixed.map((patch, index) => (
         <motion.svg
           key={patch.id}
           xmlns="http://www.w3.org/2000/svg"
-          style={
-            /* jsem vybrana latka ? {aktualni pozice} :*/ {
-              top: `${y + points[index][1]}px`,
-              left: `${x + points[index][0]}px`,
-              position: 'absolute',
-              zIndex: 1000,
-            }
+          // style={
+          //   /* jsem vybrana latka ? {aktualni pozice} : moje původní pozice*/ {
+          //     top: `${y + points[index][1]}px`,
+          //     left: `${x + points[index][0]}px`,
+          //     position: 'absolute',
+          //     zIndex: 1000,
+          //   }
+          // }
+
+          animate={
+            state.selectedPatchId === patch.id
+              ? {
+                  top: `${
+                    y + points[index][1] + (state.selectedPatchPosition.y - y)
+                  }px`,
+                  left: `${
+                    x + points[index][0] + (state.selectedPatchPosition.x - x)
+                  }px`,
+                  position: 'absolute',
+                  zIndex: 1001, // Posunutí vybrané látky nad ostatní
+                }
+              : {
+                  top: `${y + points[index][1]}px`,
+                  left: `${x + points[index][0]}px`,
+                  position: 'absolute',
+                  zIndex: 1000,
+                }
           }
           drag={index < 3 ? true : false}
-          onDragEnd={() => dispatch({ type: 'ON_DRAG_END', id: patch.id })}
-          dragMomentum={false}
+          onDragEnd={(event, info) => {
+            dispatch({
+              type: 'ON_DRAG_END',
+              patchId: patch.id,
+              patchInfo: info,
+            });
+          }}
+          dragMomentum={false} //neodjíždějí nám látky po puštění
           viewBox={patch.viewBox}
           width={`${patch.viewBox.split(' ').map(Number)[2] * 7}px`}
         >

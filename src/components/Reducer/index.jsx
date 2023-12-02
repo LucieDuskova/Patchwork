@@ -17,15 +17,26 @@ export const reducer = (state, action) => {
     }
   }
 
+  if (action.type === 'ON_DRAG_END') {
+    const newSelectedPatchId = action.patchId;
+    const newSelectedPatchPosition = {
+      x: action.patchInfo.point.x,
+      y: action.patchInfo.point.y,
+    };
+    return {
+      ...state,
+      selectedPatchId: newSelectedPatchId,
+      selectedPatchPosition: newSelectedPatchPosition,
+    };
+  }
+
   if (action.type === 'WANT_PATCH') {
     const newPlayerButtons = '';
     const newPlayerIncome = '';
     const newPlayerScore = '';
-    if (state.currentPlayer.score.incldes(button)) // políčko na kterém stojí + přidat všechna další políčka, přes ktreré projel
-    {
+    if (state.currentPlayer.score.incldes(button)) {
+      // políčko na kterém stojí + přidat všechna další políčka, přes ktreré projel
     }
-
-
 
     return {
       ...state,
@@ -36,7 +47,6 @@ export const reducer = (state, action) => {
     };
   }
 
-  
   if (action.type === 'ADD_BUTTONS') {
     return {
       ...state,
@@ -49,16 +59,6 @@ export const reducer = (state, action) => {
     };
   }
   return state;
-
-  // if (action.type === 'ADD_PATCH') {
-  //   return {
-  //     ...state,
-  //     [state.currentPlayer]: {
-  //       ...state[state.currentPlayer],
-  //       buttons: state[state.currentPlayer].buttons + state[state.currentPlayer].income,
-  //     },
-  //   };
-  // }
 };
 
 export const defaultState = {
@@ -69,22 +69,6 @@ export const defaultState = {
   gamePlayer2: {},
   scoreButton: false,
   scorePatch: false,
+  selectedPatchId: null,
+  selectedPatchPosition: { x: 0, y: 0 },
 };
-
-// export const VypoctyDoGame = () => {
-//   const [state, dispatch] = useReducer(reducer, defaultState);
-
-//   // if (state.player1.score > state.player2.score) {
-//   //   dispatch({ type: 'CHANGE_TO_PLAYER_1' });
-//   // } else if (state.player2.score > state.player1.score) {
-//   //   dispatch({ type: 'CHANGE_TO_PLAYER_2' });
-//   // } else if (state.currentPlayer.score.incldes(button)) {
-//   //   dispatch({ type: 'ADD_INCOME' });
-//   // } else if (state.scoreButton) {
-//   //   dispatch({ type: 'ADD_BUTTONS' });
-//   // } else if (state.currentPlayer.score.incldes(patch)) {
-//   //   dispatch({ type: 'ADD_PATCH' });
-//   // }
-
-//   return '';
-// };
