@@ -5,7 +5,7 @@ export const Patch = ({ patch, index, dispatch, state }) => {
   const xPossition =
     state.selectedPatchId === patch.id
       ? {
-          x: state.points[index][0] + state.selectedPatchPosition.x,
+          x: state.selectedPatchPosition.x,
         }
       : {
           x: state.x + state.points[index][0],
@@ -14,7 +14,7 @@ export const Patch = ({ patch, index, dispatch, state }) => {
   const yPossition =
     state.selectedPatchId === patch.id
       ? {
-          y: state.points[index][1] + state.selectedPatchPosition.y,
+          y: state.selectedPatchPosition.y,
         }
       : {
           y: state.y + state.points[index][1],
@@ -25,8 +25,8 @@ export const Patch = ({ patch, index, dispatch, state }) => {
       ? { position: 'absolute', zIndex: 1001 } // Posunutí vybrané látky nad ostatní
       : { position: 'absolute', zIndex: 1000 };
 
-  console.log( zIndex);
-  console.log(yPossition);
+  // console.log( zIndex);
+  // console.log(yPossition);
 
   return (
     <>
@@ -35,8 +35,8 @@ export const Patch = ({ patch, index, dispatch, state }) => {
         animate={{
           y: `${yPossition.y}px`,
           x: `${xPossition.x}px`,
-          position: zIndex.position ,
-          zIndex: zIndex.zIndex ,
+          position: zIndex.position,
+          zIndex: zIndex.zIndex,
         }}
         drag={index < 3 ? true : false}
         onDragEnd={(event, info) => {
@@ -44,8 +44,8 @@ export const Patch = ({ patch, index, dispatch, state }) => {
             type: 'ON_DRAG_END',
             patchId: patch.id,
             patchInfo: info,
-            patchX: xPossition.x ,
-            patchY: yPossition.y ,
+            patchX: xPossition.x,
+            patchY: yPossition.y,
           });
         }}
         dragMomentum={false} //neodjíždějí nám látky po puštění

@@ -1,6 +1,6 @@
 import './style.css';
 
-export const GameMenu = (state, dispatch) => {
+export const GameMenu = ({state, dispatch}) => {
   return (
     <>
       <div className="gameMenu">

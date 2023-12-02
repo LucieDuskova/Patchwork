@@ -1,11 +1,7 @@
 import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
 
-
-const performGameMoveSummary = () => {
-
-}
-
+const performGameMoveSummary = () => {};
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
@@ -36,14 +32,30 @@ export const reducer = (state, action) => {
     };
   }
 
+  // nechci hrát
   if (action.type === 'SKIP_TURN') {
-   performGameMoveSummary()
+    const currentPlayer =
+      state.currentPlayer === 'player1' ? state.player1 : state.player2;
+    const otherPlayer =
+      state.currentPlayer === 'player1' ? state.player2 : state.player1;
+
+    let newScore = null;
+    let newAddButtons = null;
+    //přeskočení druhého hráče
+      newScore = otherPlayer.score + 1;
+ 
+    //přičtení knoflíků;
+    newAddButtons = currentPlayer.buttons +  (otherPlayer.score - currentPlayer.score + 1)
+
+
+
+    console.log(newAddButtons);
     return {
       ...state,
-      // [state.currentPlayer]: {
-      //   ...state[state.currentPlayer],
-      //   income: state[state.currentPlayer].income + PatchesData.income,
-      // },
+      [state.currentPlayer]: { ...state[state.currentPlayer], score: newScore, buttons: newAddButtons },
+      // vrácení látky do elipsy
+      selectedPatchId: defaultState.selectedPatchId,
+  
     };
   }
 
@@ -63,7 +75,6 @@ export const reducer = (state, action) => {
       },
     };
   }
-
 
   if (action.type === 'ADD_BUTTONS') {
     return {
@@ -110,14 +121,10 @@ const mixingPatches = () => {
   return patches;
 };
 
-
-
-
-
 export const defaultState = {
   currentPlayer: 'player1',
   player1: { buttons: 5, income: 0, score: 2 },
-  player2: { buttons: 5, income: 0, score: 1 },
+  player2: { buttons: 5, income: 0, score: 6 },
   gamePlayer1: {},
   gamePlayer2: {},
   scoreButton: false,
@@ -132,7 +139,7 @@ export const defaultState = {
   a: 800 / 2.5, // šířka oválu šířka okna / 2,5
   b: 250, // výška oválu
   x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
-  y: 420, // pozice ze shora
+  y: 170, // pozice ze shora
   numPoints: 33,
 
   points: distributePointsOnEllipse(
