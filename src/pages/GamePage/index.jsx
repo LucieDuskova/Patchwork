@@ -12,14 +12,14 @@ export const GamePage = () => {
 
   return (
     <>
-      <GameArrayTime />
+      <GameArrayTime state={state} />
       <Patch dispatch={dispatch} state={state} />
       <main>
         <div className="time"></div>
         <div className="GamePage__playerBoards">
-          <Player1 />
+          <Player1  state={state}/>
           <GameMenu />
-          <Player2 />
+          <Player2  state={state}/>
         </div>
       </main>
     </>

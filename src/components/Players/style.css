@@ -10,14 +10,14 @@
 }
 
 .gamePage__player1-field {
-  width: 35px;
-  height: 35px;
+  /* width: 35px;
+  height: 35px; */
   border: 1px solid #506D84;
 }
 
 .gamePage__player2-field {
-  width: 35px;
-  height: 35px;
+  /* width: 35px;
+  height: 35px; */
   border: 1px solid #A84575;
 }
 

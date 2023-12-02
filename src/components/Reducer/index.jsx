@@ -20,8 +20,8 @@ export const reducer = (state, action) => {
   if (action.type === 'ON_DRAG_END') {
     const newSelectedPatchId = action.patchId;
     const newSelectedPatchPosition = {
-      x: action.patchInfo.point.x,
-      y: action.patchInfo.point.y,
+      x: action.patchInfo.offset.x,
+      y: action.patchInfo.offset.y,
     };
     return {
       ...state,
@@ -61,6 +61,37 @@ export const reducer = (state, action) => {
   return state;
 };
 
+const distributePointsOnEllipse = (a, b, numPoints) => {
+  const points = [];
+
+  // fce na vytvoření 33 pozic pro patch
+  for (let i = 0; i < numPoints; i++) {
+    const theta = (2 * Math.PI * i) / numPoints;
+    const x = a * Math.sin(theta);
+    const y = b * Math.cos(theta);
+    points.push([parseInt(x), parseInt(y)]);
+  }
+
+  return points;
+};
+
+//funkce, která mi požadovaný prvek přesune na konec pole
+const arraymove = (arr, fromIndex) => {
+  var element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(33, 0, element);
+};
+
+const mixingPatches = () => {
+  const patches = [...Patchs]; // kopie původních Patchs
+
+  patches.sort(() => Math.random() - 0.5); // náhodné seřazení látek
+  const indexOf0_0 = patches.findIndex((x) => x.id === '0_0'); // naleznutí indexu 0_0
+
+  arraymove(patches, indexOf0_0); // posunutí 0_0 nakonec
+  return patches;
+};
+
 export const defaultState = {
   currentPlayer: 'player1',
   player1: { buttons: 5, income: 0, score: 3 },
@@ -71,4 +102,21 @@ export const defaultState = {
   scorePatch: false,
   selectedPatchId: null,
   selectedPatchPosition: { x: 0, y: 0 },
+  box_weight: 37.2, // šířka/délka časovače
+  edge: 3.5, //okraj od políčka časovače
+  playerFieldSide: 35,
+
+  // Ovál parametry:
+  a: 800 / 2.5, // šířka oválu šířka okna / 2,5
+  b: 250, // výška oválu
+  x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
+  y: 420, // pozice ze shora
+  numPoints: 33,
+
+  points: distributePointsOnEllipse(
+    /*a*/ 1800 / 2.5,
+    /*b*/ 250,
+    /*numPoints*/ 33,
+  ), // vytvoření pozic na oválu
+  patchesMixed: mixingPatches(),
 };

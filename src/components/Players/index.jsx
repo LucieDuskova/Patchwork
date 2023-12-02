@@ -1,10 +1,10 @@
 import './style.css';
 
-export const Player1 = () => {
+export const Player1 = ({ state }) => {
   const renderPlayer1Fields = () => {
     const fields = [];
     for (let i = 0; i < 81; i++) {
-      fields.push(<div key={i} className="gamePage__player1-field"></div>);
+      fields.push(<div key={i} className="gamePage__player1-field" style={{width: `${state.playerFieldSide}px`, height: `${state.playerFieldSide}px`,}}></div>);
     }
     return fields;
   };
@@ -16,17 +16,17 @@ export const Player1 = () => {
         <p>
           <strong>HRÁČ 1</strong>
         </p>
-        <p>počet knoflíku: 5</p>
+        <p>počet knoflíku: {state.player1.buttons}</p>
       </div>
     </div>
   );
 };
 
-export const Player2 = () => {
+export const Player2 = ({ state }) => {
   const renderPlayer2Fields = () => {
     const fields = [];
     for (let i = 0; i < 81; i++) {
-      fields.push(<div key={i} className="gamePage__player2-field"></div>);
+      fields.push(<div key={i} className="gamePage__player2-field" style={{width: `${state.playerFieldSide}px`, height: `${state.playerFieldSide}px`,}}></div>);
     }
     return fields;
   };
@@ -37,7 +37,7 @@ export const Player2 = () => {
         <p>
           <strong>HRÁČ 2</strong>
         </p>
-        <p>počet knoflíku: 10</p>
+        <p>počet knoflíku: {state.player2.buttons}</p>
       </div>
       <div className="gamePage__player2--array">{renderPlayer2Fields()}</div>
     </div>
