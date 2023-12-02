@@ -65,6 +65,7 @@ export const Patch = ({ dispatch, state }) => {
               top: `${y + points[index][1]}px`,
               left: `${x + points[index][0]}px`,
               position: 'absolute',
+              zIndex: 1000,
             }
           }
           drag={index < 3 ? true : false}

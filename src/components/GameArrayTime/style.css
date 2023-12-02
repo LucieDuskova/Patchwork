@@ -21,6 +21,7 @@
   position: absolute;
   top: 300px;
   left: 780px;
+  z-index: 10;
 }
 
 .gameArrayTime__array-one {
@@ -37,15 +38,16 @@
   height: 30.2px;
   border-radius: 50%;
   border: 1px solid black;
-  
-  }
-  
-  .figures_2 {
-    background-color: #BD74A0;
+  z-index: 100;
+
+}
+
+.figures_2 {
+  background-color: #BD74A0;
   width: 30.2px;
   height: 30.2px;
   border-radius: 50%;
   border: 1px solid black;
-  
-  }
-  
+  z-index: 100;
+
+}
