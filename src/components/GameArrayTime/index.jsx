@@ -559,8 +559,8 @@ export const GameArrayTime = ({  state }) => {
             className="figures_1"
             style={{
               position: 'absolute',
-              top: score[12].top,
-              left: score[12].left,
+              top: score[state.player1.score].top,
+              left: score[state.player1.score].left,
             }}
           ></div>
 
@@ -568,8 +568,8 @@ export const GameArrayTime = ({  state }) => {
             className="figures_2"
             style={{
               position: 'absolute',
-              top: score[1].top,
-              left: score[1].left,
+              top: score[state.player2.score].top,
+              left: score[state.player2.score].left,
             }}
           ></div>
 
