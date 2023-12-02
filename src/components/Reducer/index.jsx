@@ -1,22 +1,14 @@
 import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
+import {changePlayer} from './../FunctionsGame'
 
 const performGameMoveSummary = () => {};
+
+
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
     return { defaultState };
-  }
-
-  if (action.type === 'CHANGE_PLAYER') {
-    const newPlayer = '';
-    if (state.player1.score < state.player2.score) {
-      newPlayer = 'player1';
-      return { ...state, currentPlayer: 'newPlayer' };
-    } else if (state.player2.score < state.player1.score) {
-      newPlayer = 'player2';
-      return { ...state, currentPlayer: 'newPlayer' };
-    }
   }
 
   if (action.type === 'ON_DRAG_END') {
@@ -42,21 +34,36 @@ export const reducer = (state, action) => {
     let newScore = null;
     let newAddButtons = null;
     //přeskočení druhého hráče
-      newScore = otherPlayer.score + 1;
- 
+    newScore = otherPlayer.score + 1;
+
     //přičtení knoflíků;
-    newAddButtons = currentPlayer.buttons +  (otherPlayer.score - currentPlayer.score + 1)
+    newAddButtons =
+      currentPlayer.buttons + (otherPlayer.score - currentPlayer.score + 1);
 
-
-
-    console.log(newAddButtons);
-    return {
+    //console.log(newAddButtons);
+    const newState = {
       ...state,
-      [state.currentPlayer]: { ...state[state.currentPlayer], score: newScore, buttons: newAddButtons },
+      [state.currentPlayer]: {
+        ...state[state.currentPlayer],
+        score: newScore,
+        buttons: newAddButtons,
+      },
       // vrácení látky do elipsy
       selectedPatchId: defaultState.selectedPatchId,
-  
     };
+    //určení hráče na tahu
+    const whoIsCurrentPlayer = changePlayer(
+      newState.player1.score,
+      newState.player2.score,
+      newState.currentPlayer,
+    );
+
+    const newStateCurrentPlayer = {
+      ...newState,
+      currentPlayer: whoIsCurrentPlayer,
+    };
+
+    return newStateCurrentPlayer;
   }
 
   if (action.type === 'WANT_PATCH') {
@@ -123,8 +130,8 @@ const mixingPatches = () => {
 
 export const defaultState = {
   currentPlayer: 'player1',
-  player1: { buttons: 5, income: 0, score: 2 },
-  player2: { buttons: 5, income: 0, score: 6 },
+  player1: { buttons: 5, income: 0, score: 1 },
+  player2: { buttons: 5, income: 0, score: 2 },
   gamePlayer1: {},
   gamePlayer2: {},
   scoreButton: false,
