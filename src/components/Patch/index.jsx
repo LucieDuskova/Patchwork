@@ -12,6 +12,8 @@ export const Patch = ({
   zIndex,
   rotate,
   rotateY,
+  canUse
+
 }) => {
   const controls = useAnimation();
 
@@ -27,12 +29,14 @@ export const Patch = ({
     });
   }, [y, x, zIndex, rotate, rotateY]);
 
+
+
   return (
     <>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         animate={controls}
-        drag={index < 3 ? true : false}
+        drag={(index < 3) && (canUse) ? true : false}
         onDragEnd={(event, info) => {
           dispatch({
             type: 'ON_DRAG_END',

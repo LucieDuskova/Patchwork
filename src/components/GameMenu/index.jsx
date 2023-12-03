@@ -13,12 +13,18 @@ export const GameMenu = ({ state, dispatch }) => {
         <div className="gameMenu__button-rotation">
           <button
             className="gameMenu__button"
+            disabled={
+              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+            }
             onClick={() => dispatch({ type: 'ROTATION_FLIP' })}
           >
             P
           </button>
           <button
             className="gameMenu__button"
+            disabled={
+              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+            }
             onClick={() => dispatch({ type: 'ROTATION_MINUS_90' })}
           >
             {' '}
@@ -26,12 +32,18 @@ export const GameMenu = ({ state, dispatch }) => {
           </button>
           <button
             className="gameMenu__button"
+            disabled={
+              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+            }
             onClick={() => dispatch({ type: 'ROTATION_PLUS_90' })}
           >
             &#9654;
           </button>
           <button
             className="gameMenu__button"
+            disabled={
+              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+            }
             onClick={() => dispatch({ type: 'ROTATION_RESET' })}
           >
             R
