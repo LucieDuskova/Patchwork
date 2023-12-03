@@ -1,5 +1,6 @@
 import { PatchesData } from '../PatchesData';
 import { changePlayer, timeArray } from './../FunctionsGame';
+import { OnDragEnd } from './onDragEnd';
 import { GameArrayTime } from './../GameArrayTime';
 
 export const reducer = (state, action) => {
@@ -8,66 +9,7 @@ export const reducer = (state, action) => {
   }
 
   if (action.type === 'ON_DRAG_END') {
-    const newSelectedPatchId = action.patchId;
-    const newSelectedPatchPosition = {
-      x: action.patchX + action.patchInfo.offset.x,
-      y: action.patchY + action.patchInfo.offset.y,
-    };
-
-    //podívat se, zda je vybraná látka v poli aktivního hráče
-    const currentPlayer =
-      state.currentPlayer === 'player1' ? state.player1 : state.player2;
-
-    const selectedPatch = state.patchesMixed.find(
-      (x) => x.id === newSelectedPatchId,
-    );
-
-    const areacurrentPlayerX = currentPlayer.gameBoard.left;
-    const areacurrentPlayerY = currentPlayer.gameBoard.top;
-    const areacurrentPlayerWidth = currentPlayer.gameBoard.width;
-    const selectedPatchPositionWidthX =
-      newSelectedPatchPosition.x +
-      selectedPatch.viewBox.split(' ').map(Number)[2] * 7;
-    const selectedPatchPositionWidthY =
-      newSelectedPatchPosition.y +
-      selectedPatch.viewBox.split(' ').map(Number)[3] * 7;
-    let newButtonBuy = false;
-
-    const halfFIeld = 0.5 * state.playerFieldSize;
-
-    //podmínka, zde je vybraná látka v poli aktivního hráče (+ odchylka pro lidskou nedokonalost)
-    if (
-      newSelectedPatchPosition.x > areacurrentPlayerX - halfFIeld &&
-      newSelectedPatchPosition.y > areacurrentPlayerY - halfFIeld &&
-      selectedPatchPositionWidthX <
-        areacurrentPlayerX + areacurrentPlayerWidth + halfFIeld &&
-      selectedPatchPositionWidthY <
-        areacurrentPlayerY + areacurrentPlayerWidth + halfFIeld
-    ) {
-      newSelectedPatchPosition.x =
-        Math.round(
-          (newSelectedPatchPosition.x - areacurrentPlayerX) /
-            state.playerFieldSize,
-        ) *
-          state.playerFieldSize +
-        areacurrentPlayerX;
-
-      newSelectedPatchPosition.y =
-        Math.round(
-          (newSelectedPatchPosition.y - areacurrentPlayerY) /
-            state.playerFieldSize,
-        ) *
-          state.playerFieldSize +
-        areacurrentPlayerY;
-      newButtonBuy = true;
-    }
-
-    return {
-      ...state,
-      selectedPatchId: newSelectedPatchId,
-      selectedPatchPosition: newSelectedPatchPosition,
-      buttonBuy: newButtonBuy,
-    };
+    return OnDragEnd(state, action);
   }
 
   // nechci hrát
