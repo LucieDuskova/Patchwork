@@ -34,6 +34,16 @@ export const Patches = ({ dispatch, state }) => {
 
     const rotateY =
       state.selectedPatchId === patch.id ? state.selectedPatchFlip : 0;
+
+    //zaktivnit jen ty látky, na které má aktivní hráč peníze
+
+    const currentPlayer =
+      state.currentPlayer === 'player1' ? state.player1 : state.player2;
+   
+
+    const canUse =
+      currentPlayer.buttons >= patch.price ? true : false;
+
     return (
       <Patch
         patch={patch}
@@ -46,6 +56,7 @@ export const Patches = ({ dispatch, state }) => {
         zIndex={zIndex}
         rotate={rotate}
         rotateY={rotateY}
+        canUse={canUse}
       />
     );
   });
