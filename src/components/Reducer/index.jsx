@@ -49,7 +49,7 @@ export const reducer = (state, action) => {
       ...state,
       selectedPatchId: newSelectedPatchId,
       selectedPatchPosition: newSelectedPatchPosition,
-      buttonBuy: newButtonBuy
+      buttonBuy: newButtonBuy,
     };
   }
 
@@ -234,6 +234,7 @@ export const defaultState = {
   scorePatch: false,
   selectedPatchId: null,
   selectedPatchPosition: { x: 0, y: 0 },
+  selectedPatchRotation: 0,
   timeArray: [...timeArray(37.2, 3.5)],
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
