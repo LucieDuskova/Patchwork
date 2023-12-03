@@ -49,8 +49,7 @@ export const Patches = ({ dispatch, state }) => {
         dispatch={dispatch}
         state={state}
         key={patch.id}
-        x={xPossition}
-        y={yPossition}
+        position={{ x: xPossition, y: yPossition }}
         zIndex={zIndex}
         rotate={rotate}
         rotateY={rotateY}

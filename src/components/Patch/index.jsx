@@ -7,8 +7,7 @@ export const Patch = ({
   patch,
   index,
   dispatch,
-  x,
-  y,
+  position,
   zIndex,
   rotate,
   rotateY,
@@ -21,8 +20,8 @@ export const Patch = ({
     // nastavení pozic látek
     if (playersBoard) {
       controls.set({
-        y: y,
-        x: x,
+        y: position.y,
+        x: position.x,
         position: 'absolute',
         zIndex: zIndex,
         rotate: rotate,
@@ -30,15 +29,15 @@ export const Patch = ({
       });
     } else {
       controls.start({
-        y: y,
-        x: x,
+        y: position.y,
+        x: position.x,
         position: 'absolute',
         zIndex: zIndex,
         rotate: rotate,
         rotateY: rotateY,
       });
     }
-  }, [y, x, zIndex, rotate, rotateY]);
+  }, [position, zIndex, rotate, rotateY]);
 
   return (
     <>
@@ -51,8 +50,8 @@ export const Patch = ({
             type: 'ON_DRAG_END',
             patchId: patch.id,
             patchInfo: info,
-            patchX: x,
-            patchY: y,
+            patchX: position.x,
+            patchY: position.y,
           });
         }}
         dragMomentum={false} //neodjíždějí nám látky po puštění

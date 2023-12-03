@@ -200,7 +200,6 @@ export const reducer = (state, action) => {
       }
     }
 
-
     //hodnota score nesmí přesáhnout 63, resp. 62
     if (newScore > 59) {
       newScore = 60;
@@ -228,7 +227,7 @@ export const reducer = (state, action) => {
       ...state,
       buttonBuy: false,
       selectedPatchRotation: 0,
-      selectPatchFlip: 0,
+      selectedPatchFlip: 0,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
         arrayPatch: newCurrentPlayerArray,
