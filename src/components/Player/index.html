@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #game-board {
+        display: grid;
+        grid-template-columns: repeat(9, 50px);
+        grid-template-rows: repeat(9, 50px);
+        gap: 5px;
+        width: 500px;
+        height: 500px;
+        position: relative;
+      }
+
+      .game-cell {
+        width: 100%;
+        height: 100%;
+        background-color: lightgray;
+        border: 1px solid gray;
+      }
+
+      .game-piece {
+        width: 50px;
+        height: 50px;
+        background-color: dodgerblue;
+        border: 1px solid darkblue;
+        cursor: pointer;
+        position: absolute;
+        touch-action: none; /* Disable touch actions for better touch behavior */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-board"></div>
+
+    <script>
+      const gameBoard = document.getElementById('game-board');
+
+      // Vytvoření herního pole
+      for (let i = 0; i < 9; i++) {
+        for (let j = 0; j < 9; j++) {
+          const cell = document.createElement('div');
+          cell.classList.add('game-cell');
+          cell.dataset.row = i;
+          cell.dataset.col = j;
+          gameBoard.appendChild(cell);
+        }
+      }
+
+      // Přidání interaktivity pro přidávání prvků s snapping
+      let selectedPiece = null;
+
+      gameBoard.addEventListener('mousedown', (event) => {
+        if (event.target.classList.contains('game-piece')) {
+          selectedPiece = event.target;
+        }
+      });
+
+      gameBoard.addEventListener('mousemove', (event) => {
+        if (selectedPiece) {
+          const mouseX = event.clientX - gameBoard.getBoundingClientRect().left;
+          const mouseY = event.clientY - gameBoard.getBoundingClientRect().top;
+
+          // Vypočítat novou pozici prvku s snapping
+          const cellSize = 50;
+          const snappedX = Math.floor(mouseX / cellSize) * cellSize;
+          const snappedY = Math.floor(mouseY / cellSize) * cellSize;
+
+          // Nastavit novou pozici prvku
+          selectedPiece.style.left = `${snappedX}px`;
+          selectedPiece.style.top = `${snappedY}px`;
+        }
+      });
+
+      gameBoard.addEventListener('mouseup', () => {
+        selectedPiece = null;
+      });
+
+      gameBoard.addEventListener('click', (event) => {
+        const piece = document.createElement('div');
+        piece.classList.add('game-piece');
+        piece.style.left = `${event.clientX - piece.offsetWidth / 2}px`;
+        piece.style.top = `${event.clientY - piece.offsetHeight / 2}px`;
+
+        gameBoard.appendChild(piece);
+      });
+    </script>
+  </body>
+</html>

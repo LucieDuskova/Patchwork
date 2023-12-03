@@ -22,25 +22,43 @@ export const reducer = (state, action) => {
       (x) => x.id === newSelectedPatchId,
     );
 
-    const AreacurrentPlayerX = currentPlayer.gameBoard.left;
-    const AreacurrentPlayerY = currentPlayer.gameBoard.top;
-    const AreacurrentPlayerWidth = currentPlayer.gameBoard.width;
-    const SelectedPatchPositionWidthX =
+    const areacurrentPlayerX = currentPlayer.gameBoard.left;
+    const areacurrentPlayerY = currentPlayer.gameBoard.top;
+    const areacurrentPlayerWidth = currentPlayer.gameBoard.width;
+    const selectedPatchPositionWidthX =
       newSelectedPatchPosition.x +
       selectedPatch.viewBox.split(' ').map(Number)[2] * 7;
-    const SelectedPatchPositionWidthY =
+    const selectedPatchPositionWidthY =
       newSelectedPatchPosition.y +
       selectedPatch.viewBox.split(' ').map(Number)[3] * 7;
     let newButtonBuy = false;
 
-    //podmínka, zde je vybraná látka v poli aktivního hráče
+    const halfFIeld = 0.5 * state.playerFieldSize;
+
+    //podmínka, zde je vybraná látka v poli aktivního hráče (+ odchylka pro lidskou nedokonalost)
     if (
-      newSelectedPatchPosition.x > AreacurrentPlayerX &&
-      newSelectedPatchPosition.y > AreacurrentPlayerY &&
-      SelectedPatchPositionWidthX <
-        AreacurrentPlayerX + AreacurrentPlayerWidth &&
-      SelectedPatchPositionWidthY < AreacurrentPlayerY + AreacurrentPlayerWidth
+      newSelectedPatchPosition.x > areacurrentPlayerX - halfFIeld &&
+      newSelectedPatchPosition.y > areacurrentPlayerY - halfFIeld &&
+      selectedPatchPositionWidthX <
+        areacurrentPlayerX + areacurrentPlayerWidth + halfFIeld &&
+      selectedPatchPositionWidthY <
+        areacurrentPlayerY + areacurrentPlayerWidth + halfFIeld
     ) {
+      newSelectedPatchPosition.x =
+        Math.round(
+          (newSelectedPatchPosition.x - areacurrentPlayerX) /
+            state.playerFieldSize,
+        ) *
+          state.playerFieldSize +
+        areacurrentPlayerX;
+
+      newSelectedPatchPosition.y =
+        Math.round(
+          (newSelectedPatchPosition.y - areacurrentPlayerY) /
+            state.playerFieldSize,
+        ) *
+          state.playerFieldSize +
+        areacurrentPlayerY;
       newButtonBuy = true;
     }
 
