@@ -53,7 +53,10 @@ export const Patch = ({
             fill={
               index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : patch.color
             }
-            stroke="#000000"
+            stroke={
+              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : "#000000"
+            }
+            
             strokeWidth="0.15"
           />
 
