@@ -12,8 +12,7 @@ export const Patch = ({
   zIndex,
   rotate,
   rotateY,
-  canUse
-
+  canUse,
 }) => {
   const controls = useAnimation();
 
@@ -29,14 +28,12 @@ export const Patch = ({
     });
   }, [y, x, zIndex, rotate, rotateY]);
 
-
-
   return (
     <>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         animate={controls}
-        drag={(index < 3) && (canUse) ? true : false}
+        drag={index < 3 && canUse ? true : false}
         onDragEnd={(event, info) => {
           dispatch({
             type: 'ON_DRAG_END',
@@ -53,8 +50,13 @@ export const Patch = ({
         <g>
           <path
             d={patch.svg}
-            fill={patch.color}
-            stroke="#000000"
+            fill={
+              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : patch.color
+            }
+            stroke={
+              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : "#000000"
+            }
+            
             strokeWidth="0.15"
           />
 
