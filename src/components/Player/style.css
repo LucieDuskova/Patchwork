@@ -24,6 +24,7 @@
 .gamePage__player1,
 .gamePage__player2 {
   display: flex;
+  position: absolute;
 }
 
 .gamePage__player1--state {
