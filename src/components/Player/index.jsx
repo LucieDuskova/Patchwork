@@ -1,4 +1,5 @@
 import { DecorButton } from '../Button';
+import { Patch } from '../Patch';
 import './style.css';
 
 export const Player = ({
@@ -24,41 +25,58 @@ export const Player = ({
     }
     return fields;
   };
-  return (
-    <div className={`gamePage__player${playerNumber}`}>
-      <div
-        className={`gamePage__player${playerNumber}--array`}
-        style={{
-          width: `${player.gameBoard.width}px`,
-          top: `${player.gameBoard.top}px`,
-          left: `${player.gameBoard.left}px`,
-        }}
-      >
-        {renderPlayerFields()}
-      </div>
-      <div className={`gamePage__player${playerNumber}--state`}>
-        <p className={isCurrentPlayer ? 'gamePage__player' : ''}>
-          <strong>HRÁČ {playerNumber}</strong>
-        </p>
 
-        <p className="gamePage__currency">
-          <strong>{player.buttons}</strong>{' '}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox={DecorButton.viewBox}
-            width={`30px`}
-          >
-            <g>
-              <path
-                d={DecorButton.svg}
-                fill={DecorButton.color}
-                stroke="#000000"
-                strokeWidth="0.15"
-              />
-            </g>
-          </svg>
-        </p>
+  return (
+    <>
+      <div className={`gamePage__player${playerNumber}`}>
+        <div
+          className={`gamePage__player${playerNumber}--array`}
+          style={{
+            width: `${player.gameBoard.width}px`,
+            top: `${player.gameBoard.top}px`,
+            left: `${player.gameBoard.left}px`,
+          }}
+        >
+          {renderPlayerFields()}
+        </div>
+        <div className={`gamePage__player${playerNumber}--state`}>
+          <p className={isCurrentPlayer ? 'gamePage__player' : ''}>
+            <strong>HRÁČ {playerNumber}</strong>
+          </p>
+
+          <p className="gamePage__currency">
+            <strong>{player.buttons}</strong>{' '}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox={DecorButton.viewBox}
+              width={`30px`}
+            >
+              <g>
+                <path
+                  d={DecorButton.svg}
+                  fill={DecorButton.color}
+                  stroke="#000000"
+                  strokeWidth="0.15"
+                />
+              </g>
+            </svg>
+          </p>
+        </div>
       </div>
-    </div>
+
+      {console.log(player.arrayPatch, player.patchesPosition)}
+
+      {player.arrayPatch.map((patch, index) => (
+        <Patch
+          patch={patch}
+          index={3}
+          x={player.patchesPosition[index].x}
+          y={player.patchesPosition[index].y}
+          zIndex={900}
+          rotate={player.patchesPosition[index].rotation}
+          rotateY={player.patchesPosition[index].flip}
+        />
+      ))}
+    </>
   );
 };
