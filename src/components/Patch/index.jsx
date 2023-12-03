@@ -1,22 +1,30 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
 export const Patch = ({ patch, index, dispatch, state }) => {
+  const controls = useAnimation();
+
   const xPossition =
     state.selectedPatchId === patch.id
       ? {
+          // vybraná látka bude tam, kam ji položíme
           x: state.selectedPatchPosition.x,
         }
       : {
+          // pokud látka není vybraná, bude na elipse
           x: state.x + state.points[index][0],
         };
 
   const yPossition =
     state.selectedPatchId === patch.id
       ? {
+          // vybraná látka bude tam, kam ji položíme
           y: state.selectedPatchPosition.y,
         }
       : {
+          // pokud látka není vybraná, bude na elipse
           y: state.y + state.points[index][1],
         };
 
@@ -28,16 +36,29 @@ export const Patch = ({ patch, index, dispatch, state }) => {
   // console.log( zIndex);
   // console.log(yPossition);
 
+  useEffect(() => {
+    // nastavení pozic látek
+    controls.start({
+      y: `${yPossition.y}px`,
+      x: `${xPossition.x}px`,
+      position: zIndex.position,
+      zIndex: zIndex.zIndex,
+      rotate:
+        state.selectedPatchId === patch.id ? state.selectedPatchRotation : 0,
+    });
+  }, [yPossition, xPossition, zIndex]);
+
   return (
     <>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        animate={{
+        /*animate={{
           y: `${yPossition.y}px`,
           x: `${xPossition.x}px`,
           position: zIndex.position,
           zIndex: zIndex.zIndex,
-        }}
+        }}*/
+        animate={controls}
         drag={index < 3 ? true : false}
         onDragEnd={(event, info) => {
           dispatch({

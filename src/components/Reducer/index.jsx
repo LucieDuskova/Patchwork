@@ -49,7 +49,7 @@ export const reducer = (state, action) => {
       ...state,
       selectedPatchId: newSelectedPatchId,
       selectedPatchPosition: newSelectedPatchPosition,
-      buttonBuy: newButtonBuy
+      buttonBuy: newButtonBuy,
     };
   }
 
@@ -156,13 +156,13 @@ export const reducer = (state, action) => {
     const newState = {
       ...state,
       buttonBuy: false,
+      selectedPatchRotation: 0,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
         arrayPatch: newCurrentPlayerArray,
         buttons: newCurrentPlayerButtons,
         income: newIncome,
         score: newScore,
-
       },
       // vrácení látky do elipsy
       patchesMixed: newPatchesMixed,
@@ -182,6 +182,23 @@ export const reducer = (state, action) => {
     return newStateCurrentPlayer;
   }
 
+  if (action.type === 'ROTATION_MINUS_90') {
+    const newSelectedPatchRotation = state.selectedPatchRotation - 90;
+
+    return {
+      ...state,
+      selectedPatchRotation: newSelectedPatchRotation,
+    };
+  }
+
+  if (action.type === 'ROTATION_PLUS_90') {
+    const newSelectedPatchRotation = state.selectedPatchRotation + 90;
+
+    return {
+      ...state,
+      selectedPatchRotation: newSelectedPatchRotation,
+    };
+  }
   return state;
 };
 
@@ -236,6 +253,7 @@ export const defaultState = {
   scorePatch: false,
   selectedPatchId: null,
   selectedPatchPosition: { x: 0, y: 0 },
+  selectedPatchRotation: 0,
   timeArray: [...timeArray(37.2, 3.5)],
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
