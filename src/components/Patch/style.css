@@ -1,11 +1,16 @@
-.descriptionPatch{
+.descriptionPatch {
   border: 1px solid black;
   background-color: white;
-  width: 50px;
+
   font-size: 15px;
   position: absolute;
   padding: 0;
   margin: 0;
-  top: 130px ;
+  bottom: 930px;
   z-index: 1000;
+}
+
+.descriptionPatch div {
+  padding: 2px;
+  white-space: nowrap;
 }

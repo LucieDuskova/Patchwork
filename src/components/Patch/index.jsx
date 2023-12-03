@@ -68,8 +68,8 @@ export const Patch = ({
             x: position.x,
           }}
         >
-          <p>cena: {patch.price}</p>
-          <p>čas: {patch.time}</p>
+          <div>cena: {patch.price}</div>
+          <div>čas: {patch.time}</div>
         </motion.div>
       )}
       <motion.svg
