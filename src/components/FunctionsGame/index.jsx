@@ -70,7 +70,7 @@ export const timeArray = (box_width, edge) => {
     top: 0 * box_width + edge,
     left: 7 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '7',
     borderWidth: '4px 4px 1px 1px',
   };
@@ -113,7 +113,7 @@ export const timeArray = (box_width, edge) => {
     top: 6 * box_width + edge,
     left: 7 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '13',
     borderWidth: '1px 4px 1px 1px',
   };
@@ -156,7 +156,7 @@ export const timeArray = (box_width, edge) => {
     top: 7 * box_width + edge,
     left: 2 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '19',
     borderWidth: '1px 1px 4px 1px',
   };
@@ -207,7 +207,7 @@ export const timeArray = (box_width, edge) => {
     top: 2 * box_width + edge,
     left: 0 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '26',
     borderWidth: '1px 1px 1px 4px',
   };
@@ -259,7 +259,7 @@ export const timeArray = (box_width, edge) => {
     top: 1 * box_width + edge,
     left: 6 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '33',
     borderWidth: '4px 4px 1px 1px',
   };
@@ -310,7 +310,7 @@ export const timeArray = (box_width, edge) => {
     top: 6 * box_width + edge,
     left: 4 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '40',
     borderWidth: '1px 1px 4px 1px',
   };
@@ -353,7 +353,7 @@ export const timeArray = (box_width, edge) => {
     top: 3 * box_width + edge,
     left: 1 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '46',
     borderWidth: '1px 1px 1px 4px',
   };
@@ -404,7 +404,7 @@ export const timeArray = (box_width, edge) => {
     top: 4 * box_width + edge,
     left: 5 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '53',
     borderWidth: '1px 4px 1px 1px',
   };
@@ -455,7 +455,7 @@ export const timeArray = (box_width, edge) => {
     top: 3 * box_width + edge,
     left: 3 * box_width + edge,
     button: true,
-    color: '#3498db',
+    color: '#ffc43b',
     text: '60',
     borderWidth: '4px 1px 1px 2px',
   };
