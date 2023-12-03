@@ -19,10 +19,26 @@ export const Patch = ({
 
   useEffect(() => {
     // nastavení pozic látek
+
+    let xt = 0;
+    let yt = 0;
+
+    if (rotate % 180 !== 0) {
+      const size = patch.viewBox
+        .split(' ')
+        .map(Number)
+        .map((x) => x * 7);
+      const heightPatch = size[3];
+      const widthPatch = size[2];
+
+      xt = (widthPatch - heightPatch) / 2;
+      yt = (heightPatch - widthPatch) / 2;
+    }
+
     if (playersBoard) {
       controls.set({
-        y: position.y,
-        x: position.x,
+        y: position.y - yt,
+        x: position.x - xt,
         position: 'absolute',
         zIndex: zIndex,
         rotate: rotate,
@@ -30,8 +46,8 @@ export const Patch = ({
       });
     } else {
       controls.start({
-        y: position.y,
-        x: position.x,
+        y: position.y - yt,
+        x: position.x - xt,
         position: 'absolute',
         zIndex: zIndex,
         rotate: rotate,

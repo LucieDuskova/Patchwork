@@ -53,24 +53,16 @@ export const OnDragEnd = (state, action) => {
     newButtonBuy = true;
   }
 
-  let newSelectedPatchRotation;
-  let newSelectedPatchFlip;
-
-  newSelectedPatchRotation =
+  // chci resetovat otáčení, ale jen, pokud jsem vybrala jinou látku
+  const newSelectedPatchRotation =
     newSelectedPatchId === state.selectedPatchId
       ? state.selectedPatchRotation
       : 0;
 
-  newSelectedPatchFlip =
+  // chci resetovat flipování, ale jen, pokud jsem vybrala jinou látku
+  const newSelectedPatchFlip =
     newSelectedPatchId === state.selectedPatchId ? state.selectedPatchFlip : 0;
 
-  // if (newSelectedPatchId === state.selectedPatchId) {
-  //   newSelectedPatchRotation = state.selectedPatchRotation;
-  //   newSelectedPatchFlip = state.selectedPatchFlip;
-  // } else {
-  //   newSelectedPatchRotation = 0;
-  //   newSelectedPatchFlip = 0;
-  // }
   return {
     ...state,
     selectedPatchId: newSelectedPatchId,
