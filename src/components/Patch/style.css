@@ -1,13 +1,13 @@
 .descriptionPatch {
   border: 1px solid black;
   background-color: white;
-
+  opacity: 0.9;
   font-size: 15px;
   position: absolute;
   padding: 0;
   margin: 0;
-  bottom: 930px;
-  z-index: 1000;
+  bottom: 1px;
+  z-index: 1200;
 }
 
 .descriptionPatch div {

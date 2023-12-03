@@ -58,20 +58,26 @@ export const Patch = ({
 
   return (
     <>
-      {playersBoard ? (
-        <></>
-      ) : (
-        <motion.div
-          className="descriptionPatch"
-          animate={{
-            y: position.y,
-            x: position.x,
-          }}
-        >
-          <div>cena: {patch.price}</div>
-          <div>čas: {patch.time}</div>
-        </motion.div>
-      )}
+      <div
+        style={{
+          position: 'relative',
+        }}
+      >
+        {playersBoard ? (
+          <></>
+        ) : (
+          <motion.div
+            className="descriptionPatch"
+            animate={{
+              y: position.y,
+              x: position.x,
+            }}
+          >
+            <div>cena: {patch.price}</div>
+            <div>čas: {patch.time}</div>
+          </motion.div>
+        )}
+      </div>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         animate={controls}
