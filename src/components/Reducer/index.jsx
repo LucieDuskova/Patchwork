@@ -78,6 +78,29 @@ export const reducer = (state, action) => {
       }
     }
 
+    //hodnota score nesmí přesáhnout 63, resp. 62
+    if (newScore > 59) {
+      newScore = 60;
+    }
+
+    // kdo je výtěz?
+    let whoisWinner = '';
+    if (state.player1.buttons > state.player2.buttons) {
+      whoisWinner = 'Vyhrál hráč 1';
+    } else if (state.player2.buttons > state.player1.buttons) {
+      whoisWinner = 'Vyhrál hráč 2';
+    } else {
+      ('Vyhráli jste oba, je to remíza.');
+    }
+
+    // je konec hry? Pokud ano, vyhodnoť to
+    if (state.player1.score >= 59 && state.player2.score >= 59) {
+      // Zpoždění alertu o 2000 milisekund (2 sekundy)
+      setTimeout(() => {
+        alert(`HRA SKONČILA. ${whoisWinner}`);
+      }, 500);
+    }
+
     const newState = {
       ...state,
       [state.currentPlayer]: {
@@ -99,10 +122,6 @@ export const reducer = (state, action) => {
       ...newState,
       currentPlayer: whoIsCurrentPlayer,
     };
-
-    // console.log(state.scoreButton);
-    // console.log(forScoreStart);
-    // console.log(forScoreEnd);
 
     return newStateCurrentPlayer;
   }
@@ -150,7 +169,7 @@ export const reducer = (state, action) => {
       currentPlayer.buttons - newSelectedPatch.price;
 
     // posunout skóre a přičíst knoflíky
-    const newScore = currentPlayer.score + newSelectedPatch.time;
+    let newScore = currentPlayer.score + newSelectedPatch.time;
     const newIncome = currentPlayer.income + newSelectedPatch.income;
 
     let forScoreStart = currentPlayer.score;
@@ -161,6 +180,30 @@ export const reducer = (state, action) => {
         newCurrentPlayerButtons =
           newCurrentPlayerButtons + currentPlayer.income;
       }
+    }
+
+
+    //hodnota score nesmí přesáhnout 63, resp. 62
+    if (newScore > 59) {
+      newScore = 60;
+    }
+
+    // kdo je výtěz?
+    let whoisWinner = '';
+    if (state.player1.buttons > state.player2.buttons) {
+      whoisWinner = 'Vyhrál hráč 1';
+    } else if (state.player2.buttons > state.player1.buttons) {
+      whoisWinner = 'Vyhrál hráč 2';
+    } else {
+      ('Vyhráli jste oba, je to remíza.');
+    }
+
+    // je konec hry? Pokud ano, vyhodnoť to
+    if (state.player1.score >= 59 && state.player2.score >= 59) {
+      // Zpoždění alertu o 2000 milisekund (2 sekundy)
+      setTimeout(() => {
+        alert(`HRA SKONČILA. ${whoisWinner}`);
+      }, 500);
     }
 
     const newState = {
