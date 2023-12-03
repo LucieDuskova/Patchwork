@@ -32,6 +32,7 @@ export const reducer = (state, action) => {
     const SelectedPatchPositionWidthY =
       newSelectedPatchPosition.y +
       selectedPatch.viewBox.split(' ').map(Number)[3] * 7;
+    let newButtonBuy = false;
 
     //podmínka, zde je vybraná látka v poli aktivního hráče
     if (
@@ -41,13 +42,14 @@ export const reducer = (state, action) => {
         AreacurrentPlayerX + AreacurrentPlayerWidth &&
       SelectedPatchPositionWidthY < AreacurrentPlayerY + AreacurrentPlayerWidth
     ) {
-      console.log('JDE TO');
+      newButtonBuy = true;
     }
 
     return {
       ...state,
       selectedPatchId: newSelectedPatchId,
       selectedPatchPosition: newSelectedPatchPosition,
+      buttonBuy: newButtonBuy
     };
   }
 
@@ -250,4 +252,6 @@ export const defaultState = {
     /*numPoints*/ 33,
   ), // vytvoření pozic na oválu
   patchesMixed: mixingPatches(),
+
+  buttonBuy: false,
 };

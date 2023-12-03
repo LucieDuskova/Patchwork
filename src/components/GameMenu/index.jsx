@@ -1,6 +1,6 @@
 import './style.css';
 
-export const GameMenu = ({state, dispatch}) => {
+export const GameMenu = ({ state, dispatch }) => {
   return (
     <>
       <div className="gameMenu">
@@ -12,6 +12,7 @@ export const GameMenu = ({state, dispatch}) => {
         </div>
         <button
           className="gameMenu__button"
+          disabled={state.buttonBuy ? false : true}
           onClick={() => dispatch({ type: 'WANT_PATCH' })}
         >
           koupit látku
