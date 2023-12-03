@@ -33,10 +33,9 @@ export const Player1 = ({ state }) => {
           <strong>HRÁČ 1</strong>
         </p>
         <p>
-          počet knoflíku:{' '}
           <strong>
             {state.player1.buttons}{' '}
-            <motion.svg
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox={DecorButton.viewBox}
               width={`30px`}
@@ -49,7 +48,7 @@ export const Player1 = ({ state }) => {
                   strokeWidth="0.15"
                 />
               </g>
-            </motion.svg>
+            </svg>
           </strong>
         </p>
       </div>
@@ -86,8 +85,8 @@ export const Player2 = ({ state }) => {
           <strong>HRÁČ 2</strong>
         </p>
         <p>
-          počet knoflíku: <strong>{state.player2.buttons}</strong>{' '}
-          <motion.svg
+          <strong>{state.player2.buttons}</strong>{' '}
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox={DecorButton.viewBox}
             width={`30px`}
@@ -100,7 +99,7 @@ export const Player2 = ({ state }) => {
                 strokeWidth="0.15"
               />
             </g>
-          </motion.svg>
+          </svg>
         </p>
       </div>
       <div className="gamePage__player2--array">{renderPlayer2Fields()}</div>

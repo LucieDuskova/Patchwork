@@ -1,6 +1,7 @@
 import './style.css';
 import { motion } from 'framer-motion';
 import { timeArray } from '../FunctionsGame';
+import { DecorButton } from '../Button';
 
 export const GameArrayTime = ({ state }) => {
   const arrayGrid = [];
@@ -111,7 +112,9 @@ export const GameArrayTime = ({ state }) => {
                   className={`gameArrayTime__cell-${Index}`}
                   style={{
                     backgroundColor: cell.color,
-                    backgroundImage: cell.button ? './url(../public/favicon.ico)' : '',
+                    backgroundImage: cell.button
+                      ? './url(../public/favicon.ico)'
+                      : '',
                     width: '37.2px',
                     height: '37.2px',
                     borderWidth: cell.borderWidth,
@@ -119,6 +122,22 @@ export const GameArrayTime = ({ state }) => {
                     borderColor: '#000000',
                   }}
                 >
+                  {cell.button ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox={DecorButton.viewBox}
+                      width={`35px`}
+                    >
+                      <g>
+                        <path
+                          d={DecorButton.svg}
+                          fill={DecorButton.color}
+                          stroke="#000000"
+                          strokeWidth="0.15"
+                        />
+                      </g>
+                    </svg>
+                  ) : null}
                   {'   '}
                   {/* {cell.text} */}
                 </div>
