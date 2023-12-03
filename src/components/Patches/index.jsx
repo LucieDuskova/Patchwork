@@ -35,21 +35,25 @@ export const Patches = ({ dispatch, state }) => {
     const rotateY =
       state.selectedPatchId === patch.id ? state.selectedPatchFlip : 0;
     return (
-      <>
-        <BoxForTable state={state} />
-        <Patch
-          patch={patch}
-          index={index}
-          dispatch={dispatch}
-          state={state}
-          key={patch.id}
-          x={xPossition}
-          y={yPossition}
-          zIndex={zIndex}
-          rotate={rotate}
-          rotateY={rotateY}
-        />
-      </>
+      <Patch
+        patch={patch}
+        index={index}
+        dispatch={dispatch}
+        state={state}
+        key={patch.id}
+        x={xPossition}
+        y={yPossition}
+        zIndex={zIndex}
+        rotate={rotate}
+        rotateY={rotateY}
+      />
     );
   });
+
+  return (
+    <>
+      <BoxForTable state={state} />
+      {patchesToDraw}
+    </>
+  );
 };
