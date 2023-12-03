@@ -3,8 +3,6 @@ import { PatchesData } from '../PatchesData';
 import { changePlayer, timeArray } from './../FunctionsGame';
 import { GameArrayTime } from './../GameArrayTime';
 
-const performGameMoveSummary = () => {};
-
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
     return { defaultState };
@@ -16,6 +14,36 @@ export const reducer = (state, action) => {
       x: action.patchX + action.patchInfo.offset.x,
       y: action.patchY + action.patchInfo.offset.y,
     };
+
+    //podívat se, zda je vybraná látka v poli aktivního hráče
+    const currentPlayer =
+      state.currentPlayer === 'player1' ? state.player1 : state.player2;
+
+    const selectedPatch = state.patchesMixed.find(
+      (x) => x.id === newSelectedPatchId,
+    );
+
+    const AreacurrentPlayerX = currentPlayer.gameBoard.left;
+    const AreacurrentPlayerY = currentPlayer.gameBoard.top;
+    const AreacurrentPlayerWidth = currentPlayer.gameBoard.width;
+    const SelectedPatchPositionWidthX =
+      newSelectedPatchPosition.x +
+      selectedPatch.viewBox.split(' ').map(Number)[2] * 7;
+    const SelectedPatchPositionWidthY =
+      newSelectedPatchPosition.y +
+      selectedPatch.viewBox.split(' ').map(Number)[3] * 7;
+
+    //podmínka, zde je vybraná látka v poli aktivního hráče
+    if (
+      newSelectedPatchPosition.x > AreacurrentPlayerX &&
+      newSelectedPatchPosition.y > AreacurrentPlayerY &&
+      SelectedPatchPositionWidthX <
+        AreacurrentPlayerX + AreacurrentPlayerWidth &&
+      SelectedPatchPositionWidthY < AreacurrentPlayerY + AreacurrentPlayerWidth
+    ) {
+      console.log('JDE TO');
+    }
+
     return {
       ...state,
       selectedPatchId: newSelectedPatchId,
@@ -49,7 +77,6 @@ export const reducer = (state, action) => {
       }
     }
 
-    //console.log(newAddButtons);
     const newState = {
       ...state,
       [state.currentPlayer]: {
@@ -84,8 +111,7 @@ export const reducer = (state, action) => {
     const currentPlayer =
       state.currentPlayer === 'player1' ? state.player1 : state.player2;
 
-    // dát mu aktuální záplatu
-    // vzít si záplatu - aktuální (ID máme vybrané)
+    // vzít si látku - aktuální (ID máme vybrané)
     const newSelectedPatch = state.patchesMixed.find(
       (x) => x.id === state.selectedPatchId,
     );
@@ -101,6 +127,7 @@ export const reducer = (state, action) => {
       (x) => x.id === state.selectedPatchId,
     );
 
+    //posunutí nepoužitých látek v elipse na konec
     const newPatchesMixed = [
       ...state.patchesMixed.slice(indexOfselectedPatch + 1),
       ...state.patchesMixed.slice(0, indexOfselectedPatch),
@@ -187,8 +214,20 @@ const mixingPatches = () => {
 
 export const defaultState = {
   currentPlayer: 'player1',
-  player1: { buttons: 5, income: 0, score: 1, arrayPatch: [] },
-  player2: { buttons: 5, income: 0, score: 2, arrayPatch: [] },
+  player1: {
+    buttons: 5,
+    income: 0,
+    score: 1,
+    arrayPatch: [],
+    gameBoard: { width: 315, left: 50, top: 550 },
+  },
+  player2: {
+    buttons: 5,
+    income: 0,
+    score: 2,
+    arrayPatch: [],
+    gameBoard: { width: 315, left: 1550, top: 550 },
+  },
   scoreButton: false,
   scorePatch: false,
   selectedPatchId: null,

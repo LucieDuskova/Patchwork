@@ -20,7 +20,13 @@ export const Player1 = ({ state }) => {
 
   return (
     <div className="gamePage__player1">
-      <div className="gamePage__player1--array">{renderPlayer1Fields()}</div>
+      <div className="gamePage__player1--array" 
+       style={{
+        width: `${state.player1.gameBoard.width}px`,
+        top: `${state.player1.gameBoard.top}px`,
+        left: `${state.player1.gameBoard.left}px`,
+      }}
+      >{renderPlayer1Fields()}</div>
       <div className="gamePage__player1--state">
         <p
           className={
@@ -65,7 +71,16 @@ export const Player2 = ({ state }) => {
         </p>
         <p>počet knoflíku: <strong>{state.player2.buttons}</strong></p>
       </div>
-      <div className="gamePage__player2--array">{renderPlayer2Fields()}</div>
+      <div className="gamePage__player2--array"
+      
+      style={{
+        width: `${state.player2.gameBoard.width}px`,
+        top: `${state.player2.gameBoard.top}px`,
+        left: `${state.player2.gameBoard.left}px`,
+      }}
+      
+      
+      >{renderPlayer2Fields()}</div>
     </div>
   );
 };
