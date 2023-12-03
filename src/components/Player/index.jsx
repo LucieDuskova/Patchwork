@@ -76,6 +76,7 @@ export const Player = ({
           zIndex={900}
           rotate={player.patchesPosition[index].rotation}
           rotateY={player.patchesPosition[index].flip}
+          playersBoard={true}
         />
       ))}
     </>

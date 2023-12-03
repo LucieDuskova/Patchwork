@@ -39,10 +39,8 @@ export const Patches = ({ dispatch, state }) => {
 
     const currentPlayer =
       state.currentPlayer === 'player1' ? state.player1 : state.player2;
-   
 
-    const canUse =
-      currentPlayer.buttons >= patch.price ? true : false;
+    const canUse = currentPlayer.buttons >= patch.price ? true : false;
 
     return (
       <Patch
@@ -57,6 +55,7 @@ export const Patches = ({ dispatch, state }) => {
         rotate={rotate}
         rotateY={rotateY}
         canUse={canUse}
+        playersBoard={false}
       />
     );
   });

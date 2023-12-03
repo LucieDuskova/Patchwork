@@ -13,19 +13,31 @@ export const Patch = ({
   rotate,
   rotateY,
   canUse,
+  playersBoard,
 }) => {
   const controls = useAnimation();
 
   useEffect(() => {
     // nastavení pozic látek
-    controls.start({
-      y: y,
-      x: x,
-      position: 'absolute',
-      zIndex: zIndex,
-      rotate: rotate,
-      rotateY: rotateY,
-    });
+    if (playersBoard) {
+      controls.set({
+        y: y,
+        x: x,
+        position: 'absolute',
+        zIndex: zIndex,
+        rotate: rotate,
+        rotateY: rotateY,
+      });
+    } else {
+      controls.start({
+        y: y,
+        x: x,
+        position: 'absolute',
+        zIndex: zIndex,
+        rotate: rotate,
+        rotateY: rotateY,
+      });
+    }
   }, [y, x, zIndex, rotate, rotateY]);
 
   return (
@@ -54,11 +66,20 @@ export const Patch = ({
               index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : patch.color
             }
             stroke={
-              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : "#000000"
+              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : '#000000'
             }
-            
             strokeWidth="0.15"
           />
+          {playersBoard ? (
+            <path
+              d={patch.svg}
+              fill="none"
+              stroke="#606060"
+              strokeWidth="1px"
+              strokeDasharray="0.5 1"
+              strokeDashoffset="3"
+            />
+          ) : null}
 
           <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
             {`P: ${patch.price}, T: ${patch.time} I:${patch.income}`}
