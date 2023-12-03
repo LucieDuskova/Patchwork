@@ -30,6 +30,7 @@ button {
   width: 100%;
   align-items: center;
   position: relative;
+
 }
 
 .gamePage__button {
@@ -37,3 +38,6 @@ button {
   height: 30px;
   width: 30px;
 }
+
+
+

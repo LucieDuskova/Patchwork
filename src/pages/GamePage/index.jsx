@@ -14,6 +14,7 @@ export const GamePage = () => {
     <>
       <GameArrayTime state={state} />
       <Patches dispatch={dispatch} state={state} />
+
       <div className="GamePage__playerBoards">
         <Player1 state={state} />
         <GameMenu dispatch={dispatch} state={state} />

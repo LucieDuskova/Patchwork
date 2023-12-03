@@ -1,6 +1,12 @@
 import './style.css';
 
 export const GameMenu = ({ state, dispatch }) => {
+  const currentPlayer =
+    state.currentPlayer === 'player1' ? state.player1 : state.player2;
+  const priceDescriptionPatch = state.patchesMixed.find(
+    (x) => x.id === state.selectedPatchId,
+  );
+
   return (
     <>
       <div className="gameMenu">
@@ -33,7 +39,9 @@ export const GameMenu = ({ state, dispatch }) => {
         </div>
         <button
           className="gameMenu__button"
-          disabled={state.buttonBuy ? false : true}
+          disabled={
+            state.buttonBuy && (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+          }
           onClick={() => dispatch({ type: 'WANT_PATCH' })}
         >
           koupit látku

@@ -1,0 +1,8 @@
+
+.boxForTable{
+  /* border: 5px solid red; */
+  position: absolute;
+  height: 30px;
+  background-color: rgb(255,196,58, 0.5);
+  /* border-radius: 20px; */
+}

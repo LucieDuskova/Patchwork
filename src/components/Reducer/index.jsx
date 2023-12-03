@@ -1,4 +1,3 @@
-import { useReducer } from 'react';
 import { PatchesData } from '../PatchesData';
 import { changePlayer, timeArray } from './../FunctionsGame';
 import { GameArrayTime } from './../GameArrayTime';
@@ -101,9 +100,9 @@ export const reducer = (state, action) => {
       currentPlayer: whoIsCurrentPlayer,
     };
 
-    console.log(state.scoreButton);
-    console.log(forScoreStart);
-    console.log(forScoreEnd);
+    // console.log(state.scoreButton);
+    // console.log(forScoreStart);
+    // console.log(forScoreEnd);
 
     return newStateCurrentPlayer;
   }

@@ -1,3 +1,5 @@
+import './style.css';
+
 export const changePlayer = (player1Score, player2Score, currentPlayer) => {
   let newPlayer = '';
   if (player1Score < player2Score) {
@@ -482,4 +484,24 @@ export const timeArray = (box_width, edge) => {
   };
 
   return score;
+};
+
+export const BoxForTable = ({ state }) => {
+  return (
+    <div
+      className="boxForTable"
+      style={{
+        width:
+          (state.x + state.points[1][0] - (state.x + state.points[0][0]) - 3) *
+          3,
+        height: 198,
+        transform: `translateX(${
+          state.x +
+          state.points[1][0] +
+          (state.x + state.points[0][0] - state.x + state.points[1][0]) -
+          10
+        }px) translateY(${state.y + state.points[1][1] - 15}px)`,
+      }}
+    ></div>
+  );
 };
