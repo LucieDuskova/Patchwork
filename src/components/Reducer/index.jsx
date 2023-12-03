@@ -123,6 +123,17 @@ export const reducer = (state, action) => {
       newSelectedPatch,
     ];
 
+    // přidání pozice látky na deku hráče
+    const newPatchesPosition = [
+      ...currentPlayer.patchesPosition,
+      {
+        x: state.selectedPatchPosition.x,
+        y: state.selectedPatchPosition.y,
+        rotation: state.selectedPatchRotation,
+        flip: state.selectedPatchFlip,
+      },
+    ];
+
     // odebrat záplatu z pole záplat
     const indexOfselectedPatch = state.patchesMixed.findIndex(
       (x) => x.id === state.selectedPatchId,
@@ -163,9 +174,9 @@ export const reducer = (state, action) => {
         buttons: newCurrentPlayerButtons,
         income: newIncome,
         score: newScore,
+        patchesPosition: newPatchesPosition,
       },
-      // vrácení látky do elipsy
-      patchesMixed: newPatchesMixed,
+      patchesMixed: newPatchesMixed, // vrácení látky do elipsy,
     };
 
     const whoIsCurrentPlayer = changePlayer(
@@ -261,6 +272,7 @@ export const defaultState = {
     income: 0,
     score: 1,
     arrayPatch: [],
+    patchesPosition: [], // pozice látek na dece
     gameBoard: { width: 315, left: 50, top: 550 },
   },
   player2: {
@@ -268,6 +280,7 @@ export const defaultState = {
     income: 0,
     score: 2,
     arrayPatch: [],
+    patchesPosition: [], // pozice látek na dece
     gameBoard: { width: 315, left: 1550, top: 550 },
   },
   scoreButton: false,
@@ -279,7 +292,7 @@ export const defaultState = {
   timeArray: [...timeArray(37.2, 3.5)],
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
-  playerFieldSide: 35,
+  playerFieldSize: 35,
 
   // Ovál parametry:
   a: 800 / 2.5, // šířka oválu šířka okna / 2,5
