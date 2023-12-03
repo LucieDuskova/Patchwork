@@ -30,5 +30,10 @@ button {
   width: 100%;
   align-items: center;
   position: relative;
+}
 
+.gamePage__button {
+  aspect-ratio: 1 / 1;
+  height: 30px;
+  width: 30px;
 }

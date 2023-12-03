@@ -38,16 +38,16 @@
 }
 
 .gamePage__player1--state {
-  width: 150px;
+  width: 200px;
   position: absolute;
   left: 400px;
   top: 700px;
 }
 
 .gamePage__player2--state {
-  width: 150px;
+  width: 200px;
   position: absolute;
-  left: 1350px;
+  left: 1300px;
   top: 700px;
 }
 

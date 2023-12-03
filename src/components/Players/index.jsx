@@ -1,4 +1,7 @@
 import './style.css';
+import { DecorButton } from '../Button';
+
+import { motion } from 'framer-motion';
 
 export const Player1 = ({ state }) => {
   const renderPlayer1Fields = () => {
@@ -29,7 +32,26 @@ export const Player1 = ({ state }) => {
         >
           <strong>HRÁČ 1</strong>
         </p>
-        <p>počet knoflíku: <strong>{state.player1.buttons}</strong></p>
+        <p>
+          počet knoflíku:{' '}
+          <strong>
+            {state.player1.buttons}{' '}
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox={DecorButton.viewBox}
+              width={`30px`}
+            >
+              <g>
+                <path
+                  d={DecorButton.svg}
+                  fill={DecorButton.color}
+                  stroke="#000000"
+                  strokeWidth="0.15"
+                />
+              </g>
+            </motion.svg>
+          </strong>
+        </p>
       </div>
     </div>
   );
@@ -63,7 +85,23 @@ export const Player2 = ({ state }) => {
         >
           <strong>HRÁČ 2</strong>
         </p>
-        <p>počet knoflíku: <strong>{state.player2.buttons}</strong></p>
+        <p>
+          počet knoflíku: <strong>{state.player2.buttons}</strong>{' '}
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={DecorButton.viewBox}
+            width={`30px`}
+          >
+            <g>
+              <path
+                d={DecorButton.svg}
+                fill={DecorButton.color}
+                stroke="#000000"
+                strokeWidth="0.15"
+              />
+            </g>
+          </motion.svg>
+        </p>
       </div>
       <div className="gamePage__player2--array">{renderPlayer2Fields()}</div>
     </div>
