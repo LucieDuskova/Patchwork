@@ -156,13 +156,13 @@ export const reducer = (state, action) => {
     const newState = {
       ...state,
       buttonBuy: false,
+      selectedPatchRotation: 0,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
         arrayPatch: newCurrentPlayerArray,
         buttons: newCurrentPlayerButtons,
         income: newIncome,
         score: newScore,
-
       },
       // vrácení látky do elipsy
       patchesMixed: newPatchesMixed,
@@ -182,6 +182,23 @@ export const reducer = (state, action) => {
     return newStateCurrentPlayer;
   }
 
+  if (action.type === 'ROTATION_MINUS_90') {
+    const newSelectedPatchRotation = state.selectedPatchRotation - 90;
+
+    return {
+      ...state,
+      selectedPatchRotation: newSelectedPatchRotation,
+    };
+  }
+
+  if (action.type === 'ROTATION_PLUS_90') {
+    const newSelectedPatchRotation = state.selectedPatchRotation + 90;
+
+    return {
+      ...state,
+      selectedPatchRotation: newSelectedPatchRotation,
+    };
+  }
   return state;
 };
 

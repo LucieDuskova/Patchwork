@@ -43,7 +43,8 @@ export const Patch = ({ patch, index, dispatch, state }) => {
       x: `${xPossition.x}px`,
       position: zIndex.position,
       zIndex: zIndex.zIndex,
-      rotate: state.selectedPatchRotation,
+      rotate:
+        state.selectedPatchId === patch.id ? state.selectedPatchRotation : 0,
     });
   }, [yPossition, xPossition, zIndex]);
 
