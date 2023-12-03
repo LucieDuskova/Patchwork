@@ -32,24 +32,23 @@ export const Player1 = ({ state }) => {
         >
           <strong>HRÁČ 1</strong>
         </p>
-        <p>
-          <strong>
-            {state.player1.buttons}{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox={DecorButton.viewBox}
-              width={`30px`}
-            >
-              <g>
-                <path
-                  d={DecorButton.svg}
-                  fill={DecorButton.color}
-                  stroke="#000000"
-                  strokeWidth="0.15"
-                />
-              </g>
-            </svg>
-          </strong>
+
+        <p className="gamePage__currency">
+          <strong>{state.player1.buttons}</strong>{' '}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={DecorButton.viewBox}
+            width={`30px`}
+          >
+            <g>
+              <path
+                d={DecorButton.svg}
+                fill={DecorButton.color}
+                stroke="#000000"
+                strokeWidth="0.15"
+              />
+            </g>
+          </svg>
         </p>
       </div>
     </div>
@@ -84,7 +83,7 @@ export const Player2 = ({ state }) => {
         >
           <strong>HRÁČ 2</strong>
         </p>
-        <p>
+        <p className="gamePage__currency">
           <strong>{state.player2.buttons}</strong>{' '}
           <svg
             xmlns="http://www.w3.org/2000/svg"
