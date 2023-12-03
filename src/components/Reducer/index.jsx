@@ -155,12 +155,14 @@ export const reducer = (state, action) => {
 
     const newState = {
       ...state,
+      buttonBuy: false,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
         arrayPatch: newCurrentPlayerArray,
         buttons: newCurrentPlayerButtons,
         income: newIncome,
         score: newScore,
+
       },
       // vrácení látky do elipsy
       patchesMixed: newPatchesMixed,
