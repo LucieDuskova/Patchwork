@@ -32,6 +32,7 @@ export const Player = ({
         <div
           className={`gamePage__player${playerNumber}--array`}
           style={{
+            boxShadow: isCurrentPlayer ? '10px 10px 5px #ffc43a' : '',
             width: `${player.gameBoard.width}px`,
             top: `${player.gameBoard.top}px`,
             left: `${player.gameBoard.left}px`,
