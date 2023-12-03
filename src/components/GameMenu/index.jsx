@@ -5,7 +5,12 @@ export const GameMenu = ({ state, dispatch }) => {
     <>
       <div className="gameMenu">
         <div className="gameMenu__button-rotation">
-          <button className="gameMenu__button">O</button>
+          <button
+            className="gameMenu__button"
+            onClick={() => dispatch({ type: 'ROTATION_FLIP' })}
+          >
+            P
+          </button>
           <button
             className="gameMenu__button"
             onClick={() => dispatch({ type: 'ROTATION_MINUS_90' })}
@@ -19,7 +24,12 @@ export const GameMenu = ({ state, dispatch }) => {
           >
             &#9654;
           </button>
-          <button className="gameMenu__button">O</button>
+          <button
+            className="gameMenu__button"
+            onClick={() => dispatch({ type: 'ROTATION_RESET' })}
+          >
+            R
+          </button>
         </div>
         <button
           className="gameMenu__button"

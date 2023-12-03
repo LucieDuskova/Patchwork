@@ -157,6 +157,7 @@ export const reducer = (state, action) => {
       ...state,
       buttonBuy: false,
       selectedPatchRotation: 0,
+      selectPatchFlip: 0,
       [state.currentPlayer]: {
         ...state[state.currentPlayer],
         arrayPatch: newCurrentPlayerArray,
@@ -199,6 +200,23 @@ export const reducer = (state, action) => {
       selectedPatchRotation: newSelectedPatchRotation,
     };
   }
+
+  if (action.type === 'ROTATION_FLIP') {
+    const newSelectedPatchFlip = state.selectedPatchFlip === 180 ? 0 : 180;
+
+    return {
+      ...state,
+      selectedPatchFlip: newSelectedPatchFlip,
+    };
+  }
+
+  if (action.type === 'ROTATION_RESET') {
+    return {
+      ...state,
+      selectedPatchFlip: 0,
+      selectedPatchRotation: 0,
+    };
+  }
   return state;
 };
 
@@ -213,12 +231,16 @@ const distributePointsOnEllipse = (a, b, numPoints) => {
     points.push([parseInt(x), parseInt(y)]);
   }
 
+  const starOfEllipse = points[numPoints - 1];
+  points.splice(numPoints - 1, 0);
+  points.splice(0, 0, starOfEllipse);
+
   return points;
 };
 
 //funkce, která mi požadovaný prvek přesune na konec pole
 const arraymove = (arr, fromIndex) => {
-  var element = arr[fromIndex];
+  const element = arr[fromIndex];
   arr.splice(fromIndex, 1);
   arr.splice(33, 0, element);
 };
@@ -254,6 +276,7 @@ export const defaultState = {
   selectedPatchId: null,
   selectedPatchPosition: { x: 0, y: 0 },
   selectedPatchRotation: 0,
+  selectedPatchFlip: 0,
   timeArray: [...timeArray(37.2, 3.5)],
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače

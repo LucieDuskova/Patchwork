@@ -455,16 +455,16 @@ export const timeArray = (box_width, edge) => {
     top: 3 * box_width + edge,
     left: 3 * box_width + edge,
     button: true,
-    color: '#ffc43b',
+    color: '#ff0000',
     text: '60',
-    borderWidth: '4px 1px 1px 2px',
+    borderWidth: '4px 0px 0px 2px',
   };
   score[61] = {
     top: 3 * box_width + edge,
     left: 4 * box_width + edge,
     color: '#ff0000',
     text: '61',
-    borderWidth: '4px 4px 0px 1px',
+    borderWidth: '4px 4px 0px 0px',
   };
   score[62] = {
     top: 4 * box_width + edge,
@@ -478,7 +478,7 @@ export const timeArray = (box_width, edge) => {
     left: 3 * box_width + edge,
     color: '#ff0000',
     text: '63',
-    borderWidth: '1px 0px 4px 4px',
+    borderWidth: '0px 0px 4px 4px',
   };
 
   return score;

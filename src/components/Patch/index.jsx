@@ -45,6 +45,7 @@ export const Patch = ({ patch, index, dispatch, state }) => {
       zIndex: zIndex.zIndex,
       rotate:
         state.selectedPatchId === patch.id ? state.selectedPatchRotation : 0,
+      rotateY: state.selectedPatchId === patch.id ? state.selectedPatchFlip : 0,
     });
   }, [yPossition, xPossition, zIndex]);
 
