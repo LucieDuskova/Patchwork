@@ -7,7 +7,6 @@ export const Patch = ({
   patch,
   index,
   dispatch,
-  state,
   x,
   y,
   zIndex,
@@ -15,8 +14,6 @@ export const Patch = ({
   rotateY,
 }) => {
   const controls = useAnimation();
-  // console.log( zIndex);
-  // console.log(y);
 
   useEffect(() => {
     // nastavení pozic látek
@@ -34,12 +31,6 @@ export const Patch = ({
     <>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        /*animate={{
-          y: `${y.y}px`,
-          x: `${x.x}px`,
-          position: zIndex.position,
-          zIndex: zIndex.zIndex,
-        }}*/
         animate={controls}
         drag={index < 3 ? true : false}
         onDragEnd={(event, info) => {
