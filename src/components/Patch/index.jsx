@@ -83,7 +83,7 @@ export const Patch = ({ patch, index, dispatch, state }) => {
           />
 
           <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
-            {`P: ${patch.price}, T: ${patch.time}`}
+            {`P: ${patch.price}, T: ${patch.time} I:${patch.income}`}
           </text>
         </g>
       </motion.svg>
