@@ -111,7 +111,7 @@ export const GameArrayTime = ({ state }) => {
                   className={`gameArrayTime__cell-${Index}`}
                   style={{
                     backgroundColor: cell.color,
-                    backgroundImage: cell.button ? './url(img/lucka.jpeg)' : '',
+                    backgroundImage: cell.button ? './url(../public/favicon.ico)' : '',
                     width: '37.2px',
                     height: '37.2px',
                     borderWidth: cell.borderWidth,

@@ -37,16 +37,24 @@
   display: flex;
 }
 
-.gamePage__player1--state{
-  width: 100px;
+.gamePage__player1--state {
+  width: 150px;
   position: absolute;
   left: 400px;
   top: 700px;
 }
 
-.gamePage__player2--state{
-  width: 100px;
+.gamePage__player2--state {
+  width: 150px;
   position: absolute;
-  left: 1400px;
+  left: 1350px;
   top: 700px;
+}
+
+.gamePage__player {
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  background-color: #ffc43a;
+  font-size: 24px;
 }
