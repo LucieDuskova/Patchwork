@@ -111,7 +111,7 @@ export const PatchesData = [
     svg: 'm 0 0 L 10 0 L 10 10 L 0 10 L 0 0',
     viewBox: '0 0 10 10',
     pattern: '',
-    color: '#1a1a1a', // Tmavě šedá
+    color: '#FFC0CB', // Světle růžová
     price: 6,
     time: 5,
     income: 2,
@@ -357,7 +357,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 15 L 0 15 L 0 0',
     viewBox: '0 0 5 15',
     pattern: '',
-    color: '#666666', //Středně šedá
+    color: '#008080', //Kachní modř
     price: 2,
     time: 3,
     income: 1,
@@ -369,7 +369,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 25 L 0 25 L 0 0',
     viewBox: '0 0 5 25',
     pattern: '',
-    color: '#4D4D4D', //Středně tmavě šedá
+    color: '#00FFB2', //Mátově zelená
     price: 7,
     time: 1,
     income: 1,
@@ -478,7 +478,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 20 L 0 20 L 0 0',
     viewBox: '0 0 5 20',
     pattern: '',
-    color: '#999999', //Střední světlá šedá
+    color: '#FF6F61', //Korálová
     price: 3,
     time: 3,
     income: 1,
