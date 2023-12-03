@@ -1,0 +1,11 @@
+.descriptionPatch{
+  border: 1px solid black;
+  background-color: white;
+  width: 50px;
+  font-size: 15px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 130px ;
+  z-index: 1000;
+}

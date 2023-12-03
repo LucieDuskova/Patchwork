@@ -2,6 +2,7 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
+import './style.css';
 
 export const Patch = ({
   patch,
@@ -57,6 +58,16 @@ export const Patch = ({
 
   return (
     <>
+      <motion.div
+        className="descriptionPatch"
+        animate={{
+          y: position.y,
+          x: position.x,
+        }}
+      >
+        <p>cena: {patch.price}</p>
+        <p>čas: {patch.time}</p>
+      </motion.div>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         animate={controls}
@@ -96,9 +107,9 @@ export const Patch = ({
             />
           ) : null}
 
-          <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
+          {/* <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
             {`P: ${patch.price}, T: ${patch.time} I:${patch.income}`}
-          </text>
+          </text> */}
         </g>
       </motion.svg>
     </>
