@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import './style.css';
+import { DecorButton } from '../Button';
 
 export const Patch = ({
   patch,
@@ -55,6 +56,32 @@ export const Patch = ({
       });
     }
   }, [position, zIndex, rotate, rotateY]);
+
+  const patchHeight = patch.filled.length;
+  const patchWidth = patch.filled[0].length;
+  let i, j;
+
+  const button = [];
+  for (i = 0; i < patchHeight; i++) {
+    for (j = 0; j < patchWidth; j++) {
+      if (patch.filled[i][j] === 2) {
+        button.push(
+          <path
+            d={DecorButton.svg}
+            fill=
+            {
+              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : DecorButton.color
+            }
+            stroke="#000000"
+            strokeWidth="0.1"
+            transform={`translate(${5*j}, ${5*i})`}
+          />,
+        );
+      }
+    }
+  }
+
+  console.log(patchHeight);
 
   return (
     <>
@@ -116,11 +143,8 @@ export const Patch = ({
               strokeDashoffset="3"
             />
           ) : null}
-
-          {/* <text x="50%" y="50%" textAnchor="middle" fill="#000000" fontSize="2">
-            {`P: ${patch.price}, T: ${patch.time} I:${patch.income}`}
-          </text> */}
         </g>
+        {button}
       </motion.svg>
     </>
   );

@@ -111,8 +111,8 @@ export const reducer = (state, action) => {
     // odečtení volných pozic na desce hráče
     let newHoles = currentPlayer.holes;
     let i, j;
-    const buyPatchHeight = newSelectedPatch.filled.lenght;
-    const buyPatchWidth = newSelectedPatch.filled[0].lenght;
+    const buyPatchHeight = newSelectedPatch.filled.length;
+    const buyPatchWidth = newSelectedPatch.filled[0].length;
     for (i = 0; i < buyPatchHeight; i++) {
       for (j = 0; j < buyPatchWidth; j++) {
         if (newSelectedPatch.filled[i][j] > 0) {
@@ -323,6 +323,7 @@ export const defaultState = {
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
   playerFieldSize: 35,
+  
 
   // Ovál parametry:
   a: 800 / 2.5, // šířka oválu šířka okna / 2,5

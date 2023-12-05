@@ -126,7 +126,7 @@ export const GameArrayTime = ({ state }) => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox={DecorButton.viewBox}
-                      width={`35px`}
+                      width={`34px`}
                     >
                       <g>
                         <path
