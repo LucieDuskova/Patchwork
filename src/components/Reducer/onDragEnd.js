@@ -16,12 +16,16 @@ export const OnDragEnd = (state, action) => {
   const areacurrentPlayerX = currentPlayer.gameBoard.left;
   const areacurrentPlayerY = currentPlayer.gameBoard.top;
   const areacurrentPlayerWidth = currentPlayer.gameBoard.width;
+
+  const currentPatchAngleX = state.selectedPatchRotation % 180 !== 0 ? 3 : 2;
+  const currentPatchAngleY = state.selectedPatchRotation % 180 !== 0 ? 2 : 3;
+
   const selectedPatchPositionWidthX =
     newSelectedPatchPosition.x +
-    selectedPatch.viewBox.split(' ').map(Number)[2] * 7;
+    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleX] * 7; // šířka látky
   const selectedPatchPositionWidthY =
     newSelectedPatchPosition.y +
-    selectedPatch.viewBox.split(' ').map(Number)[3] * 7;
+    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleY] * 7; // výška látky
   let newButtonBuy = false;
 
   const halfFIeld = 0.5 * state.playerFieldSize;
