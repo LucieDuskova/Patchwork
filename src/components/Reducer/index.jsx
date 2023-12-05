@@ -45,9 +45,15 @@ export const reducer = (state, action) => {
 
     // kdo je výtěz?
     let whoisWinner = '';
-    if (state.player1.buttons > state.player2.buttons) {
+    if (
+      state.player1.buttons - state.player1.holes * 2 >
+      state.player2.buttons - state.player2.holes * 2
+    ) {
       whoisWinner = 'Vyhrál hráč 1';
-    } else if (state.player2.buttons > state.player1.buttons) {
+    } else if (
+      state.player2.buttons - state.player2.holes * 2 >
+      state.player1.buttons - state.player1.holes * 2
+    ) {
       whoisWinner = 'Vyhrál hráč 2';
     } else {
       ('Vyhráli jste oba, je to remíza.');
@@ -102,6 +108,19 @@ export const reducer = (state, action) => {
       newSelectedPatch,
     ];
 
+    // odečtení volných pozic na desce hráče
+    let newHoles = currentPlayer.holes;
+    let i, j;
+    const buyPatchHeight = newSelectedPatch.filled.lenght;
+    const buyPatchWidth = newSelectedPatch.filled[0].lenght;
+    for (i = 0; i < buyPatchHeight; i++) {
+      for (j = 0; j < buyPatchWidth; j++) {
+        if (newSelectedPatch.filled[i][j] > 0) {
+          newHoles = newHoles - 1;
+        }
+      }
+    }
+
     // přidání pozice látky na deku hráče
     const newPatchesPosition = [
       ...currentPlayer.patchesPosition,
@@ -149,9 +168,15 @@ export const reducer = (state, action) => {
 
     // kdo je výtěz?
     let whoisWinner = '';
-    if (state.player1.buttons > state.player2.buttons) {
+    if (
+      state.player1.buttons - state.player1.holes * 2 >
+      state.player2.buttons - state.player2.holes * 2
+    ) {
       whoisWinner = 'Vyhrál hráč 1';
-    } else if (state.player2.buttons > state.player1.buttons) {
+    } else if (
+      state.player2.buttons - state.player2.holes * 2 >
+      state.player1.buttons - state.player1.holes * 2
+    ) {
       whoisWinner = 'Vyhrál hráč 2';
     } else {
       ('Vyhráli jste oba, je to remíza.');
@@ -176,6 +201,7 @@ export const reducer = (state, action) => {
         buttons: newCurrentPlayerButtons,
         income: newIncome,
         score: newScore,
+        holes: newHoles,
         patchesPosition: newPatchesPosition,
       },
       patchesMixed: newPatchesMixed, // vrácení látky do elipsy,
@@ -273,6 +299,7 @@ export const defaultState = {
     buttons: 5,
     income: 0,
     score: 1,
+    holes: 81,
     arrayPatch: [],
     patchesPosition: [], // pozice látek na dece
     gameBoard: { width: 315, left: 50, top: 550 },
@@ -281,6 +308,7 @@ export const defaultState = {
     buttons: 5,
     income: 0,
     score: 2,
+    holes: 81,
     arrayPatch: [],
     patchesPosition: [], // pozice látek na dece
     gameBoard: { width: 315, left: 1550, top: 550 },
