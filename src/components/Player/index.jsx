@@ -1,6 +1,7 @@
 import { DecorButton } from '../Button';
 import { Patch } from '../Patch';
 import './style.css';
+import { motion } from 'framer-motion';
 
 export const Player = ({
   playerNumber,
@@ -66,52 +67,26 @@ export const Player = ({
         </div>
       </div>
 
-      {console.log(player.arrayPatch, player.patchesPosition)}
-
-      {player.arrayPatch.map((patch, index) => (
-        <Patch
-          patch={patch}
-          index={3}
-          position={{
-            x: player.patchesPosition[index].x,
-            y: player.patchesPosition[index].y,
-          }}
-          zIndex={900}
-          rotate={player.patchesPosition[index].rotation}
-          rotateY={player.patchesPosition[index].flip}
-          playersBoard={true}
-        />
-      ))}
+      <motion.div
+        style={{
+          filter: isCurrentPlayer ? '' : 'grayscale(100%)',
+        }}
+      >
+        {player.arrayPatch.map((patch, index) => (
+          <Patch
+            patch={patch}
+            index={3}
+            position={{
+              x: player.patchesPosition[index].x,
+              y: player.patchesPosition[index].y,
+            }}
+            zIndex={900}
+            rotate={player.patchesPosition[index].rotation}
+            rotateY={player.patchesPosition[index].flip}
+            playersBoard={true}
+          />
+        ))}
+      </motion.div>
     </>
   );
 };
-
-/*
-<script>
-
-  gameBoard.addEventListener('mousedown', (event) => {
-    if (event.target.classList.contains('game-piece')) {
-      selectedPiece = event.target
-    }
-  });
-
-  gameBoard.addEventListener('mousemove', (event) => {
-    if (selectedPiece) {
-      const mouseX = event.clientX - gameBoard.getBoundingClientRect().left;
-      const mouseY = event.clientY - gameBoard.getBoundingClientRect().top;
-
-      // Vypočítat novou pozici prvku s snapping
-      const cellSize = 50;
-      const snappedX = Math.floor(mouseX / cellSize) * cellSize;
-      const snappedY = Math.floor(mouseY / cellSize) * cellSize;
-
-      // Nastavit novou pozici prvku
-      selectedPiece.style.left = `${snappedX}px`;
-      selectedPiece.style.top = `${snappedY}px`;
-    }
-  });
-
-  gameBoard.addEventListener('mouseup', () => {
-    selectedPiece = null;
-  });
-</script>*/
