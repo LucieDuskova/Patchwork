@@ -1,14 +1,11 @@
+import { Game } from '../../components/Img';
 import './style.css';
 
 export const RulePage = () => {
   return (
     <main>
       <div className="main__div1">
-        <img
-          className="projectImg"
-          src="./pages/RulePage/img/Patchwork.png"
-          alt="herní plán Patchwork"
-        />
+        <Game />
         <div>
           <h2>Co je patchwork?</h2>
           <p>

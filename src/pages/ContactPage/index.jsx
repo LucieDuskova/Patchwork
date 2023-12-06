@@ -1,15 +1,13 @@
 import './style.css';
+import { Linda } from '../../components/Img';
+import { Lucie } from '../../components/Img';
 
 export const ContactPage = () => {
   return (
     <div className="contactPage">
       <main className="contactPage__profil contactPage__Linda">
         <h2>Linda Hrdinová</h2>
-        <img
-          className="contactPage__img contactPage__Linda-img"
-          src="./../../pages/ContactPage/img/Linda.jpg"
-          alt="Linda Hrdinová"
-        />
+        <Linda />
         <div className="contactPage__description">
           <p>
             Jmenuji se Linda Hrdinová a tvoření je tak trochu smysl mého života.
@@ -62,11 +60,7 @@ export const ContactPage = () => {
       </main>
       <main className="contactPage__profil contactPage__Lucka">
         <h2>Lucie Dušková</h2>
-        <img
-          className="contactPage__img contactPage__Lucka-img"
-          src="../../pages/ContactPage/img/Lucie_Duskova.jpeg"
-          alt="Lucie Dušková"
-        />
+        <Lucie />
         <div className="contactPage__description">
           <p>Jmenuje se Lucka a jsem hrdá máma 3 skvělých dětí.❤️❤️❤️</p>
           <p>
