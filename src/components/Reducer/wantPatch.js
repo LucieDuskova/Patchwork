@@ -10,7 +10,7 @@ export const WantPatch = (state) => {
     (x) => x.id === state.selectedPatchId,
   );
 
-  //aktuálního hráče si vezmeme jeho pole a do něj vložíme tu záplatu
+  //aktuálního hráče si vezmeme jeho pole a do něj vložíme tu látku
   const newCurrentPlayerArray = [...currentPlayer.arrayPatch, newSelectedPatch];
 
   // odečtení volných pozic na desce hráče
@@ -37,7 +37,7 @@ export const WantPatch = (state) => {
     },
   ];
 
-  // odebrat záplatu z pole záplat
+  // odebrat látku z pole záplat
   const indexOfselectedPatch = state.patchesMixed.findIndex(
     (x) => x.id === state.selectedPatchId,
   );

@@ -106,17 +106,22 @@ export const defaultState = {
   selectedPatchPosition: { x: 0, y: 0 },
   selectedPatchRotation: 0,
   selectedPatchFlip: 0,
-  timeArray: [...timeArray(37.2, 3.5)],
-  box_weight: 37.2, // šířka/délka časovače
-  edge: 3.5, //okraj od políčka časovače
-  playerFieldSize: 35,
 
+  timeArray: [...timeArray(37, 3.5)],
+  sizeBoxTimmer: 37, // šířka/délka časovače
+  // box_weight: 37.2,
+  edgeTimmer: 3.5, //okraj od políčka časovače
+  playerFieldSize: 35, // šířka desky hráče
+  windowWeight: 30, // šířka okna
+  sizeBoxPatch: 30,
+  
   // Ovál parametry:
   a: 800 / 2.5, // šířka oválu šířka okna / 2,5
   b: 250, // výška oválu
   x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
   y: 170, // pozice ze shora
   numPoints: 33,
+
 
   points: distributePointsOnEllipse(
     /*a*/ 1800 / 2.5,

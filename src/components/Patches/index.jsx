@@ -55,6 +55,7 @@ export const Patches = ({ dispatch, state }) => {
         rotateY={rotateY}
         canUse={canUse}
         playersBoard={false}
+        windowWeight={state.windowWeight}
       />
     );
   });

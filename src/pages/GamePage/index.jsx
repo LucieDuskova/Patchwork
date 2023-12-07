@@ -14,6 +14,7 @@ export const GamePage = () => {
 
       <Player
         playerNumber={1}
+        windowWeight={state.windowWeight}
         player={state.player1}
         isCurrentPlayer={state.currentPlayer === 'player1'}
         playerFieldSize={state.playerFieldSize}
@@ -21,6 +22,7 @@ export const GamePage = () => {
       <GameMenu dispatch={dispatch} state={state} />
       <Player
         playerNumber={2}
+        windowWeight={state.windowWeight}
         player={state.player2}
         isCurrentPlayer={state.currentPlayer === 'player2'}
         playerFieldSize={state.playerFieldSize}

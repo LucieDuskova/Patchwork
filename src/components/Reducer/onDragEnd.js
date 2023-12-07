@@ -22,10 +22,10 @@ export const OnDragEnd = (state, action) => {
 
   const selectedPatchPositionWidthX =
     newSelectedPatchPosition.x +
-    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleX] * 7; // šířka látky
+    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleX] /5*state.windowWeight; // šířka látky
   const selectedPatchPositionWidthY =
     newSelectedPatchPosition.y +
-    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleY] * 7; // výška látky
+    selectedPatch.viewBox.split(' ').map(Number)[currentPatchAngleY] /5*state.windowWeight; // výška látky
   let newButtonBuy = false;
 
   const halfFIeld = 0.5 * state.playerFieldSize;
@@ -42,17 +42,17 @@ export const OnDragEnd = (state, action) => {
     newSelectedPatchPosition.x =
       Math.round(
         (newSelectedPatchPosition.x - areacurrentPlayerX) /
-          state.playerFieldSize,
+          state.windowWeight,
       ) *
-        state.playerFieldSize +
+        state.windowWeight +
       areacurrentPlayerX;
 
     newSelectedPatchPosition.y =
       Math.round(
         (newSelectedPatchPosition.y - areacurrentPlayerY) /
-          state.playerFieldSize,
+          state.windowWeight,
       ) *
-        state.playerFieldSize +
+        state.windowWeight +
       areacurrentPlayerY;
     newButtonBuy = true;
   }
