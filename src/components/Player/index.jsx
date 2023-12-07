@@ -8,7 +8,7 @@ export const Player = ({
   playerNumber,
   player,
   isCurrentPlayer,
-  windowWeight
+  windowWeight,
 }) => {
   const renderPlayerFields = () => {
     const fields = [];
@@ -19,8 +19,8 @@ export const Player = ({
           key={i}
           className={`gamePage__player${playerNumber}-field`}
           style={{
-            width: `${5/5*windowWeight}px`,
-            height: `${5/5*windowWeight}px`,
+            width: `${windowWeight}px`,
+            height: `${windowWeight}px`,
           }}
         ></div>,
       );
@@ -30,7 +30,6 @@ export const Player = ({
 
   //315, 130 = 455
   const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 1.7;
-  console.log(state.x);
 
   return (
     <>
@@ -40,7 +39,7 @@ export const Player = ({
           style={{
             boxShadow: isCurrentPlayer ? '0px 0px 10px 10px #ffc43a' : '',
             filter: isCurrentPlayer ? '' : 'grayscale(100%)',
-            width: `${windowWeight*9}px`,
+            width: `${windowWeight * 9}px`,
             top: `${player.gameBoard.top}px`,
             left: `${player.gameBoard.left}px`,
           }}
@@ -92,7 +91,7 @@ export const Player = ({
               y: player.patchesPosition[index].y,
             }}
             zIndex={900}
-            width={`${patch.viewBox.split(' ').map(Number)[2] /5*windowWeight}px`}
+            windowWeight={windowWeight}
             key={patch.id}
             rotate={player.patchesPosition[index].rotation}
             rotateY={player.patchesPosition[index].flip}
