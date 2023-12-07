@@ -499,7 +499,7 @@ export const BoxForTable = ({ state }) => {
           state.x +
           state.points[1][0] +
           (state.x + state.points[0][0] - state.x + state.points[1][0]) -
-          10
+          30
         }px) translateY(${state.y + state.points[1][1] - 15}px)`,
       }}
     ></div>

@@ -4,11 +4,6 @@ import { Patch } from '../Patch';
 import { BoxForTable } from '../FunctionsGame';
 
 export const Patches = ({ dispatch, state }) => {
-  // useEffectů může být použito několik v kódu
-  useEffect(() => {
-    // setUserWidth(document.body.clientWidth);
-  }, []);
-
   const patchesToDraw = state.patchesMixed.map((patch, index) => {
     const xPossition =
       state.selectedPatchId === patch.id

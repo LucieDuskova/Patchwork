@@ -9,12 +9,20 @@ export const GameMenu = ({ state, dispatch }) => {
 
   return (
     <>
-      <div className="gameMenu">
+      <div
+        className="gameMenu"
+        style={{
+          top: `${state.player1.gameBoard.top + 250}px`,
+          left: `${state.x - 90}px`,
+        }}
+      >
         <div className="gameMenu__button-rotation">
           <button
             className="gameMenu__button"
             disabled={
-              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+              priceDescriptionPatch?.price <= currentPlayer.buttons
+                ? false
+                : true
             }
             onClick={() => dispatch({ type: 'ROTATION_FLIP' })}
           >
@@ -23,7 +31,9 @@ export const GameMenu = ({ state, dispatch }) => {
           <button
             className="gameMenu__button"
             disabled={
-              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+              priceDescriptionPatch?.price <= currentPlayer.buttons
+                ? false
+                : true
             }
             onClick={() => dispatch({ type: 'ROTATION_MINUS_90' })}
           >
@@ -33,7 +43,9 @@ export const GameMenu = ({ state, dispatch }) => {
           <button
             className="gameMenu__button"
             disabled={
-              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+              priceDescriptionPatch?.price <= currentPlayer.buttons
+                ? false
+                : true
             }
             onClick={() => dispatch({ type: 'ROTATION_PLUS_90' })}
           >
@@ -42,7 +54,9 @@ export const GameMenu = ({ state, dispatch }) => {
           <button
             className="gameMenu__button"
             disabled={
-              (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+              priceDescriptionPatch?.price <= currentPlayer.buttons
+                ? false
+                : true
             }
             onClick={() => dispatch({ type: 'ROTATION_RESET' })}
           >
@@ -52,7 +66,10 @@ export const GameMenu = ({ state, dispatch }) => {
         <button
           className="gameMenu__button"
           disabled={
-            state.buttonBuy && (priceDescriptionPatch?.price) <= currentPlayer.buttons ? false : true
+            state.buttonBuy &&
+            priceDescriptionPatch?.price <= currentPlayer.buttons
+              ? false
+              : true
           }
           onClick={() => dispatch({ type: 'WANT_PATCH' })}
         >

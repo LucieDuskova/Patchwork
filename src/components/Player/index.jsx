@@ -4,6 +4,7 @@ import './style.css';
 import { motion } from 'framer-motion';
 
 export const Player = ({
+  state,
   playerNumber,
   player,
   isCurrentPlayer,
@@ -27,6 +28,10 @@ export const Player = ({
     return fields;
   };
 
+  //315, 130 = 455
+  const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 1.7;
+  console.log(state.x);
+
   return (
     <>
       <div className={`gamePage__player${playerNumber}`}>
@@ -42,7 +47,13 @@ export const Player = ({
         >
           {renderPlayerFields()}
         </div>
-        <div className={`gamePage__player${playerNumber}--state`}>
+        <div
+          className={`gamePage__player${playerNumber}--state`}
+          style={{
+            top: `${state.y + state.y * 1.4}px`,
+            left: `${playerLeftSpace}px`,
+          }}
+        >
           <p className={isCurrentPlayer ? 'gamePage__player' : ''}>
             <strong>HRÁČ {playerNumber}</strong>
           </p>

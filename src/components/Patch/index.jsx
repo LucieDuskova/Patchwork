@@ -68,20 +68,19 @@ export const Patch = ({
         button.push(
           <path
             d={DecorButton.svg}
-            fill=
-            {
-              index < 3 && !canUse ? 'rgba(128, 128, 128, 0.5)' : DecorButton.color
+            fill={
+              index < 3 && !canUse
+                ? 'rgba(128, 128, 128, 0.5)'
+                : DecorButton.color
             }
             stroke="#000000"
             strokeWidth="0.1"
-            transform={`translate(${5*j}, ${5*i})`}
+            transform={`translate(${5 * j}, ${5 * i})`}
           />,
         );
       }
     }
   }
-
-  console.log(patchHeight);
 
   return (
     <>

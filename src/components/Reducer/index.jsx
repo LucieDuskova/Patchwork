@@ -8,11 +8,69 @@ export const reducer = (state, action) => {
     return { defaultState };
   }
 
+  // responzivní design
+  if (action.type === 'WINDOW_SIZE') {
+    return {
+      ...state,
+      x: action.windowWidth / 2 - 57,
+      y: action.windowHeight / 4.4,
+      points: distributePointsOnEllipse(
+        action.windowWidth / 2.4,
+        action.windowHeight / 4,
+        33,
+      ),
+      player1: {
+        ...state.player1,
+        gameBoard: {
+          width: 315,
+          left: 50,
+          top: action.windowHeight - 315 - 270,
+        },
+      },
+      player2: {
+        ...state.player2,
+        gameBoard: {
+          width: 315,
+          left: action.windowWidth - 315 - 50,
+          top: action.windowHeight - 315 - 270,
+        },
+      },
+    };
+    // Ovál parametry:/*
+    // x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
+    // y: 170, // pozice ze shora
+    /*
+    player1: {
+      gameBoard: { width: 315, left: 50, top: 550 },
+    },
+    player2: {
+      gameBoard: { width: 315, left: 1550, top: 550 },
+    },
+    timeArray: [...timeArray(37.2, 3.5)],
+    box_weight: 37.2, // šířka/délka časovače
+    edge: 3.5, //okraj od políčka časovače
+    playerFieldSize: 35,
+  
+    // Ovál parametry:
+    x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
+    y: 170, // pozice ze shora
+    numPoints: 33,
+  
+    points: distributePointsOnEllipse(*/
+    //1800 / 2.5,
+    // 250,
+    ///*numPoints*/ 33,
+    /*), // vytvoření pozic na oválu
+    patchesMixed: mixingPatches(),*/
+  }
+
+  // pohyb látky
   if (action.type === 'ON_DRAG_END') {
     return OnDragEnd(state, action);
   }
 
   // nechci hrát
+
   if (action.type === 'SKIP_TURN') {
     const currentPlayer =
       state.currentPlayer === 'player1' ? state.player1 : state.player2;
@@ -323,11 +381,9 @@ export const defaultState = {
   box_weight: 37.2, // šířka/délka časovače
   edge: 3.5, //okraj od políčka časovače
   playerFieldSize: 35,
-  
 
   // Ovál parametry:
-  a: 800 / 2.5, // šířka oválu šířka okna / 2,5
-  b: 250, // výška oválu
+
   x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
   y: 170, // pozice ze shora
   numPoints: 33,

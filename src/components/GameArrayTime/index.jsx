@@ -85,7 +85,10 @@ export const GameArrayTime = ({ state }) => {
   return (
     <>
       <div className="gameArrayTime">
-        <div className="gameArrayTime__array">
+        <div
+          className="gameArrayTime__array"
+          style={{ top: `${state.y + 140}px`, left: `${state.x - 90}px` }}
+        >
           <motion.div
             className="figures_1"
             animate={{
