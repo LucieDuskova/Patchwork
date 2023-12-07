@@ -81,7 +81,6 @@ export const Patch = ({
     }
   }
 
-  console.log(patchHeight);
 
   return (
     <>
