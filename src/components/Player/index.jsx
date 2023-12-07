@@ -19,8 +19,8 @@ export const Player = ({
           key={i}
           className={`gamePage__player${playerNumber}-field`}
           style={{
-            width: `${5/5*windowWeight}px`,
-            height: `${5/5*windowWeight}px`,
+            width: `${windowWeight}px`,
+            height: `${windowWeight}px`,
           }}
         ></div>,
       );
