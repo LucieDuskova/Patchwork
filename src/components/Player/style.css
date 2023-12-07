@@ -28,14 +28,14 @@
 }
 
 .gamePage__player1--state {
-  width: 130px;
+  /* width: 130px; */
   position: absolute;
   /* left: 380px; */
   top: 700px;
 }
 
 .gamePage__player2--state {
-  width: 130px;
+  /* width: 130px; */
   position: absolute;
   /* left: 1380px; */
   top: 700px;

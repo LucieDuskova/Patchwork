@@ -118,8 +118,8 @@ export const GameArrayTime = ({ state }) => {
                     backgroundImage: cell.button
                       ? './url(../public/favicon.ico)'
                       : '',
-                    width: '37.2px',
-                    height: '37.2px',
+                    width: `${state.sizeBoxTimmer}px`,
+                    height: `${state.sizeBoxTimmer}px`,
                     borderWidth: cell.borderWidth,
                     borderStyle: 'solid',
                     borderColor: '#000000',

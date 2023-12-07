@@ -15,6 +15,7 @@ export const Patch = ({
   rotateY,
   canUse,
   playersBoard,
+  windowWeight
 }) => {
   const controls = useAnimation();
 
@@ -28,7 +29,7 @@ export const Patch = ({
       const size = patch.viewBox
         .split(' ')
         .map(Number)
-        .map((x) => x * 7);
+        .map((x) => x /5*windowWeight);
       const heightPatch = size[3];
       const widthPatch = size[2];
 
@@ -82,6 +83,10 @@ export const Patch = ({
     }
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0b0389bc10ae04555228f5ce673935d69246ec07
   return (
     <>
       <div
@@ -119,7 +124,7 @@ export const Patch = ({
         }}
         dragMomentum={false} //neodjíždějí nám látky po puštění
         viewBox={patch.viewBox}
-        width={`${patch.viewBox.split(' ').map(Number)[2] * 7}px`}
+        width={`${patch.viewBox.split(' ').map(Number)[2] /5*windowWeight}px`}
       >
         <g>
           <path

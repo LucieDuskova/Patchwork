@@ -7,7 +7,6 @@ import { ContactPage } from './pages/ContactPage';
 import { HomePage } from './pages/HomePage';
 import { ErrorPage } from './pages/ErrorPage';
 import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { GamePage } from './pages/GamePage';
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
     <div className="container">
       <Header />
       <Outlet />
-      {/* <Footer /> */}
     </div>
   );
 };
