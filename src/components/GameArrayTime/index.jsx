@@ -87,23 +87,29 @@ export const GameArrayTime = ({ state }) => {
       <div className="gameArrayTime">
         <div
           className="gameArrayTime__array"
-          style={{ top: `${state.y + 140}px`, left: `${state.x - 90}px` }}
+          style={{
+            top: `${state.y + 140}px`,
+            left: `${state.x - 90}px`,
+            width: `${state.sizeBoxTimmer * 8}px`,
+          }}
         >
           <motion.div
             className="figures_1"
+            style={{ width: state.sizeBoxTimmer, height: state.sizeBoxTimmer }}
             animate={{
               position: 'absolute',
-              y: score[state.player1.score].top,
-              x: score[state.player1.score].left,
+              y: score[state.player1.score].top * state.sizeBoxTimmer,
+              x: score[state.player1.score].left * state.sizeBoxTimmer,
             }}
           ></motion.div>
 
           <motion.div
             className="figures_2"
+            style={{ width: state.sizeBoxTimmer, height: state.sizeBoxTimmer }}
             animate={{
               position: 'absolute',
-              y: score[state.player2.score].top,
-              x: score[state.player2.score].left,
+              y: score[state.player2.score].top * state.sizeBoxTimmer,
+              x: score[state.player2.score].left * state.sizeBoxTimmer,
             }}
           ></motion.div>
 
@@ -129,7 +135,7 @@ export const GameArrayTime = ({ state }) => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox={DecorButton.viewBox}
-                      width={`34px`}
+                      width={`${state.sizeBoxTimmer * 0.9}px`}
                     >
                       <g>
                         <path
@@ -142,7 +148,8 @@ export const GameArrayTime = ({ state }) => {
                     </svg>
                   ) : null}
                   {'   '}
-                  {/* {cell.text} */}
+                  {/* {cell.text} */
+                  /* debugovací text */}
                 </div>
               ))}
             </div>
