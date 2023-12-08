@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import './style.css';
-import { DecorButton } from '../Button';
+import { DecorButton, buttonData } from '../Button';
 import { DecorHourglass } from '../Hourglass';
 
 export const Patch = ({
@@ -17,6 +17,7 @@ export const Patch = ({
   canUse,
   playersBoard,
   windowHeight,
+  state,
 }) => {
   const controls = useAnimation();
 
@@ -68,17 +69,19 @@ export const Patch = ({
     for (j = 0; j < patchWidth; j++) {
       if (patch.filled[i][j] === 2) {
         button.push(
-          <path
-            d={DecorButton.svg}
-            fill={
-              index < 3 && !canUse
-                ? 'rgba(128, 128, 128, 0.5)'
-                : DecorButton.color
-            }
-            stroke="#000000"
-            strokeWidth="0.1"
-            transform={`translate(${5 * j}, ${5 * i})`}
-          />,
+          <>
+            <path
+              d={buttonData.svg}
+              fill={
+                index < 3 && !canUse
+                  ? 'rgba(128, 128, 128, 0.5)'
+                  : buttonData.color
+              }
+              stroke="#000000"
+              strokeWidth="0.1"
+              transform={`translate(${5 * j}, ${5 * i})`}
+            />
+          </>,
         );
       }
     }
@@ -102,21 +105,8 @@ export const Patch = ({
             }}
           >
             <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox={DecorButton.viewBox}
-                width={`15px`}
-              >
-                <g>
-                  <path
-                    d={DecorButton.svg}
-                    fill={DecorButton.color}
-                    stroke="#000000"
-                    strokeWidth="0.10"
-                  />
-                </g>
-              </svg>
-              : {patch.price}
+              <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.9} /> :{' '}
+              {patch.price}
             </div>
             <div>
               <path

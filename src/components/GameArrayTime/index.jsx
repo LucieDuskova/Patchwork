@@ -1,6 +1,5 @@
 import './style.css';
 import { motion } from 'framer-motion';
-import { timeArray } from '../FunctionsGame';
 import { DecorButton } from '../Button';
 
 export const GameArrayTime = ({ state }) => {
@@ -132,20 +131,7 @@ export const GameArrayTime = ({ state }) => {
                   }}
                 >
                   {cell.button ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox={DecorButton.viewBox}
-                      width={`${state.sizeBoxTimer * 0.9}px`}
-                    >
-                      <g>
-                        <path
-                          d={DecorButton.svg}
-                          fill={DecorButton.color}
-                          stroke="#000000"
-                          strokeWidth="0.15"
-                        />
-                      </g>
-                    </svg>
+                    <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.9} />
                   ) : null}
                   {'   '}
                   {/* {cell.text} */
