@@ -120,7 +120,7 @@ export const defaultState = {
   player1: {
     buttons: 5,
     income: 0,
-    score: 1,
+    score: 2,
     holes: 81,
     arrayPatch: [],
     patchesPosition: [], // pozice látek na dece

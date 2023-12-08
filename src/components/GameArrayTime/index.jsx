@@ -81,6 +81,8 @@ export const GameArrayTime = ({ state }) => {
   arrayGrid[4][4] = score[62];
   arrayGrid[3][4] = score[63];
 
+  const startPosition = state.player1.score === 2 ? 1 : 0; // startujicí hráč 1 je vizuélně pozadu
+
   return (
     <>
       <div className="gameArrayTime">
@@ -98,7 +100,9 @@ export const GameArrayTime = ({ state }) => {
             animate={{
               position: 'absolute',
               y: score[state.player1.score].top * state.sizeBoxTimer,
-              x: score[state.player1.score].left * state.sizeBoxTimer,
+              x:
+                score[state.player1.score].left * state.sizeBoxTimer -
+                state.sizeBoxTimer * startPosition,
             }}
           ></motion.div>
 
