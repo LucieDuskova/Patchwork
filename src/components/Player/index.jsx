@@ -3,6 +3,7 @@ import { Patch } from '../Patch';
 import './style.css';
 import { motion } from 'framer-motion';
 
+
 export const Player = ({
   state,
   playerNumber,
@@ -31,16 +32,23 @@ export const Player = ({
   //315, 130 = 455
   const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 1.7;
 
+
+console.log(state.player2.gameBoard.bottom)
+
   return (
     <>
-      <div className={`gamePage__player${playerNumber}`}>
+      <div className={`gamePage__player${playerNumber}`}
+    
+    style={{
+      bottom: '15px',
+    }}>
         <div
           className={`gamePage__player${playerNumber}--array`}
           style={{
             boxShadow: isCurrentPlayer ? '0px 0px 10px 10px #ffc43a' : '',
             filter: isCurrentPlayer ? '' : 'grayscale(100%)',
             width: `${windowHeight * 9}px`,
-            top: `${player.gameBoard.top}px`,
+            // bottom: '15px',
             left: `${player.gameBoard.left}px`,
           }}
         >
@@ -49,7 +57,8 @@ export const Player = ({
         <div
           className={`gamePage__player${playerNumber}--state`}
           style={{
-            top: `${state.y + state.y * 1.4}px`,
+            // top: `${state.y + state.y * 1.4}px`,
+            bottom: '15px',
             left: `${playerLeftSpace}px`,
           }}
         >

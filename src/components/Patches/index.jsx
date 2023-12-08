@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { Patch } from '../Patch';
-import { BoxForTable } from '../FunctionsGame';
+import { BoxForTable } from '../BoxForTable';
 
 export const Patches = ({ dispatch, state }) => {
   const patchesToDraw = state.patchesMixed.map((patch, index) => {
