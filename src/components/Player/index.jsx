@@ -28,8 +28,7 @@ export const Player = ({
     return fields;
   };
 
-  //315, 130 = 455
-  const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 1.7;
+  const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 2;
 
   return (
     <>
@@ -49,30 +48,16 @@ export const Player = ({
         <div
           className={`gamePage__player${playerNumber}--state`}
           style={{
-            top: `${state.y + state.y * 1.4}px`,
+            top: `${state.y + state.y * 1.1}px`,
             left: `${playerLeftSpace}px`,
           }}
         >
           <p className={isCurrentPlayer ? 'gamePage__player' : ''}>
             <strong>HRÁČ {playerNumber}</strong>
           </p>
-
           <p className="gamePage__currency">
             <strong>{player.buttons}</strong>{' '}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox={DecorButton.viewBox}
-              width={`30px`}
-            >
-              <g>
-                <path
-                  d={DecorButton.svg}
-                  fill={DecorButton.color}
-                  stroke="#000000"
-                  strokeWidth="0.03"
-                />
-              </g>
-            </svg>
+            <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.9} />
           </p>
         </div>
       </div>

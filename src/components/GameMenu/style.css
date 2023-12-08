@@ -8,10 +8,9 @@
 }
 
 .gameMenu__button {
-  background-color: #A888AF !important;
+  background-color: #A888AF;
   border: 1px solid #6F5084;
   color: black;
-
   width: 100%;
   height: 2rem;
   margin-top: 5px;

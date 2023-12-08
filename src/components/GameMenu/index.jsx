@@ -14,6 +14,7 @@ export const GameMenu = ({ state, dispatch }) => {
         style={{
           top: `${state.player1.gameBoard.top + 250}px`,
           left: `${state.x - 90}px`,
+          width: '250px',
         }}
       >
         <div className="gameMenu__button-rotation">

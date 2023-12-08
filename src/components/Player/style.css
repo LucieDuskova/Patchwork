@@ -28,11 +28,13 @@
 
 .gamePage__player1--state {
   position: absolute;
+  width: 120px;
   /* top: 700px; */
 }
 
 .gamePage__player2--state {
   position: absolute;
+  width: 120px;
   /* top: 700px; */
 }
 

@@ -87,7 +87,7 @@ export const GameArrayTime = ({ state }) => {
         <div
           className="gameArrayTime__array"
           style={{
-            top: `${state.y + 140}px`,
+            top: `${state.y + 50}px`,
             left: `${state.x - 90}px`,
             width: `${state.sizeBoxTimer * 8}px`,
           }}

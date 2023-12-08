@@ -18,12 +18,12 @@ export const reducer = (state, action) => {
     return {
       ...state,
       x: action.windowWidth / 2 - 57,
-      y: action.windowHeight / 4.4,
+      y: action.windowHeight / 4 + 40,
       sizeBoxTimer: action.windowWidth / 70,
       windowHeight: action.windowWidth / 70,
       points: distributePointsOnEllipse(
         action.windowWidth / 2.4,
-        action.windowHeight / 4,
+        action.windowHeight / 4.4,
         33,
       ),
 
@@ -32,7 +32,7 @@ export const reducer = (state, action) => {
         gameBoard: {
           width: 315,
           left: 50,
-          top: action.windowHeight - 315 - 270,
+          top: action.windowHeight - 425,
         },
       },
       player2: {
@@ -40,7 +40,7 @@ export const reducer = (state, action) => {
         gameBoard: {
           width: 315,
           left: action.windowWidth - 315 - 50,
-          top: action.windowHeight - 315 - 270,
+          top: action.windowHeight - 425,
         },
       },
     };
@@ -155,11 +155,7 @@ export const defaultState = {
   y: 170, // pozice ze shora
   numPoints: 33,
 
-  points: distributePointsOnEllipse(
-    /*a*/ 1800 / 2.5,
-    /*b*/ 250,
-    /*numPoints*/ 33,
-  ), // vytvoření pozic na oválu
+  points: distributePointsOnEllipse(1800 / 2.5, 250, /*numPoints*/ 33), // vytvoření pozic na oválu
   patchesMixed: mixingPatches(),
 
   buttonBuy: false,
