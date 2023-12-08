@@ -19,7 +19,7 @@ export const reducer = (state, action) => {
       ...state,
       x: action.windowWidth / 2 - 57,
       y: action.windowHeight / 4.4,
-      sizeBoxTimmer: action.windowWidth / 70,
+      sizeBoxTimer: action.windowWidth / 70,
       windowHeight: action.windowWidth / 70,
       points: distributePointsOnEllipse(
         action.windowWidth / 2.4,
@@ -143,7 +143,7 @@ export const defaultState = {
   selectedPatchFlip: 0,
 
   timeArray: [...timeArray(37, 3.5)],
-  sizeBoxTimmer: 37, // šířka/délka časovače
+  sizeBoxTimer: 37, // šířka/délka časovače
   //edgeTimmer: 3.5, //okraj od políčka časovače
   playerFieldSize: 35, // šířka desky hráče
   windowHeight: 25, // šířka okna

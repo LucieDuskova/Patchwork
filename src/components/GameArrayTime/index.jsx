@@ -90,26 +90,26 @@ export const GameArrayTime = ({ state }) => {
           style={{
             top: `${state.y + 140}px`,
             left: `${state.x - 90}px`,
-            width: `${state.sizeBoxTimmer * 8}px`,
+            width: `${state.sizeBoxTimer * 8}px`,
           }}
         >
           <motion.div
             className="figures_1"
-            style={{ width: state.sizeBoxTimmer, height: state.sizeBoxTimmer }}
+            style={{ width: state.sizeBoxTimer, height: state.sizeBoxTimer }}
             animate={{
               position: 'absolute',
-              y: score[state.player1.score].top * state.sizeBoxTimmer,
-              x: score[state.player1.score].left * state.sizeBoxTimmer,
+              y: score[state.player1.score].top * state.sizeBoxTimer,
+              x: score[state.player1.score].left * state.sizeBoxTimer,
             }}
           ></motion.div>
 
           <motion.div
             className="figures_2"
-            style={{ width: state.sizeBoxTimmer, height: state.sizeBoxTimmer }}
+            style={{ width: state.sizeBoxTimer, height: state.sizeBoxTimer }}
             animate={{
               position: 'absolute',
-              y: score[state.player2.score].top * state.sizeBoxTimmer,
-              x: score[state.player2.score].left * state.sizeBoxTimmer,
+              y: score[state.player2.score].top * state.sizeBoxTimer,
+              x: score[state.player2.score].left * state.sizeBoxTimer,
             }}
           ></motion.div>
 
@@ -124,8 +124,8 @@ export const GameArrayTime = ({ state }) => {
                     backgroundImage: cell.button
                       ? './url(../public/favicon.ico)'
                       : '',
-                    width: `${state.sizeBoxTimmer}px`,
-                    height: `${state.sizeBoxTimmer}px`,
+                    width: `${state.sizeBoxTimer}px`,
+                    height: `${state.sizeBoxTimer}px`,
                     borderWidth: cell.borderWidth,
                     borderStyle: 'solid',
                     borderColor: '#000000',
@@ -135,7 +135,7 @@ export const GameArrayTime = ({ state }) => {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox={DecorButton.viewBox}
-                      width={`${state.sizeBoxTimmer * 0.9}px`}
+                      width={`${state.sizeBoxTimer * 0.9}px`}
                     >
                       <g>
                         <path

@@ -69,7 +69,7 @@ export const Player = ({
                   d={DecorButton.svg}
                   fill={DecorButton.color}
                   stroke="#000000"
-                  strokeWidth="0.15"
+                  strokeWidth="0.03"
                 />
               </g>
             </svg>

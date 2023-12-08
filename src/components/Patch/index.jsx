@@ -4,6 +4,7 @@ import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 import './style.css';
 import { DecorButton } from '../Button';
+import { DecorHourglass } from '../Hourglass';
 
 export const Patch = ({
   patch,
@@ -100,8 +101,51 @@ export const Patch = ({
               x: position.x,
             }}
           >
-            <div>cena: {patch.price}</div>
-            <div>čas: {patch.time}</div>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox={DecorButton.viewBox}
+                width={`15px`}
+              >
+                <g>
+                  <path
+                    d={DecorButton.svg}
+                    fill={DecorButton.color}
+                    stroke="#000000"
+                    strokeWidth="0.03"
+                  />
+                </g>
+              </svg>
+              : {patch.price}
+            </div>
+            <div>
+              <path
+                d={DecorButton.svg}
+                fill={
+                  index < 3 && !canUse
+                    ? 'rgba(128, 128, 128, 0.5)'
+                    : DecorButton.color
+                }
+                stroke="#000000"
+                strokeWidth="0.1"
+                transform={`translate(${5 * j}, ${5 * i})`}
+              />{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox={DecorHourglass.viewBox}
+                width={`15`}
+              >
+                <g>
+                  <path
+                    d={DecorHourglass.svg}
+                    fill={DecorHourglass.color}
+                    stroke="#000000"
+                    strokeWidth="0.03"
+                  />
+                </g>
+              </svg>{' '}
+              : {patch.time}
+            </div>
           </motion.div>
         )}
       </div>
@@ -137,6 +181,7 @@ export const Patch = ({
           />
           {playersBoard ? (
             <path
+              className="dva"
               d={patch.svg}
               fill="none"
               stroke="#606060"
