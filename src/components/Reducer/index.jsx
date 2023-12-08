@@ -21,9 +21,6 @@ export const reducer = (state, action) => {
       y: action.windowHeight / 4.4,
       sizeBoxTimer: action.windowWidth / 70,
       windowHeight: action.windowWidth / 70,
-      windowHeightUser: action.windowHeight,
-      gameMenuWindowWidth: action.windowWidth / 7,
-
       points: distributePointsOnEllipse(
         action.windowWidth / 2.4,
         action.windowHeight / 4,
@@ -35,7 +32,7 @@ export const reducer = (state, action) => {
         gameBoard: {
           width: 315,
           left: 50,
-          bottom: action.windowHeight + 15,
+          top: action.windowHeight - 315 - 270,
         },
       },
       player2: {
@@ -43,7 +40,7 @@ export const reducer = (state, action) => {
         gameBoard: {
           width: 315,
           left: action.windowWidth - 315 - 50,
-          bottom: action.windowHeight + 15,
+          top: action.windowHeight - 315 - 270,
         },
       },
     };
@@ -127,7 +124,7 @@ export const defaultState = {
     holes: 81,
     arrayPatch: [],
     patchesPosition: [], // pozice látek na dece
-    gameBoard: { width: null, left: null, bottom: null },
+    gameBoard: { width: 315, left: 50, top: 550 },
   },
   player2: {
     buttons: 5,
@@ -136,7 +133,7 @@ export const defaultState = {
     holes: 81,
     arrayPatch: [],
     patchesPosition: [], // pozice látek na dece
-    gameBoard: { width: null, left: null, bottom: null },
+    gameBoard: { width: 315, left: 1550, top: 550 },
   },
   scoreButton: false,
   scorePatch: false,
@@ -150,9 +147,7 @@ export const defaultState = {
   //edgeTimmer: 3.5, //okraj od políčka časovače
   playerFieldSize: 35, // šířka desky hráče
   windowHeight: 25, // šířka okna
-  windowHeightUser: null,
   sizeBoxPatch: 30,
-  gameMenuWindowWidth: null,
 
   // Ovál parametry:
 

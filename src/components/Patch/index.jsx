@@ -109,7 +109,7 @@ export const Patch = ({
               {patch.price}
             </div>
             <div>
-              <path
+              {/* <path
                 d={DecorButton.svg}
                 fill={
                   index < 3 && !canUse
@@ -119,7 +119,7 @@ export const Patch = ({
                 stroke="#000000"
                 strokeWidth="0.1"
                 transform={`translate(${5 * j}, ${5 * i})`}
-              />{' '}
+              />{' '} */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox={DecorHourglass.viewBox}
@@ -143,6 +143,7 @@ export const Patch = ({
         xmlns="http://www.w3.org/2000/svg"
         animate={controls}
         drag={index < 3 && canUse ? true : false}
+        state={{ top: 0 }}
         onDragEnd={(event, info) => {
           dispatch({
             type: 'ON_DRAG_END',
