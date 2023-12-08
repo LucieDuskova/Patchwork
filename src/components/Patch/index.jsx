@@ -112,7 +112,7 @@ export const Patch = ({
                     d={DecorButton.svg}
                     fill={DecorButton.color}
                     stroke="#000000"
-                    strokeWidth="0.03"
+                    strokeWidth="0.10"
                   />
                 </g>
               </svg>

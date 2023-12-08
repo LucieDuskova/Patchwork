@@ -14,7 +14,7 @@ export const GameMenu = ({ state, dispatch }) => {
         style={{
           width: `${state.gameMenuWindowWidth}px`,
           bottom: '15px',
-          left: `${state.x - (state.gameMenuWindowWidth/2)}px`,
+          left: `${state.x - state.gameMenuWindowWidth / 2}px`,
         }}
       >
         <div className="gameMenu__button-rotation">
@@ -65,7 +65,7 @@ export const GameMenu = ({ state, dispatch }) => {
           </button>
         </div>
         <button
-          className="gameMenu__button"
+          className="gameMenu__button gameMenu__button--large"
           disabled={
             state.buttonBuy &&
             priceDescriptionPatch?.price <= currentPlayer.buttons
@@ -77,7 +77,7 @@ export const GameMenu = ({ state, dispatch }) => {
           koupit látku
         </button>
         <button
-          className="gameMenu__button"
+          className="gameMenu__button gameMenu__button--large"
           onClick={() => dispatch({ type: 'SKIP_TURN' })}
         >
           vynechat tah
