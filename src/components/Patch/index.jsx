@@ -105,21 +105,10 @@ export const Patch = ({
             }}
           >
             <div>
-              <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.9} /> :{' '}
+              <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.7} />{' '}
               {patch.price}
             </div>
             <div>
-              {/* <path
-                d={DecorButton.svg}
-                fill={
-                  index < 3 && !canUse
-                    ? 'rgba(128, 128, 128, 0.5)'
-                    : DecorButton.color
-                }
-                stroke="#000000"
-                strokeWidth="0.1"
-                transform={`translate(${5 * j}, ${5 * i})`}
-              />{' '} */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox={DecorHourglass.viewBox}
@@ -134,7 +123,7 @@ export const Patch = ({
                   />
                 </g>
               </svg>{' '}
-              : {patch.time}
+              {patch.time}
             </div>
           </motion.div>
         )}

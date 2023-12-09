@@ -222,7 +222,6 @@ export const timeArray = () => {
     top: 1,
     left: 1,
     color: '#ffc43a',
-    color: '#ffc43a',
     text: '28',
     borderWidth: '3px 1px 1px 1px',
   };
