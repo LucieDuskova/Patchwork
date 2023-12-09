@@ -7,7 +7,7 @@ import { RotationMinus90 } from './rotationMinus90';
 import { RotationPlus90 } from './rotationPlus90';
 import { RotationFlip } from './rotationFlip';
 import { RotationReset } from './rotationReset';
-import { WindowSize } from './windowSize';
+import { WindowSize, distributePointsOnEllipse } from './windowSize';
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {

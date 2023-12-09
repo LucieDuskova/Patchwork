@@ -52,7 +52,10 @@ export const WantPatch = (state) => {
   let newCurrentPlayerButtons = currentPlayer.buttons - newSelectedPatch.price;
 
   // posunout skóre a přičíst knoflíky
-  let newScore = currentPlayer.score + newSelectedPatch.time;
+  let newScore =
+    currentPlayer.score + newSelectedPatch.time > 59
+      ? 60
+      : currentPlayer.score + newSelectedPatch.time;
   const newIncome = currentPlayer.income + newSelectedPatch.income;
 
   let forScoreStart = currentPlayer.score;
@@ -65,9 +68,9 @@ export const WantPatch = (state) => {
   }
 
   //hodnota score nesmí přesáhnout 63, resp. 62
-  if (newScore > 59) {
-    newScore = 60;
-  }
+  // if (newScore > 59) {
+  //   newScore = 60;
+  // }
 
   // kdo je výtěz?
   let whoisWinner = '';

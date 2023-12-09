@@ -1,4 +1,4 @@
-const distributePointsOnEllipse = (a, b, numPoints) => {
+export const distributePointsOnEllipse = (a, b, numPoints) => {
   const points = [];
 
   // fce na vytvoření 33 pozic pro patch
