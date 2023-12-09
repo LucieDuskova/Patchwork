@@ -7,6 +7,7 @@ import { RotationMinus90 } from './rotationMinus90';
 import { RotationPlus90 } from './rotationPlus90';
 import { RotationFlip } from './rotationFlip';
 import { RotationReset } from './rotationReset';
+import { WindowSize } from './windowSize';
 
 export const reducer = (state, action) => {
   if (action.type === 'NEW_GAME') {
@@ -15,35 +16,7 @@ export const reducer = (state, action) => {
 
   // responzivní design
   if (action.type === 'WINDOW_SIZE') {
-    return {
-      ...state,
-      x: action.windowWidth / 2 - 57,
-      y: action.windowHeight / 4 + 40,
-      sizeBoxTimer: action.windowWidth / 70,
-      windowHeight: action.windowWidth / 70,
-      points: distributePointsOnEllipse(
-        action.windowWidth / 2.4,
-        action.windowHeight / 4.4,
-        33,
-      ),
-
-      player1: {
-        ...state.player1,
-        gameBoard: {
-          width: 315,
-          left: 50,
-          top: action.windowHeight - 425,
-        },
-      },
-      player2: {
-        ...state.player2,
-        gameBoard: {
-          width: 315,
-          left: action.windowWidth - 315 - 50,
-          top: action.windowHeight - 425,
-        },
-      },
-    };
+    return WindowSize(state, action);
   }
 
   // pohyb látky
@@ -52,23 +25,26 @@ export const reducer = (state, action) => {
   }
 
   // nechci hrát
-
   if (action.type === 'SKIP_TURN') {
     return SkipTurn(state, action);
   }
 
+  //chci koupit látku
   if (action.type === 'WANT_PATCH') {
     return WantPatch(state);
   }
 
+  //rotace -
   if (action.type === 'ROTATION_MINUS_90') {
     return RotationMinus90(state);
   }
 
+  //rotace +
   if (action.type === 'ROTATION_PLUS_90') {
     return RotationPlus90(state);
   }
 
+  //překlopení
   if (action.type === 'ROTATION_FLIP') {
     return RotationFlip(state);
   }
@@ -78,24 +54,6 @@ export const reducer = (state, action) => {
   }
 
   return state;
-};
-
-const distributePointsOnEllipse = (a, b, numPoints) => {
-  const points = [];
-
-  // fce na vytvoření 33 pozic pro patch
-  for (let i = 0; i < numPoints; i++) {
-    const theta = (2 * Math.PI * i) / numPoints;
-    const x = a * Math.sin(theta);
-    const y = b * Math.cos(theta);
-    points.push([parseInt(x), parseInt(y)]);
-  }
-
-  const starOfEllipse = points[numPoints - 1];
-  points.splice(numPoints - 1, 0);
-  points.splice(0, 0, starOfEllipse);
-
-  return points;
 };
 
 //funkce, která mi požadovaný prvek přesune na konec pole
@@ -144,13 +102,11 @@ export const defaultState = {
 
   timeArray: [...timeArray(37, 3.5)],
   sizeBoxTimer: 37, // šířka/délka časovače
-  //edgeTimmer: 3.5, //okraj od políčka časovače
   playerFieldSize: 35, // šířka desky hráče
   windowHeight: 25, // šířka okna
   sizeBoxPatch: 30,
 
   // Ovál parametry:
-
   x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
   y: 170, // pozice ze shora
   numPoints: 33,
