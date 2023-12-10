@@ -20,6 +20,7 @@ export const GameMenu = ({ state, dispatch }) => {
         <div className="gameMenu__button-rotation">
           <button
             className="gameMenu__button"
+            title="překlopit dílek"
             disabled={
               priceDescriptionPatch?.price <= currentPlayer.buttons
                 ? false
@@ -31,6 +32,7 @@ export const GameMenu = ({ state, dispatch }) => {
           </button>
           <button
             className="gameMenu__button"
+            title="otočit dílek doleva"
             disabled={
               priceDescriptionPatch?.price <= currentPlayer.buttons
                 ? false
@@ -43,6 +45,7 @@ export const GameMenu = ({ state, dispatch }) => {
           </button>
           <button
             className="gameMenu__button"
+            title="otočit dílek doprava"
             disabled={
               priceDescriptionPatch?.price <= currentPlayer.buttons
                 ? false
@@ -54,6 +57,7 @@ export const GameMenu = ({ state, dispatch }) => {
           </button>
           <button
             className="gameMenu__button"
+            title="restartovat dílek"
             disabled={
               priceDescriptionPatch?.price <= currentPlayer.buttons
                 ? false
@@ -74,13 +78,13 @@ export const GameMenu = ({ state, dispatch }) => {
           }
           onClick={() => dispatch({ type: 'WANT_PATCH' })}
         >
-          koupit látku
+          Koupit látku
         </button>
         <button
           className="gameMenu__button gameMenu__button--large"
           onClick={() => dispatch({ type: 'SKIP_TURN' })}
         >
-          vynechat tah
+          Vynechat tah
         </button>
       </div>
     </>

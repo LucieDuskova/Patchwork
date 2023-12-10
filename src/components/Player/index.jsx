@@ -28,7 +28,10 @@ export const Player = ({
     return fields;
   };
 
-  const playerLeftSpace = playerNumber === 1 ? 380 : state.x + state.x / 2;
+  const playerLeftSpace =
+    playerNumber === 1
+      ? windowHeight * 9 + 50
+      : 2 * state.x - windowHeight * 9 - 65;
 
   return (
     <>
@@ -48,7 +51,7 @@ export const Player = ({
         <div
           className={`gamePage__player${playerNumber}--state`}
           style={{
-            top: `${state.y + state.y * 1.1}px`,
+            top: `${player.gameBoard.top + 2 * windowHeight}px`,
             left: `${playerLeftSpace}px`,
           }}
         >
@@ -56,7 +59,7 @@ export const Player = ({
             <strong>HRÁČ {playerNumber}</strong>
           </p>
           <p className="gamePage__currency">
-            <strong>{player.buttons}</strong>{' '}
+            <strong style={{ paddingRight: '4px' }}>{player.buttons}</strong>{' '}
             <DecorButton sizeBoxTimer={state.sizeBoxTimer} size={0.9} />
           </p>
         </div>
