@@ -69,19 +69,18 @@ export const Patch = ({
     for (j = 0; j < patchWidth; j++) {
       if (patch.filled[i][j] === 2) {
         button.push(
-          <>
-            <path
-              d={buttonData.svg}
-              fill={
-                index < 3 && !canUse
-                  ? 'rgba(128, 128, 128, 0.5)'
-                  : buttonData.color
-              }
-              stroke="#000000"
-              strokeWidth="0.1"
-              transform={`translate(${5 * j}, ${5 * i})`}
-            />
-          </>,
+          <path
+            key={i + ' ' + j}
+            d={buttonData.svg}
+            fill={
+              index < 3 && !canUse
+                ? 'rgba(128, 128, 128, 0.5)'
+                : buttonData.color
+            }
+            stroke="#000000"
+            strokeWidth="0.1"
+            transform={`translate(${5 * j}, ${5 * i})`}
+          />,
         );
       }
     }
