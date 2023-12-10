@@ -1,7 +1,5 @@
 .gameArrayTime {
   height: 100%;
-  /* margin: 5rem 0 5rem 0; */
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   position: relative,
@@ -10,8 +8,6 @@
 
 .gameArrayTime__array {
   aspect-ratio: 1 / 1;
-  /* background-color: #889EAF; */
-  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -19,9 +15,6 @@
   position: absolute;
   z-index: 10;
 }
-
-
-
 
 .figures_1 {
   background-color: #889EAF;
@@ -36,5 +29,4 @@
   border-radius: 50%;
   border: 1px solid black;
   z-index: 100;
-
 }

@@ -1,8 +1,8 @@
 import * as React from 'react';
+import './style.css';
 import { motion } from 'framer-motion';
 import { useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
-import './style.css';
 import { DecorButton, buttonData } from '../Button';
 import { DecorHourglass } from '../Hourglass';
 
@@ -23,7 +23,6 @@ export const Patch = ({
 
   useEffect(() => {
     // nastavení pozic látek
-
     let xt = 0;
     let yt = 0;
 
@@ -132,7 +131,7 @@ export const Patch = ({
         animate={controls}
         drag={index < 3 && canUse ? true : false}
         state={{ top: 0 }}
-        onDragEnd={(event, info) => {
+        onDragEnd={(info) => {
           dispatch({
             type: 'ON_DRAG_END',
             patchId: patch.id,

@@ -1,6 +1,6 @@
+import './style.css';
 import { DecorButton } from '../Button';
 import { Patch } from '../Patch';
-import './style.css';
 import { motion } from 'framer-motion';
 
 export const Player = ({

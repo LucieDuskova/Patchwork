@@ -7,7 +7,6 @@ export const GameMenu = ({ state, dispatch }) => {
     (x) => x.id === state.selectedPatchId,
   );
 
-  console.log(state.gameMenuWindowWidth);
 
   return (
     <>

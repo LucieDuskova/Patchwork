@@ -18,3 +18,5 @@ export const BoxForTable = ({ state }) => {
     ></div>
   );
 };
+
+

@@ -67,11 +67,6 @@ export const WantPatch = (state) => {
     }
   }
 
-  //hodnota score nesmí přesáhnout 63, resp. 62
-  // if (newScore > 59) {
-  //   newScore = 60;
-  // }
-
   // kdo je výtěz?
   let whoisWinner = '';
   if (

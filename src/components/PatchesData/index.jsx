@@ -16,14 +16,12 @@ export const PatchesData = [
     viewBox: '0 0 10 10',
     pattern: '',
     color: '#59E42F', //Zelená
-    price: 4,
-    time: 6,
-    income: 2,
+    price: 3,
+    time: 1,
+    income: 0,
     filled: [
-      [2, 0],
-      [2, 0],
-      [1, 0],
-      [1, 1],
+      [0, 0],
+      [0, 0],
     ],
   },
   {
@@ -36,8 +34,8 @@ export const PatchesData = [
     time: 4,
     income: 1,
     filled: [
-      [0, 2, 0],
       [0, 1, 0],
+      [0, 2, 0],
       [1, 1, 1],
       [0, 1, 0],
       [0, 1, 0],
@@ -100,8 +98,8 @@ export const PatchesData = [
     time: 6,
     income: 2,
     filled: [
-      [2, 0, 2],
-      [1, 1, 1],
+      [1, 0, 1],
+      [2, 1, 2],
       [0, 1, 0],
     ],
   },
@@ -116,8 +114,8 @@ export const PatchesData = [
     time: 5,
     income: 2,
     filled: [
-      [2, 2],
-      [1, 1],
+      [2, 1],
+      [1, 2],
     ],
   },
 
@@ -131,8 +129,8 @@ export const PatchesData = [
     time: 3,
     income: 1,
     filled: [
-      [0, 2, 0],
-      [1, 1, 1],
+      [0, 1, 0],
+      [1, 2, 1],
       [1, 1, 1],
       [0, 1, 0],
     ],
@@ -148,9 +146,9 @@ export const PatchesData = [
     time: 2,
     income: 2,
     filled: [
+      [0, 1, 0],
       [0, 2, 0],
-      [0, 1, 0],
-      [0, 1, 0],
+      [0, 2, 0],
       [1, 1, 1],
     ],
   },
@@ -163,11 +161,11 @@ export const PatchesData = [
     color: '#000099', //Tmavě modrá
     price: 8,
     time: 6,
-    income: 2,
+    income: 3,
     filled: [
-      [0, 2, 2],
+      [0, 1, 1],
       [1, 2, 0],
-      [1, 1, 0],
+      [2, 2, 0],
     ],
   },
   {
@@ -214,9 +212,9 @@ export const PatchesData = [
     time: 4,
     income: 3,
     filled: [
-      [2, 0, 0],
+      [1, 0, 0],
       [2, 2, 0],
-      [0, 1, 1],
+      [0, 2, 1],
     ],
   },
 
@@ -230,9 +228,9 @@ export const PatchesData = [
     time: 4,
     income: 2,
     filled: [
-      [0, 2],
+      [0, 1],
       [1, 2],
-      [1, 1],
+      [1, 2],
       [0, 1],
     ],
   },
@@ -247,9 +245,9 @@ export const PatchesData = [
     time: 4,
     income: 1,
     filled: [
-      [2, 0],
       [1, 0],
-      [1, 1],
+      [1, 0],
+      [1, 2],
       [1, 0],
     ],
   },
@@ -359,9 +357,13 @@ export const PatchesData = [
     pattern: '',
     color: '#008080', //Kachní modř
     price: 2,
-    time: 3,
+    time: 2,
     income: 1,
-    filled: [[1], [1], [1]],
+    filled: [
+      [1], 
+      [1], 
+      [1]
+    ],
   },
 
   {
@@ -373,7 +375,13 @@ export const PatchesData = [
     price: 7,
     time: 1,
     income: 1,
-    filled: [[1], [1], [2], [1], [1]],
+    filled: [
+      [1], 
+      [1], 
+      [2], 
+      [1], 
+      [1]
+    ],
   },
 
   {
@@ -482,7 +490,12 @@ export const PatchesData = [
     price: 3,
     time: 3,
     income: 1,
-    filled: [[1], [1], [1], [2]],
+    filled: [
+      [1], 
+      [1], 
+      [1], 
+      [2]
+    ],
   },
 
   {

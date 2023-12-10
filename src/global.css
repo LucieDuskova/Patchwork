@@ -13,11 +13,8 @@ html {
   font-size: 1.2rem;
   background-color: #F7F4E1;
   -webkit-user-select: none;
-  /* Safari */
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
   user-select: none;
-  /* Standard syntax */
 
 }
 
@@ -33,6 +30,4 @@ main {
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
-  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
-  /* background-color: #FAF0E8; */
 }
