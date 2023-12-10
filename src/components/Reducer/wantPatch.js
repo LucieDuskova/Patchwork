@@ -1,4 +1,5 @@
 import { changePlayer } from '../FunctionsGame';
+import { whoIsWinner } from './whoIsWinner';
 
 export const WantPatch = (state) => {
   // vybrat aktuálního hráče
@@ -67,29 +68,7 @@ export const WantPatch = (state) => {
     }
   }
 
-  // kdo je výtěz?
-  let whoisWinner = '';
-  if (
-    state.player1.buttons - state.player1.holes * 2 >
-    state.player2.buttons - state.player2.holes * 2
-  ) {
-    whoisWinner = 'Vyhrál hráč 1';
-  } else if (
-    state.player2.buttons - state.player2.holes * 2 >
-    state.player1.buttons - state.player1.holes * 2
-  ) {
-    whoisWinner = 'Vyhrál hráč 2';
-  } else {
-    ('Vyhráli jste oba, je to remíza.');
-  }
-
-  // je konec hry? Pokud ano, vyhodnoť to
-  if (state.player1.score >= 59 && state.player2.score >= 59) {
-    // Zpoždění alertu o 2000 milisekund (2 sekundy)
-    setTimeout(() => {
-      alert(`HRA SKONČILA. ${whoisWinner}`);
-    }, 500);
-  }
+  whoIsWinner(state)
 
   const newState = {
     ...state,

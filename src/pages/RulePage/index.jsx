@@ -65,7 +65,6 @@ export const RulePage = () => {
         </p>
         <p>
           <li> Vyberte si vhodnou záplatu </li>
-          <li> Posuňte neutrální figurku na místo koupené záplaty</li>
           <li> Zaplaťte záplatu - použijte knoflíky jako platidlo </li>
           <li>
             Umístěte záplatu na svou přikrývku - natočte a umistěte ji dle

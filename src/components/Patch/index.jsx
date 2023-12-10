@@ -110,7 +110,7 @@ export const Patch = ({
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox={DecorHourglass.viewBox}
-                width={`15`}
+                width={`${state.sizeBoxTimer * 0.7}px`}
               >
                 <g>
                   <path
@@ -131,7 +131,7 @@ export const Patch = ({
         animate={controls}
         drag={index < 3 && canUse ? true : false}
         state={{ top: 0 }}
-        onDragEnd={(info) => {
+        onDragEnd={(_, info) => {
           dispatch({
             type: 'ON_DRAG_END',
             patchId: patch.id,
