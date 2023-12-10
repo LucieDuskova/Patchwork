@@ -1,5 +1,5 @@
 import { changePlayer } from '../FunctionsGame';
-import { whoIsWinner } from './whoIsWinner';
+import { whoIsWinner } from './winner';
 
 export const WantPatch = (state) => {
   // vybrat aktuálního hráče
@@ -67,11 +67,12 @@ export const WantPatch = (state) => {
       newCurrentPlayerButtons = newCurrentPlayerButtons + currentPlayer.income;
     }
   }
+  const winnerState = whoIsWinner(state);
 
-  whoIsWinner(state)
+
 
   const newState = {
-    ...state,
+    ...winnerState,
     buttonBuy: false,
     selectedPatchRotation: 0,
     selectedPatchFlip: 0,

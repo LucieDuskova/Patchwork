@@ -1,6 +1,6 @@
 import { changePlayer } from '../FunctionsGame';
 import { defaultState } from '.';
-import { whoIsWinner } from './whoIsWinner';
+import { whoIsWinner } from './winner';
 
 export const SkipTurn = (state) => {
   const currentPlayer =
@@ -27,10 +27,10 @@ export const SkipTurn = (state) => {
     }
   }
 
-  whoIsWinner(state);
+  const winnerState = whoIsWinner(state);
 
   const newState = {
-    ...state,
+    ...winnerState,
     [state.currentPlayer]: {
       ...state[state.currentPlayer],
       score: newScore,
