@@ -6,11 +6,16 @@ export const ContactPage = () => {
   return (
     <div className="contactPage">
       <main className="contactPage__profil contactPage__Linda">
-        <h2>Linda Hrdinová</h2>
         <Linda />
         <div className="contactPage__description">
-          <p>
+          <h2>
             Jmenuji se Linda Hrdinová a tvoření je tak trochu smysl mého života.
+          </h2>
+          <p>
+            <a href="https://www.linkedin.com/in/linda-hrdinova/">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://github.com/LilyEmilyHero">GitHub</a>
           </p>
           <h3>První kontakt s front-endem</h3>
           <p>
@@ -59,17 +64,26 @@ export const ContactPage = () => {
         </div>
       </main>
       <main className="contactPage__profil contactPage__Lucka">
-        <h2>Lucie Dušková</h2>
         <Lucie />
         <div className="contactPage__description">
-          <h3>
-            Jmenuje se Lucie Dušková a měním směr svého pracovního života</h3>
-          <p> <a href="www.linkedin.com/in/duskova-lucie">www.linkedin.com/in/duskova-lucie</a></p>
-          <p><a href="https://github.com/LucieDuskova">https://github.com/LucieDuskova</a></p>
+          <h2>Jmenuje se Lucie Dušková a měním směr svého pracovního života</h2>
+          <p>
+            {' '}
+            <a href="www.linkedin.com/in/duskova-lucie">
+              www.linkedin.com/in/duskova-lucie
+            </a>
+          </p>
+          <p>
+            <a href="https://github.com/LucieDuskova">
+              https://github.com/LucieDuskova
+            </a>
+          </p>
           <h3>První kontakt s "AjTý"</h3>
           <p>
             Už od školy jsem měla ráda logiku, matematiku, analytické myšlení a
-            prostě vše co dává smysl. Mám ráda preciznost a jasnost. Kódování tedy byla jasná volba. Moc se mi líbí, že IT svět nabízí možnost vzdělávat se a posouvat své hranice.
+            prostě vše co dává smysl. Mám ráda preciznost a jasnost. Kódování
+            tedy byla jasná volba. Moc se mi líbí, že IT svět nabízí možnost
+            vzdělávat se a posouvat své hranice.
           </p>
           <p>
             V roce 2017 mě poprvé napadla myšlenka programovat. Začala jsem se
@@ -80,7 +94,8 @@ export const ContactPage = () => {
           <h3>Skutečná změna</h3>
           <p>
             Mnoho let jsem byla pohodlná a spokojená v práci, kde jsem si
-            oddělala své a šla domů. Nyní vím, že život mi dává možnost plnit si sny a byla by škoda toho nevyužít.
+            oddělala své a šla domů. Nyní vím, že život mi dává možnost plnit si
+            sny a byla by škoda toho nevyužít.
           </p>
           <p>
             Od roku 2022 jsem měla nutkání se vzdělávat a posunout se dál.

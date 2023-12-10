@@ -8,6 +8,7 @@ export const Lucie = () => {
       src={lucie}
       className="contactPage__img contactPage__Lucka-img"
       alt="Lucie Dušková"
+      style={{ marginLeft: 'auto', marginRight: 'auto' }}
     />
   );
 };
@@ -18,6 +19,7 @@ export const Linda = () => {
       src={linda}
       className="contactPage__img contactPage__Linda-img"
       alt="Linda Hrdinová"
+      style={{ marginLeft: 'auto', marginRight: 'auto' }}
     />
   );
 };
