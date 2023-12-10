@@ -30,9 +30,9 @@ export const OnDragEnd = (state, action) => {
       state.windowHeight; // výška látky
   let newButtonBuy = false;
 
-  const halfFIeld = 0.5 * state.playerFieldSize;
+  const halfFIeld = 0.5 * state.windowHeight;
 
-  //podmínka, zde je vybraná látka v poli aktivního hráče (+ odchylka pro lidskou nedokonalost)
+  //podmínka, zde je vybraná látka v poli aktivního hráče (+ odchylka pro lidskou nedokonalost (snapping))
   if (
     newSelectedPatchPosition.x > areacurrentPlayerX - halfFIeld &&
     newSelectedPatchPosition.y > areacurrentPlayerY - halfFIeld &&

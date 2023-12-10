@@ -32,15 +32,18 @@ export const WindowSize = (state, action) => {
     player1: {
       ...state.player1,
       gameBoard: {
-        width: 315,
+        width: (action.windowWidth / 70) * 9,
         left: 50,
-        top: action.windowHeight - 425,
+        top:
+          action.windowHeight -
+          (action.windowWidth / 70) * 9 -
+          (action.windowWidth / 70) * 9 * 0.75,
       },
     },
     player2: {
       ...state.player2,
       gameBoard: {
-        width: 315,
+        width: (action.windowWidth / 70) * 9,
         left: action.windowWidth - (action.windowWidth / 70) * 9 - 50,
         top: action.windowHeight - 425,
       },
