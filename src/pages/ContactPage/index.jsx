@@ -62,23 +62,46 @@ export const ContactPage = () => {
         <h2>Lucie Dušková</h2>
         <Lucie />
         <div className="contactPage__description">
-          <p>Jmenuje se Lucka a jsem hrdá máma 3 skvělých dětí.❤️❤️❤️</p>
-          <p>
-            Před mateřskou dovolenou jsem byla pohodlná a spokojená v práci, kde
-            jsem si oddělala své a šla domů. Nyní vím, že život dává možnost mít
-            se co nejlépe.
-          </p>
+          <h3>
+            Jmenuje se Lucie Dušková a měním směr svého pracovního života</h3>
+          <p> <a href="www.linkedin.com/in/duskova-lucie">www.linkedin.com/in/duskova-lucie</a></p>
+          <p><a href="https://github.com/LucieDuskova">https://github.com/LucieDuskova</a></p>
+          <h3>První kontakt s "AjTý"</h3>
           <p>
             Už od školy jsem měla ráda logiku, matematiku, analytické myšlení a
-            prostě vše co dává smysl. Kódy tedy byla jasná volba. Moc se mi
-            líbí, že IT svět nabízí možnost vzdělávat se a v čase si vybírat,
-            který směr bude ten nejlepší.
+            prostě vše co dává smysl. Mám ráda preciznost a jasnost. Kódování tedy byla jasná volba. Moc se mi líbí, že IT svět nabízí možnost vzdělávat se a posouvat své hranice.
           </p>
           <p>
-            Teď po mateřské mám pocit, že sobě i rodině dlužím více
-            bezstarostnosti a životních jistot, což doufám, že mi front-end
-            developer přinese. Moc se těším na životní změnu a nový vítr do
-            plachet 😀
+            V roce 2017 mě poprvé napadla myšlenka programovat. Začala jsem se
+            sama a pomocí přátel učit Javu, a moc mě to bavilo. Po několika
+            měsících však přišly příjemné rodinné události a programování muselo
+            jít na nějaký čas stranou.
+          </p>
+          <h3>Skutečná změna</h3>
+          <p>
+            Mnoho let jsem byla pohodlná a spokojená v práci, kde jsem si
+            oddělala své a šla domů. Nyní vím, že život mi dává možnost plnit si sny a byla by škoda toho nevyužít.
+          </p>
+          <p>
+            Od roku 2022 jsem měla nutkání se vzdělávat a posunout se dál.
+            Nejprve jsem si dala za cím zlepšit se v angličtině. Po několika
+            měsících jsem zjistila, že cizí jazyk je sice super, ale není ten
+            směr, který mě láká. Opět jsme se tedy vrhla na programování.
+            Tentokrát jsem si vybrala Python a vše dávalo smysl. Učila jsem se
+            sama, občas s pomocí přátel, ale pokroky nebyly tak rychlé.
+          </p>
+          <h3>Czechitas a digitální akademie WEB</h3>
+          <p>
+            Dozvěděla jsem se o Czechitas a digitální akademii Web. Tohle byla
+            moje cesta. Vše nabralo rychlý spád, přihláška, výběr, a velmi
+            intezivní výuka. CSS/HTML, JavaScript, React, základy UX, UI - šla
+            mi z toho hlava kolem :) Ale vím, že programování, kodování a motání
+            se kolem webu je cílem mého pracovního života.
+          </p>
+          <p>
+            Pro závěrečný projekt jsme si vybrali interaktivní hru, která má
+            přesah akademie. Bylo super spolupracovat se zkušeným programátorem
+            a opět se dozvědět o dalších možnostech programování.{' '}
           </p>
         </div>
       </main>
