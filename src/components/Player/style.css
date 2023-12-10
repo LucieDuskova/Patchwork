@@ -33,13 +33,13 @@
 
 .gamePage__player2--state {
   position: absolute;
-  width: 120px;
+  width: 110px;
 }
 
 .gamePage__player {
   border: 2px solid #000000;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 4px;
+  padding: 3px;
   background-color: #ffc43a;
   font-size: 20px;
 }

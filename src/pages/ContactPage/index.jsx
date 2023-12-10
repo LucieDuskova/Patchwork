@@ -1,6 +1,7 @@
 import './style.css';
 import { Linda } from '../../components/Img';
 import { Lucie } from '../../components/Img';
+import { DecorButton } from '../../components/Button';
 
 export const ContactPage = () => {
   return (
@@ -17,7 +18,10 @@ export const ContactPage = () => {
           <p>
             <a href="https://github.com/LilyEmilyHero">GitHub</a>
           </p>
-          <h3>První kontakt s front-endem</h3>
+          <h3>
+            <DecorButton sizeBoxTimer={25} size={0.9} /> První kontakt s
+            front-endem
+          </h3>
           <p>
             Na střední škole mě nic moc nebavilo. Výtvarka, trochu matematika,
             správná témata v biologii (rok, kdy se brala geologie, byl pro mě
@@ -30,7 +34,8 @@ export const ContactPage = () => {
             frontendem.
           </p>
           <h3>
-            Nové věci se musí zkoušet...abychom zjistily, že ty staré jsou lepší
+            <DecorButton sizeBoxTimer={25} size={0.9} /> Nové věci se musí
+            zkoušet...abychom zjistily, že ty staré jsou lepší
           </h3>
           <p>
             Protože mě v práci nejvíc bavil excel, tak mi kolegyně navrhla, ať
@@ -53,7 +58,9 @@ export const ContactPage = () => {
             Trochu jsem jí záviděla. Věděla, co jí baví a šla si za tím. V práci
             skončila, našla si jiné místo a je šťastná.
           </p>
-          <h3>Návrat ke kořenům</h3>
+          <h3>
+            <DecorButton sizeBoxTimer={25} size={0.9} /> Návrat ke kořenům
+          </h3>
 
           <p>
             Věděla jsem, že nechci dělat data, ale taky, že chci změnu. Koukala
@@ -66,15 +73,18 @@ export const ContactPage = () => {
       <main className="contactPage__profil contactPage__Lucka">
         <Lucie />
         <div className="contactPage__description">
-          <h2>Jmenuje se Lucie Dušková a měním směr svého pracovního života</h2>
+          <h2>
+            Jmenuje se Lucie Dušková a měním směr svého pracovního života.
+          </h2>
           <p>
-            {' '}
             <a href="www.linkedin.com/in/duskova-lucie">LinkedIn</a>
           </p>
           <p>
             <a href="https://github.com/LucieDuskova">GitHub</a>
           </p>
-          <h3>První kontakt s "AjTý"</h3>
+          <h3>
+            <DecorButton sizeBoxTimer={25} size={0.9} /> První kontakt s "AjTý"
+          </h3>
           <p>
             Už od školy jsem měla ráda logiku, matematiku, analytické myšlení a
             prostě vše co dává smysl. Mám ráda preciznost a jasnost. Kódování
@@ -87,7 +97,9 @@ export const ContactPage = () => {
             měsících však přišly příjemné rodinné události a programování muselo
             jít na nějaký čas stranou.
           </p>
-          <h3>Skutečná změna</h3>
+          <h3>
+            <DecorButton sizeBoxTimer={25} size={0.9} /> Skutečná změna
+          </h3>
           <p>
             Mnoho let jsem byla pohodlná a spokojená v práci, kde jsem si
             oddělala své a šla domů. Nyní vím, že život mi dává možnost plnit si
@@ -101,7 +113,10 @@ export const ContactPage = () => {
             Tentokrát jsem si vybrala Python a vše dávalo smysl. Učila jsem se
             sama, občas s pomocí přátel, ale pokroky nebyly tak rychlé.
           </p>
-          <h3>Czechitas a digitální akademie WEB</h3>
+          <h3>
+            <DecorButton sizeBoxTimer={25} size={0.9} /> Czechitas a digitální
+            akademie WEB
+          </h3>
           <p>
             Dozvěděla jsem se o Czechitas a digitální akademii Web. Tohle byla
             moje cesta. Vše nabralo rychlý spád, přihláška, výběr, a velmi
@@ -112,7 +127,7 @@ export const ContactPage = () => {
           <p>
             Pro závěrečný projekt jsme si vybrali interaktivní hru, která má
             přesah akademie. Bylo super spolupracovat se zkušeným programátorem
-            a opět se dozvědět o dalších možnostech programování.{' '}
+            a opět se dozvědět o dalších možnostech programování.
           </p>
         </div>
       </main>

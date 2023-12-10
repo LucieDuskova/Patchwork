@@ -9,14 +9,18 @@ export const Header = ({ dispatch }) => {
       </div>
       <nav className="header__nav">
         <Link className="header__nav-link" to="/">
-          Domu
+          Domů
         </Link>
         <span className="header__nav-space"> | </span>
         <Link className="header__nav-link" to="/pravidla">
           Pravidla
         </Link>
         <span className="header__nav-space"> | </span>
-        <Link className="header__nav-link" to="/hra" onClick={() => dispatch({ type: 'NEW_GAME' })}>
+        <Link
+          className="header__nav-link"
+          to="/hra"
+          onClick={() => dispatch({ type: 'NEW_GAME' })}
+        >
           Začít hrát
         </Link>
         <span className="header__nav-space"> | </span>
