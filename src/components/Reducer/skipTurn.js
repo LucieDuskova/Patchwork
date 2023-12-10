@@ -27,10 +27,8 @@ export const SkipTurn = (state) => {
     }
   }
 
-  const winnerState = whoIsWinner(state);
-
-  const newState = {
-    ...winnerState,
+  let newState = {
+    ...state,
     [state.currentPlayer]: {
       ...state[state.currentPlayer],
       score: newScore,
@@ -39,6 +37,9 @@ export const SkipTurn = (state) => {
     // vrácení látky do elipsy
     selectedPatchId: defaultState.selectedPatchId,
   };
+
+  newState = whoIsWinner(newState);
+
   //určení hráče na tahu
   const whoIsCurrentPlayer = changePlayer(
     newState.player1.score,

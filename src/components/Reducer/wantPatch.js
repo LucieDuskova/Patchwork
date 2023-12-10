@@ -67,12 +67,9 @@ export const WantPatch = (state) => {
       newCurrentPlayerButtons = newCurrentPlayerButtons + currentPlayer.income;
     }
   }
-  const winnerState = whoIsWinner(state);
 
-
-
-  const newState = {
-    ...winnerState,
+  let newState = {
+    ...state,
     buttonBuy: false,
     selectedPatchRotation: 0,
     selectedPatchFlip: 0,
@@ -87,6 +84,8 @@ export const WantPatch = (state) => {
     },
     patchesMixed: newPatchesMixed, // vrácení látky do elipsy,
   };
+
+  newState = whoIsWinner(newState);
 
   const whoIsCurrentPlayer = changePlayer(
     newState.player1.score,

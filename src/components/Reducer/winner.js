@@ -1,7 +1,6 @@
 export const whoIsWinner = (state) => {
   // je konec hry? Pokud ano, vyhodnoť to
-  if (state.player1.score >= 59 && state.player2.score >= 59) {
-    
+  if (state.player1.score > 59 && state.player2.score > 59) {
     // kdo je vítěz?
     let whoisWinner = '';
     const newPlayer1FinalButtons =
@@ -9,15 +8,9 @@ export const whoIsWinner = (state) => {
     const newPlayer2FinalButtons =
       state.player2.buttons - state.player2.holes * 2;
 
-    if (
-      state.player1.buttons - state.player1.holes * 2 >
-      state.player2.buttons - state.player2.holes * 2
-    ) {
+    if (newPlayer1FinalButtons > newPlayer2FinalButtons) {
       whoisWinner = 'Vyhrál hráč 1';
-    } else if (
-      state.player2.buttons - state.player2.holes * 2 >
-      state.player1.buttons - state.player1.holes * 2
-    ) {
+    } else if (newPlayer2FinalButtons > newPlayer1FinalButtons) {
       whoisWinner = 'Vyhrál hráč 2';
     } else {
       whoisWinner = 'Vyhráli jste oba, je to remíza.';
@@ -27,9 +20,6 @@ export const whoIsWinner = (state) => {
     setTimeout(() => {
       alert(`HRA SKONČILA. ${whoisWinner}`);
     }, 500);
-
-console.log(newPlayer1FinalButtons)
-console.log(newPlayer2FinalButtons)
 
     return {
       ...state,
@@ -43,5 +33,5 @@ console.log(newPlayer2FinalButtons)
       },
     };
   }
-  return(state)
+  return state;
 };
