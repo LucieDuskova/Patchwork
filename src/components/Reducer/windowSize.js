@@ -17,6 +17,8 @@ export const distributePointsOnEllipse = (a, b, numPoints) => {
 };
 
 export const WindowSize = (state, action) => {
+  const newWidth = action.windowWidth / 7 < 130 ? 130 : action.windowWidth / 7;
+
   return {
     ...state,
     x: action.windowWidth / 2 - 57,
@@ -45,8 +47,12 @@ export const WindowSize = (state, action) => {
       gameBoard: {
         width: (action.windowWidth / 70) * 9,
         left: action.windowWidth - (action.windowWidth / 70) * 9 - 50,
-        top: action.windowHeight - 425,
+        top:
+          action.windowHeight -
+          (action.windowWidth / 70) * 9 -
+          (action.windowWidth / 70) * 9 * 0.75,
       },
     },
+    gameMenuWindowWidth: newWidth,
   };
 };

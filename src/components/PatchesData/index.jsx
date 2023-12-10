@@ -15,7 +15,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 5 L 10 5 L 10 10 L 0 10 L 0 0',
     viewBox: '0 0 10 10',
     pattern: '',
-    color: '#00ff00', //Zelená
+    color: '#59E42F', //Zelená
     price: 4,
     time: 6,
     income: 2,
@@ -31,7 +31,7 @@ export const PatchesData = [
     svg: 'M 5 0 L 10 0 L 10 10 L 15 10 L 15 15 L 10 15 L 10 25 L 5 25 L 5 15 L 0 15 L 0 10 L 5 10 L 5 0',
     viewBox: '0 0 15 25',
     pattern: '',
-    color: '#0000ff', //Modrá
+    color: '#3766F6', //Modrá
     price: 1,
     time: 4,
     income: 1,
@@ -48,7 +48,7 @@ export const PatchesData = [
     svg: 'm 0 0 L 10 0 L 10 15 L 20 15 L 15 20 L 5 20 L 5 5 L 0 5 L 0 0',
     viewBox: '0 0 15 20',
     pattern: '',
-    color: '#ffff00', //Žlutá
+    color: '#F6E710', //Žlutá
     price: 1,
     time: 2,
     income: 0,
@@ -64,7 +64,7 @@ export const PatchesData = [
     svg: 'm 0 0 L 5 0 L 5 10 L 10 10 L 10 20 L 0 20 L 0 0',
     viewBox: '0 0 10 20',
     pattern: '',
-    color: '#ff00ff', // Purpurová
+    color: '#ED149C', // Fuchsiová
     price: 10,
     time: 5,
     income: 3,
@@ -80,7 +80,7 @@ export const PatchesData = [
     svg: 'm 0 0 L 5 0 L 5 5 L 10 5 L 10 0 L 15 0 L 15 15 L 10 15 L 10 10 L 5 10 L 5 15 L 0 15 L 0 0',
     viewBox: '0 0 15 15',
     pattern: '',
-    color: '#00ffff', // Azurová
+    color: '#2BCEE4', // Azurová
     price: 2,
     time: 3,
     income: 0,
@@ -291,7 +291,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 5 L 5 10 L 10 10 L 10 15 L 5 15 L 0 15 L 0 0',
     viewBox: '0 0 10 15',
     pattern: '',
-    color: '#0000CC', //Sytě modrá
+    color: '#0B8FE4', //Sytě modrá
     price: 4,
     time: 2,
     income: 1,
@@ -369,7 +369,7 @@ export const PatchesData = [
     svg: 'M 0 0 L 5 0 L 5 25 L 0 25 L 0 0',
     viewBox: '0 0 5 25',
     pattern: '',
-    color: '#00FFB2', //Mátově zelená
+    color: '#36FFBD', //Mátově zelená
     price: 7,
     time: 1,
     income: 1,

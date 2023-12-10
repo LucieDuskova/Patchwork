@@ -7,14 +7,18 @@ export const GameMenu = ({ state, dispatch }) => {
     (x) => x.id === state.selectedPatchId,
   );
 
+  console.log(state.gameMenuWindowWidth);
+
   return (
     <>
       <div
         className="gameMenu"
         style={{
-          top: `${state.player1.gameBoard.top + 250}px`,
-          left: `${state.x - 90}px`,
-          width: '250px',
+          width: `${state.gameMenuWindowWidth}px`,
+          top: `${
+            state.player1.gameBoard.top + 140 + 4 * state.windowHeight
+          }px`,
+          left: `${state.x - state.gameMenuWindowWidth / 2}px`,
         }}
       >
         <div className="gameMenu__button-rotation">

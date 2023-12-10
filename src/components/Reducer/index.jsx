@@ -105,6 +105,7 @@ export const defaultState = {
   playerFieldSize: 35, // šířka desky hráče
   windowHeight: 25, // šířka okna
   sizeBoxPatch: 30,
+  gameMenuWindowWidth: 300,
 
   // Ovál parametry:
   x: 1800 / 2, // pozice zleva, šířka okna / 2 (střed okna)
