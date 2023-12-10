@@ -9,10 +9,10 @@ import { ErrorPage } from './pages/ErrorPage';
 import { Header } from './components/Header';
 import { GamePage } from './pages/GamePage';
 
-const App = () => {
+const App = ({dispatch}) => {
   return (
     <div className="container">
-      <Header />
+      <Header dispatch={dispatch}/>
       <Outlet />
     </div>
   );
