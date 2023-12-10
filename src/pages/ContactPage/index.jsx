@@ -69,14 +69,10 @@ export const ContactPage = () => {
           <h2>Jmenuje se Lucie Dušková a měním směr svého pracovního života</h2>
           <p>
             {' '}
-            <a href="www.linkedin.com/in/duskova-lucie">
-              www.linkedin.com/in/duskova-lucie
-            </a>
+            <a href="www.linkedin.com/in/duskova-lucie">LinkedIn</a>
           </p>
           <p>
-            <a href="https://github.com/LucieDuskova">
-              https://github.com/LucieDuskova
-            </a>
+            <a href="https://github.com/LucieDuskova">GitHub</a>
           </p>
           <h3>První kontakt s "AjTý"</h3>
           <p>
